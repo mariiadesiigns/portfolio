@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f7f4ef;
+  --soft: #efe8dd;
+  --ink: #121212;
+  --muted: #5e584f;
+  --accent: #8b5e3c;
+  --line: #d7cdc0;
+  --ring: #8b5e3c;
+  --danger: #a33232;
+}
+
+@theme inline {
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+* {
+  border-color: var(--line);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif), Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+p,
+a,
+li,
+span,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-sans), sans-serif;
+}
+
+.reveal {
+  animation: revealUp 700ms ease both;
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
