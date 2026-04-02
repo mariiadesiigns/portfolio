@@ -10,6 +10,23 @@ export type Project = {
   services: string[];
 };
 
+export type CaseStudySection = {
+  title: string;
+  body: string;
+};
+
+export type CaseStudy = {
+  slug: string;
+  heroTitle: string;
+  heroSummary: string;
+  company: CaseStudySection;
+  problem: CaseStudySection;
+  impact: CaseStudySection;
+  approach: CaseStudySection;
+  design: CaseStudySection & { deliverables: string[] };
+  outcome: CaseStudySection & { results: string[] };
+};
+
 export type Service = {
   title: string;
   bestFor: string[];

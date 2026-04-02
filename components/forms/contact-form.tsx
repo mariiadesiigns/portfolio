@@ -124,7 +124,7 @@ export function ContactForm() {
         ) : null}
         {state === "error" ? (
           <p className="text-sm text-[color:var(--danger)]">
-            Something went wrong. Please email hello@mirakoval.com.
+            Something went wrong. Please email hello@mariia.desiigns.
           </p>
         ) : null}
       </div>

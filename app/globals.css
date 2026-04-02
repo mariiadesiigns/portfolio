@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f7f4ef;
-  --soft: #efe8dd;
+  --paper: #ffffff;
+  --soft: #ffffff;
   --ink: #121212;
-  --muted: #5e584f;
-  --accent: #8b5e3c;
-  --line: #d7cdc0;
-  --ring: #8b5e3c;
+  --muted: #5c5c5c;
+  --accent: #121212;
+  --line: #e8e8e8;
+  --ring: #121212;
   --danger: #a33232;
 }
 
 @theme inline {
-  --font-serif: var(--font-serif);
-  --font-sans: var(--font-sans);
+  --font-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -28,14 +28,15 @@ body {
 
 body {
   line-height: 1.5;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-serif), Georgia, serif;
-  letter-spacing: -0.02em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 p,

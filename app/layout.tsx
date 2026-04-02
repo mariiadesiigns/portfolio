@@ -1,19 +1,8 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/content/site";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
-
-const fraunces = Fraunces({
-  variable: "--font-serif",
-  subsets: ["latin"]
-});
-
-const manrope = Manrope({
-  variable: "--font-sans",
-  subsets: ["latin"]
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -47,9 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${fraunces.variable} ${manrope.variable} bg-[color:var(--paper)] font-sans text-[color:var(--ink)] antialiased`}
-      >
+      <body className="bg-[color:var(--paper)] font-sans text-[color:var(--ink)] antialiased">
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

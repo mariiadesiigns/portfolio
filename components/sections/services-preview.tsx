@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Card } from "@/components/ui/card";
 import { mainServices } from "@/content/services";
@@ -9,9 +8,6 @@ export function ServicesPreviewSection() {
       <Container>
         <div className="mb-10 flex items-end justify-between gap-4">
           <h2 className="font-serif text-3xl md:text-5xl">Services</h2>
-          <Link href="/services" className="text-sm hover:text-[color:var(--accent)]">
-            View details
-          </Link>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           {mainServices.map((service) => (

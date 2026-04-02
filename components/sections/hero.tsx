@@ -4,23 +4,23 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden border-b border-[color:var(--line)] py-20 md:py-30">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_85%_10%,rgba(197,168,132,0.18),transparent_40%)]" />
-      <Container className="relative grid gap-12 md:grid-cols-[1.2fr_0.8fr] md:items-end">
-        <div className="reveal">
+    <section className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden border-b border-[color:var(--line)] py-14 md:py-20">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(0,0,0,0.03),transparent_42%)]" />
+      <Container className="relative grid gap-16 md:grid-cols-[1.05fr_0.95fr] md:items-end">
+        <div className="reveal max-w-3xl">
           <p className="text-sm uppercase tracking-[0.16em] text-[color:var(--muted)]">
             Brand & Graphic Designer
           </p>
-          <h1 className="mt-5 max-w-3xl font-serif text-5xl leading-[1.05] md:text-7xl">
+          <h1 className="mt-8 max-w-2xl text-3xl leading-[1.2] md:text-5xl">
             I build story-led brand identities for founders and the brands they build.
           </h1>
         </div>
-        <div className="reveal space-y-7 md:pb-3">
-          <p className="text-base leading-relaxed text-[color:var(--muted)]">
+        <div className="reveal max-w-md space-y-9 md:justify-self-end md:pb-5">
+          <p className="text-base leading-relaxed text-[color:var(--muted)] md:text-lg">
             For people building something meaningful and ready for a brand that
             feels clear, intentional, and unmistakably theirs.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-4">
             <Link href="/work">
               <Button>View Work</Button>
             </Link>
