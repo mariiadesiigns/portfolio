@@ -3,31 +3,30 @@ import type { Testimonial } from "@/types";
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Mira translated a messy vision into a brand that feels focused and unmistakably ours.",
-    name: "Alex Brown",
+      "Mariia translated a complex product into a brand that finally feels coherent and professional.",
+    name: "Alex B.",
     role: "Founder",
-    company: "Northline"
+    company: "Kaiserex"
   },
   {
     quote:
-      "The process was strategic and calm. Every design decision had meaning behind it.",
-    name: "Priya Menon",
+      "She understood our audience immediately. The result was fresh, credible, and very on-brand.",
+    name: "Olena M.",
     role: "Marketing Lead",
-    company: "Kindred Labs"
+    company: "Dinternal Education"
   },
   {
     quote:
-      "We finally have a brand system our team can apply consistently without losing personality.",
-    name: "Daniel Park",
+      "We now have a visual identity our whole team can use consistently. Clean, sharp, and memorable.",
+    name: "Dmytro P.",
     role: "Co-Founder",
-    company: "Vertex"
+    company: "Locksmith UA"
   }
 ];
 
 export const trustLogos = [
-  "Northline",
-  "Kindred Labs",
-  "Vertex",
-  "Monarch",
-  "Fieldnote"
+  "Kaiserex",
+  "Dinternal Education",
+  "Locksmith UA",
+  "Maibutni School"
 ];

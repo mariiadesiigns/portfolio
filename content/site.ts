@@ -9,7 +9,8 @@ export const siteConfig = {
     { href: "/work", label: "Work" },
     { href: "/#services", label: "Services" },
     { href: "/#about", label: "About" },
-    { href: "/contact", label: "Contact" }
+    { href: "/contact", label: "Contact" },
+    { href: "/newsletter", label: "Newsletter" }
   ],
   ctaEmail: "hello@mariia.desiigns"
 };

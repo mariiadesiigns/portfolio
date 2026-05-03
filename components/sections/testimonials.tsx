@@ -4,23 +4,46 @@ import { testimonials, trustLogos } from "@/content/testimonials";
 
 export function TestimonialsSection() {
   return (
-    <section className="border-y border-[color:var(--line)] py-18 md:py-24">
+    <section className="border-y border-[color:var(--line)] py-24 md:py-32">
       <Container>
-        <p className="mb-8 max-w-2xl font-serif text-3xl md:text-4xl">
-          Trusted by companies and founders who care about clarity.
-        </p>
-        <div className="mb-10 flex flex-wrap gap-x-7 gap-y-3 text-sm uppercase tracking-[0.12em] text-[color:var(--muted)]">
-          {trustLogos.map((logo) => (
-            <span key={logo}>{logo}</span>
-          ))}
+        <div className="mb-12 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+          <p className="max-w-xl font-serif text-3xl font-bold leading-tight md:text-4xl">
+            Brands I&apos;ve helped look the part — and stay consistent.
+          </p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 md:justify-end md:pb-1">
+            {trustLogos.map((logo) => (
+              <span
+                key={logo}
+                className="text-xs font-medium uppercase tracking-[0.16em] text-[color:var(--muted)]"
+              >
+                {logo}
+              </span>
+            ))}
+          </div>
         </div>
+
         <div className="grid gap-5 md:grid-cols-3">
           {testimonials.map((item) => (
-            <Card key={item.name} className="p-5">
-              <p className="text-sm leading-relaxed">"{item.quote}"</p>
-              <p className="mt-5 text-xs uppercase tracking-[0.1em] text-[color:var(--muted)]">
-                {item.name} / {item.role}, {item.company}
-              </p>
+            <Card key={item.name} className="flex flex-col justify-between p-7">
+              <div>
+                <span
+                  className="block font-serif text-4xl font-bold leading-none text-[color:var(--accent)] opacity-30 select-none"
+                  aria-hidden
+                >
+                  &ldquo;
+                </span>
+                <p className="mt-3 text-sm leading-relaxed text-[color:var(--ink)]">
+                  {item.quote}
+                </p>
+              </div>
+              <div className="mt-7 border-t border-[color:var(--line)] pt-5">
+                <p className="text-sm font-semibold text-[color:var(--ink)]">
+                  {item.name}
+                </p>
+                <p className="mt-0.5 text-xs text-[color:var(--muted)]">
+                  {item.role}, {item.company}
+                </p>
+              </div>
             </Card>
           ))}
         </div>

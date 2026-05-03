@@ -2,43 +2,43 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    slug: "northline-founder-brand",
-    title: "Northline",
-    category: "Founder",
-    client: "Executive Coach",
+    slug: "kaiserex-brand",
+    title: "Kaiserex",
+    category: "Business",
+    client: "Fintech & Crypto Platform",
     summary:
-      "A personal brand identity designed around authority, trust, and editorial clarity for thought-leadership content.",
+      "Visual identity and graphic design for a B2B crypto-to-fiat exchange platform — balancing trust, modernity, and technical precision.",
     image: "/work-1.svg",
-    services: ["Strategy", "Visual Identity", "Social Templates"]
+    services: ["Visual Identity", "Graphic Design", "Brand Assets"]
   },
   {
-    slug: "kindred-labs",
-    title: "Kindred Labs",
+    slug: "dinternal-education",
+    title: "Dinternal Education",
     category: "Business",
-    client: "HealthTech Startup",
+    client: "EdTech & Publishing",
     summary:
-      "A scalable visual language for a growing product team, balancing warmth with clinical precision.",
+      "Brand and social media design for Ukraine's largest educational content importer — making learning feel approachable and credible.",
     image: "/work-2.svg",
-    services: ["Brand Story", "Identity System", "Guidelines"]
+    services: ["Brand Design", "Social Media", "Print Materials"]
   },
   {
-    slug: "alba-studio",
-    title: "Alba Studio",
-    category: "Founder",
-    client: "Creator & Educator",
-    summary:
-      "A story-led personal identity focused on consistency across digital products, newsletter, and workshops.",
-    image: "/work-3.svg",
-    services: ["Positioning", "Typography System", "Templates"]
-  },
-  {
-    slug: "vertex-finance",
-    title: "Vertex",
+    slug: "locksmith-ua",
+    title: "Locksmith UA",
     category: "Business",
-    client: "Fintech Company",
+    client: "Service Business",
     summary:
-      "A rebrand built for long-term growth with a sharper narrative and a modular identity system.",
+      "A clean, trustworthy identity for a local service brand — built for recognition and repeat business.",
+    image: "/work-3.svg",
+    services: ["Logo Design", "Visual Identity", "Brand Guidelines"]
+  },
+  {
+    slug: "maibutni-school",
+    title: "Maibutni School",
+    category: "Founder",
+    client: "Democratic School",
+    summary:
+      "A warm, human brand for a progressive alternative school — conveying openness, curiosity, and community from first glance.",
     image: "/work-4.svg",
-    services: ["Rebranding", "Graphic Language", "Brand Assets"]
+    services: ["Brand Story", "Visual Identity", "Templates"]
   }
 ];

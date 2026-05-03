@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { siteConfig } from "@/content/site";
-import { SiteHeader } from "@/components/layout/site-header";
-import { SiteFooter } from "@/components/layout/site-footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -37,9 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-[color:var(--paper)] font-sans text-[color:var(--ink)] antialiased">
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
+        {children}
       </body>
     </html>
   );
