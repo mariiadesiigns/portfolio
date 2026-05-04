@@ -1,5 +1,13 @@
 import Link from "next/link";
+import { Instrument_Serif } from "next/font/google";
 import { siteConfig } from "@/content/site";
+
+const instrumentSerif = Instrument_Serif({
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-instrument",
+});
 
 export default function NewsletterLayout({
   children,
@@ -7,7 +15,7 @@ export default function NewsletterLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen w-full flex-col">
+    <div className={`${instrumentSerif.variable} flex min-h-screen w-full flex-col`}>
       <header className="shrink-0 px-8 pt-8">
         <Link
           href="/"

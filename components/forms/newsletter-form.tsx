@@ -57,7 +57,7 @@ export function NewsletterForm({ centered = false }: { centered?: boolean }) {
           <Input
             id="firstName"
             placeholder="First name"
-            className="h-11 min-w-0 sm:w-36"
+            className="h-11 min-w-0 sm:w-40"
             {...register("firstName")}
             aria-invalid={!!errors.firstName}
           />
@@ -71,7 +71,7 @@ export function NewsletterForm({ centered = false }: { centered?: boolean }) {
             id="email"
             type="email"
             placeholder="your@email.com"
-            className="h-11 min-w-0 sm:w-56"
+            className="h-11 min-w-0 sm:w-60"
             {...register("email")}
             aria-invalid={!!errors.email}
           />

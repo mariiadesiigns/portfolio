@@ -10,62 +10,56 @@ export const metadata: Metadata = {
 
 export default function NewsletterPage() {
   return (
-    /*
-     * Strategy:
-     * - Content flows naturally (no absolute centering) → no empty gaps
-     * - Cards are absolute decorations, visible at lg (1024px+)
-     * - Container gets extra vertical padding on lg+ to give cards room
-     */
-    <div className="relative flex flex-1 flex-col items-center justify-center overflow-hidden px-6 py-14 lg:px-8 lg:py-20">
+    <div className="relative flex flex-1 flex-col items-center justify-center overflow-hidden px-6 py-16 lg:px-8 lg:py-20">
 
       {/* ── Card 1 · top-left · portrait photo ───────────────────── */}
-      <div className="absolute left-[-14px] top-[5%] hidden -rotate-[8deg] lg:block">
+      <div className="absolute left-[4%] top-[7%] hidden -rotate-[8deg] lg:block">
         <div
-          className="w-[176px] overflow-hidden rounded-[18px]"
-          style={{ boxShadow: "0 12px 40px rgba(0,0,0,0.13)" }}
+          className="w-[214px] overflow-hidden rounded-[20px]"
+          style={{ boxShadow: "0 20px 56px rgba(0,0,0,0.14)" }}
         >
-          <div className="relative h-[232px] w-full bg-[#e0dbd6]">
+          <div className="relative h-[284px] w-full bg-[#e0dbd6]">
             <Image
               src="/photos/mariia-ai.jpg"
               alt="Mariia — Learning AI"
               fill
               className="object-cover"
-              sizes="176px"
+              sizes="214px"
             />
           </div>
         </div>
       </div>
 
       {/* ── Card 2 · top-right · first issue date ────────────────── */}
-      <div className="absolute right-[-6px] top-[4%] hidden rotate-[4deg] lg:block">
+      <div className="absolute right-[4%] top-[7%] hidden rotate-[4deg] lg:block">
         <div
-          className="w-[240px] rounded-[18px] bg-white p-5"
-          style={{ boxShadow: "0 12px 40px rgba(0,0,0,0.10)" }}
+          className="w-[276px] rounded-[20px] bg-white p-6"
+          style={{ boxShadow: "0 20px 56px rgba(0,0,0,0.09)" }}
         >
-          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[color:var(--muted)]">
+          <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-[color:var(--muted)]">
             Coming up
           </p>
-          <p className="mt-3 text-[1.35rem] font-bold leading-[1.2] tracking-tight text-[color:var(--ink)]">
+          <p className="mt-4 text-[1.4rem] font-bold leading-[1.15] tracking-[-0.02em] text-[color:var(--ink)]">
             First issue drops<br />
-            <span className="text-[color:var(--muted)]">Friday, 8.05</span>
+            <span className="font-normal text-[color:var(--muted)]">Friday, 8.05</span>
           </p>
-          <div className="mt-3 h-px w-full bg-[color:var(--line)]" />
-          <p className="mt-2 text-[11px] leading-relaxed text-[color:var(--muted)]">
+          <div className="mt-4 h-px w-full bg-[color:var(--line)]" />
+          <p className="mt-3 text-[11.5px] leading-[1.65] text-[color:var(--muted)]">
             Subscribe now so you&apos;re in from day one →
           </p>
         </div>
       </div>
 
       {/* ── Card 3 · bottom-left · mistake note ──────────────────── */}
-      <div className="absolute bottom-[5%] left-[1%] hidden -rotate-[3deg] lg:block">
+      <div className="absolute bottom-[7%] left-[4%] hidden -rotate-[3deg] lg:block">
         <div
-          className="w-[232px] rounded-[18px] bg-[#f7f3ee] p-5"
-          style={{ boxShadow: "0 12px 40px rgba(0,0,0,0.09)" }}
+          className="w-[258px] rounded-[20px] bg-[#f7f3ee] p-6"
+          style={{ boxShadow: "0 20px 56px rgba(0,0,0,0.08)" }}
         >
-          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#9a8c7e]">
+          <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-[#9a8c7e]">
             Mistake I made
           </p>
-          <p className="mt-2 text-[12px] leading-relaxed text-[color:var(--ink)]">
+          <p className="mt-3 text-[12.5px] leading-[1.72] text-[color:var(--ink)]">
             I told AI to &ldquo;make it look better.&rdquo; Spent 40&nbsp;min
             fixing the mess. The prompt you actually need is in issue&nbsp;#1.
           </p>
@@ -73,22 +67,22 @@ export default function NewsletterPage() {
       </div>
 
       {/* ── Card 4 · bottom-right · laptop photo + quote ─────────── */}
-      <div className="absolute bottom-[4%] right-[-6px] hidden rotate-[5deg] lg:block">
+      <div className="absolute bottom-[7%] right-[4%] hidden rotate-[5deg] lg:block">
         <div
-          className="w-[176px] overflow-hidden rounded-[18px] bg-white"
-          style={{ boxShadow: "0 12px 40px rgba(0,0,0,0.13)" }}
+          className="w-[214px] overflow-hidden rounded-[20px] bg-white"
+          style={{ boxShadow: "0 20px 56px rgba(0,0,0,0.14)" }}
         >
-          <div className="relative h-[196px] w-full bg-[#dde3e0]">
+          <div className="relative h-[232px] w-full bg-[#dde3e0]">
             <Image
               src="/photos/mariia-working.jpg"
               alt="Mariia working"
               fill
               className="object-cover"
-              sizes="176px"
+              sizes="214px"
             />
           </div>
-          <div className="px-3 py-3">
-            <p className="text-[10px] leading-relaxed text-[color:var(--muted)]">
+          <div className="px-4 py-3.5">
+            <p className="text-[10.5px] leading-[1.6] text-[color:var(--muted)]">
               Focus on creativity —<br />leave execution to AI.
             </p>
           </div>
@@ -98,33 +92,41 @@ export default function NewsletterPage() {
       {/* ── Centre content ────────────────────────────────────────── */}
       <div className="relative z-10 mx-auto flex w-full max-w-[500px] flex-col items-center text-center">
 
-        <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[color:var(--muted)]">
+        <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-[color:var(--muted)]">
           Weekly newsletter
         </p>
 
-        <h1
-          className="mt-5 font-bold leading-[1.04] tracking-[-0.03em]"
-          style={{ fontSize: "clamp(3.2rem, 6.5vw, 5.8rem)" }}
-        >
-          Learning AI<br />
-          <em className="font-normal italic">in public.</em>
+        <h1 className="mt-5 leading-[1.0] tracking-[-0.04em]" style={{ fontSize: "clamp(3.4rem, 7vw, 6rem)" }}>
+          <span className="block font-bold">Learning AI</span>
+          <em
+            className="block font-normal"
+            style={{
+              fontFamily: "var(--font-instrument)",
+              fontStyle: "italic",
+              fontSize: "1.06em",
+              lineHeight: 1.08,
+              letterSpacing: "-0.01em",
+            }}
+          >
+            in public.
+          </em>
         </h1>
 
-        <p className="mt-6 max-w-[380px] text-[15px] leading-[1.75] text-[color:var(--muted)]">
+        <p className="mt-8 max-w-[400px] text-[15.5px] leading-[1.85] text-[color:var(--muted)]">
           For creatives who feel like AI is everywhere and don&apos;t know
           where to start. I&apos;m a designer figuring it out in real
           time — every prompt, workflow, and mistake, shared weekly.
         </p>
 
-        <p className="mt-3 text-[14px] font-semibold text-[color:var(--ink)]">
+        <p className="mt-3.5 text-[13px] font-medium tracking-[0.01em] text-[color:var(--muted)]">
           No dev background. No hype. Just real experiments.
         </p>
 
-        <div className="mt-8 w-full">
+        <div className="mt-10 w-full">
           <NewsletterForm centered />
         </div>
 
-        <p className="mt-4 text-[11px] tracking-wide text-[color:var(--muted)]">
+        <p className="mt-5 text-[11px] tracking-[0.04em] text-[color:var(--muted)]">
           Free · weekly · unsubscribe any time
         </p>
       </div>
