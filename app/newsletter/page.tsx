@@ -141,11 +141,11 @@ export default function NewsletterPage() {
           </span>
         </h1>
 
-        <p className="mt-8 text-[17px] leading-[1.55] text-[color:var(--muted)]">
+        <p className="mt-7 text-[18px] leading-[1.4] tracking-[-0.02em] text-[color:var(--ink)]">
           I&apos;m figuring it out in public, so you don&apos;t have to
         </p>
 
-        <p className="mt-6 max-w-[420px] text-[14.5px] leading-[1.85] text-[color:var(--muted)]">
+        <p className="mt-3 max-w-[400px] text-[14px] leading-[1.72] text-[color:var(--muted)]">
           Every week I share what I&apos;m learning as I go: prompts,
           mistakes, tools, and workflows for designers and creatives.
           Follow along
