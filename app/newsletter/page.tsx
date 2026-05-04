@@ -4,81 +4,81 @@ import { NewsletterForm } from "@/components/forms/newsletter-form";
 
 export const metadata: Metadata = {
   title: "Newsletter",
-  description:
-    "Weekly AI tips, prompts, and real talk from a designer learning in public.",
+  description: "AI for creative work — figuring it out in public, so you don't have to.",
 };
 
 export default function NewsletterPage() {
   return (
     <div className="relative flex flex-1 flex-col items-center justify-center overflow-hidden px-6 py-16 lg:px-8 lg:py-20">
 
-      {/* ── Card 1 · top-left · portrait photo ───────────────────── */}
-      <div className="absolute left-[4%] top-[7%] hidden -rotate-[8deg] lg:block">
+      {/* ── TL · portrait photo ──────────────────────────────────── */}
+      <div className="absolute left-[5%] top-[10%] hidden -rotate-[9deg] lg:block">
         <div
-          className="w-[214px] overflow-hidden rounded-[20px]"
-          style={{ boxShadow: "0 20px 56px rgba(0,0,0,0.14)" }}
+          className="w-[244px] overflow-hidden rounded-[18px]"
+          style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.12)" }}
         >
-          <div className="relative h-[284px] w-full bg-[#e0dbd6]">
+          <div className="relative h-[308px] w-full bg-[#e0dbd6]">
             <Image
               src="/photos/mariia-ai.jpg"
-              alt="Mariia — Learning AI"
+              alt="Mariia learning AI"
               fill
               className="object-cover"
-              sizes="214px"
+              sizes="244px"
             />
           </div>
         </div>
       </div>
 
-      {/* ── Card 2 · top-right · first issue date ────────────────── */}
-      <div className="absolute right-[4%] top-[7%] hidden rotate-[4deg] lg:block">
+      {/* ── TR · date card ───────────────────────────────────────── */}
+      <div className="absolute right-[5%] top-[12%] hidden rotate-[5deg] lg:block">
         <div
-          className="w-[276px] rounded-[20px] bg-white p-6"
-          style={{ boxShadow: "0 20px 56px rgba(0,0,0,0.09)" }}
+          className="w-[252px] rounded-[18px] bg-white p-6"
+          style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.09)" }}
         >
           <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-[color:var(--muted)]">
             Coming up
           </p>
-          <p className="mt-4 text-[1.4rem] font-bold leading-[1.15] tracking-[-0.02em] text-[color:var(--ink)]">
+          <p className="mt-3.5 text-[1.35rem] font-bold leading-[1.15] tracking-[-0.02em] text-[color:var(--ink)]">
             First issue drops<br />
             <span className="font-normal text-[color:var(--muted)]">Friday, 8.05</span>
           </p>
-          <div className="mt-4 h-px w-full bg-[color:var(--line)]" />
-          <p className="mt-3 text-[11.5px] leading-[1.65] text-[color:var(--muted)]">
+          <div className="mt-3.5 h-px bg-[color:var(--line)]" />
+          <p className="mt-2.5 text-[11.5px] leading-[1.65] text-[color:var(--muted)]">
             Subscribe now so you&apos;re in from day one →
           </p>
         </div>
       </div>
 
-      {/* ── Card 3 · bottom-left · mistake note ──────────────────── */}
-      <div className="absolute bottom-[7%] left-[4%] hidden -rotate-[3deg] lg:block">
+      {/* ── BL · mistake note ────────────────────────────────────── */}
+      <div className="absolute bottom-[10%] left-[5%] hidden -rotate-[4deg] lg:block">
         <div
-          className="w-[258px] rounded-[20px] bg-[#f7f3ee] p-6"
-          style={{ boxShadow: "0 20px 56px rgba(0,0,0,0.08)" }}
+          className="w-[252px] rounded-[18px] bg-[#f6f2ee] p-6"
+          style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.08)" }}
         >
           <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-[#9a8c7e]">
             Mistake I made
           </p>
-          <p className="mt-3 text-[12.5px] leading-[1.72] text-[color:var(--ink)]">
-            I told AI to &ldquo;make it look better.&rdquo; Spent 40&nbsp;min
-            fixing the mess. The prompt you actually need is in issue&nbsp;#1.
+          <p className="mt-3 text-[13px] leading-[1.7] text-[color:var(--ink)]">
+            I told AI to &ldquo;make it look better.&rdquo; Spent
+            40&nbsp;min fixing the mess. The prompt you need is in
+            issue&nbsp;#1.
           </p>
         </div>
       </div>
 
-      {/* ── Card 4 · bottom-right · laptop photo + quote ─────────── */}
-      <div className="absolute bottom-[7%] right-[4%] hidden rotate-[5deg] lg:block">
+      {/* ── BR · laptop photo ────────────────────────────────────── */}
+      <div className="absolute bottom-[6%] right-[5%] hidden rotate-[5deg] lg:block">
         <div
-          className="w-[214px] overflow-hidden rounded-[20px] bg-white"
-          style={{ boxShadow: "0 20px 56px rgba(0,0,0,0.14)" }}
+          className="w-[228px] overflow-hidden rounded-[18px] bg-white"
+          style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.12)" }}
         >
-          <div className="relative h-[232px] w-full bg-[#dde3e0]">
+          <div className="relative h-[256px] w-full bg-[#dde3e0]">
             <Image
               src="/photos/mariia-working.jpg"
               alt="Mariia working"
               fill
               className="object-cover"
-              sizes="214px"
+              sizes="228px"
             />
           </div>
           <div className="px-4 py-3.5">
@@ -89,46 +89,61 @@ export default function NewsletterPage() {
         </div>
       </div>
 
-      {/* ── Centre content ────────────────────────────────────────── */}
-      <div className="relative z-10 mx-auto flex w-full max-w-[500px] flex-col items-center text-center">
+      {/* ── Centre content · left-aligned ────────────────────────── */}
+      <div className="relative z-10 mx-auto flex w-full max-w-[500px] flex-col items-start">
 
-        <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-[color:var(--muted)]">
-          Weekly newsletter
-        </p>
-
-        <h1 className="mt-5 leading-[1.0] tracking-[-0.04em]" style={{ fontSize: "clamp(3.4rem, 7vw, 6rem)" }}>
-          <span className="block font-bold">Learning AI</span>
-          <em
-            className="block font-normal"
+        <h1 className="leading-none">
+          <span className="block" style={{ lineHeight: 0.92 }}>
+            <em
+              style={{
+                fontFamily: "var(--font-instrument)",
+                fontStyle: "italic",
+                fontSize: "clamp(5rem, 10vw, 9rem)",
+                display: "inline",
+              }}
+            >
+              AI
+            </em>
+            <span
+              className="font-light text-[color:var(--ink)]"
+              style={{
+                fontSize: "clamp(1.8rem, 3.2vw, 3rem)",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              {" "}for
+            </span>
+          </span>
+          <span
+            className="block font-bold text-[color:var(--ink)]"
             style={{
-              fontFamily: "var(--font-instrument)",
-              fontStyle: "italic",
-              fontSize: "1.06em",
-              lineHeight: 1.08,
-              letterSpacing: "-0.01em",
+              fontSize: "clamp(3rem, 5.6vw, 5.1rem)",
+              letterSpacing: "-0.035em",
+              lineHeight: 1.0,
             }}
           >
-            in public.
-          </em>
+            creative work
+          </span>
         </h1>
 
-        <p className="mt-8 max-w-[400px] text-[15.5px] leading-[1.85] text-[color:var(--muted)]">
-          For creatives who feel like AI is everywhere and don&apos;t know
-          where to start. I&apos;m a designer figuring it out in real
-          time — every prompt, workflow, and mistake, shared weekly.
+        <p className="mt-7 text-[17px] leading-[1.55] text-[color:var(--muted)]">
+          I&apos;m figuring it out in public,<br />
+          so you don&apos;t have to
         </p>
 
-        <p className="mt-3.5 text-[13px] font-medium tracking-[0.01em] text-[color:var(--muted)]">
-          No dev background. No hype. Just real experiments.
+        <p className="mt-5 text-[14.5px] leading-[1.85] text-[color:var(--muted)]">
+          Every week I share what I&apos;m learning as I go: prompts,
+          mistakes, tools, and workflows for designers and creatives.
         </p>
 
-        <div className="mt-10 w-full">
-          <NewsletterForm centered />
+        <div className="mt-9 w-full">
+          <NewsletterForm />
         </div>
 
-        <p className="mt-5 text-[11px] tracking-[0.04em] text-[color:var(--muted)]">
+        <p className="mt-4 text-[11px] tracking-[0.04em] text-[color:var(--muted)]">
           Free · weekly · unsubscribe any time
         </p>
+
       </div>
     </div>
   );

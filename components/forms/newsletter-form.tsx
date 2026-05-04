@@ -38,12 +38,12 @@ export function NewsletterForm({ centered = false }: { centered?: boolean }) {
 
   if (state === "success") {
     return (
-      <div className="rounded-2xl border border-[color:var(--line)] bg-[color:var(--soft)] px-6 py-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[color:var(--muted)]">
+      <div className="rounded-2xl border border-[color:var(--line)] bg-white px-6 py-8">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[color:var(--muted)]">
           You&apos;re in ✓
         </p>
-        <p className="mt-2 text-lg font-bold">See you in your inbox.</p>
-        <p className="mt-1 text-sm text-[color:var(--muted)]">
+        <p className="mt-2 text-lg font-bold tracking-tight">See you in your inbox.</p>
+        <p className="mt-1 text-sm leading-relaxed text-[color:var(--muted)]">
           First issue coming soon — real prompts, real mistakes, zero hype.
         </p>
       </div>
@@ -52,12 +52,13 @@ export function NewsletterForm({ centered = false }: { centered?: boolean }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      <div className={`flex flex-col gap-3 sm:flex-row ${centered ? "justify-center" : ""}`}>
+      <div className={`flex flex-col gap-2.5 sm:flex-row ${centered ? "sm:justify-center" : ""}`}>
+
         <div className="flex flex-col gap-1">
           <Input
             id="firstName"
             placeholder="First name"
-            className="h-11 min-w-0 sm:w-40"
+            className="h-12 min-w-0 sm:w-40"
             {...register("firstName")}
             aria-invalid={!!errors.firstName}
           />
@@ -66,12 +67,12 @@ export function NewsletterForm({ centered = false }: { centered?: boolean }) {
           )}
         </div>
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 sm:flex-1">
           <Input
             id="email"
             type="email"
             placeholder="your@email.com"
-            className="h-11 min-w-0 sm:w-60"
+            className="h-12 min-w-0"
             {...register("email")}
             aria-invalid={!!errors.email}
           />
@@ -80,7 +81,11 @@ export function NewsletterForm({ centered = false }: { centered?: boolean }) {
           )}
         </div>
 
-        <Button type="submit" disabled={state === "loading"} className="h-11 shrink-0">
+        <Button
+          type="submit"
+          disabled={state === "loading"}
+          className="h-12 shrink-0 px-6"
+        >
           {state === "loading" ? "…" : "Join free"}
         </Button>
       </div>
