@@ -94,8 +94,11 @@ export default function NewsletterPage() {
             />
           </div>
           <div className="px-5 py-5">
-            <p className="text-[13px] leading-[1.7] text-[color:var(--muted)]">
-              Focus on creativity —<br />leave execution to AI.
+            <p className="text-[14px] font-medium leading-none tracking-[-0.01em] text-[color:var(--ink)]">
+              Focus on creativity.
+            </p>
+            <p className="mt-1.5 text-[13px] leading-none text-[color:var(--muted)]">
+              Leave execution to AI.
             </p>
           </div>
         </div>
