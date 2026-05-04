@@ -39,12 +39,12 @@ export function NewsletterForm({ centered = false }: { centered?: boolean }) {
   if (state === "success") {
     return (
       <div className="rounded-2xl border border-[color:var(--line)] bg-white px-6 py-8">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[color:var(--muted)]">
+        <p className="text-[12px] font-semibold text-[color:var(--muted)]">
           You&apos;re in ✓
         </p>
         <p className="mt-2 text-lg font-bold tracking-tight">See you in your inbox.</p>
         <p className="mt-1 text-sm leading-relaxed text-[color:var(--muted)]">
-          First issue coming soon — real prompts, real mistakes, zero hype.
+          First issue on its way. Real experiments, real mistakes, all straight to your inbox.
         </p>
       </div>
     );
