@@ -12,53 +12,55 @@ export default function NewsletterPage() {
     <div className="relative flex flex-1 flex-col items-center justify-center overflow-hidden px-6 py-16 lg:px-8 lg:py-20">
 
       {/* ── TL · portrait photo ──────────────────────────────────── */}
-      <div className="absolute left-[5%] top-[10%] hidden -rotate-[9deg] lg:block">
+      <div className="absolute left-[7%] top-[10%] hidden -rotate-[9deg] lg:block">
         <div
-          className="w-[244px] overflow-hidden rounded-[18px]"
+          className="w-[260px] overflow-hidden rounded-[18px]"
           style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.12)" }}
         >
-          <div className="relative h-[308px] w-full bg-[#e0dbd6]">
+          <div className="relative h-[326px] w-full bg-[#e0dbd6]">
             <Image
               src="/photos/mariia-ai.jpg"
               alt="Mariia learning AI"
               fill
               className="object-cover"
-              sizes="244px"
+              sizes="260px"
             />
           </div>
         </div>
       </div>
 
       {/* ── TR · date card ───────────────────────────────────────── */}
-      <div className="absolute right-[5%] top-[12%] hidden rotate-[5deg] lg:block">
+      <div className="absolute right-[7%] top-[12%] hidden rotate-[5deg] lg:block">
         <div
-          className="w-[252px] rounded-[18px] bg-white p-6"
-          style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.09)" }}
+          className="w-[268px] rounded-[18px] bg-white p-6"
+          style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.10)" }}
         >
-          <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-[color:var(--muted)]">
+          <p className="text-[12px] font-semibold text-[color:var(--muted)]">
             Coming up
           </p>
-          <p className="mt-3.5 text-[1.35rem] font-bold leading-[1.15] tracking-[-0.02em] text-[color:var(--ink)]">
-            First issue drops<br />
-            <span className="font-normal text-[color:var(--muted)]">Friday, 8.05</span>
+          <p className="mt-2 text-[1.5rem] font-bold leading-[1.1] tracking-[-0.03em] text-[color:var(--ink)]">
+            First issue drops
+          </p>
+          <p className="text-[1.5rem] font-light leading-[1.1] tracking-[-0.02em] text-[color:var(--muted)]">
+            Friday, 8.05
           </p>
           <div className="mt-3.5 h-px bg-[color:var(--line)]" />
-          <p className="mt-2.5 text-[11.5px] leading-[1.65] text-[color:var(--muted)]">
+          <p className="mt-3 text-[12px] leading-[1.6] text-[color:var(--muted)]">
             Subscribe now so you&apos;re in from day one →
           </p>
         </div>
       </div>
 
-      {/* ── BL · mistake note ────────────────────────────────────── */}
-      <div className="absolute bottom-[10%] left-[5%] hidden -rotate-[4deg] lg:block">
+      {/* ── BL · mistake note · white ────────────────────────────── */}
+      <div className="absolute bottom-[10%] left-[7%] hidden -rotate-[4deg] lg:block">
         <div
-          className="w-[252px] rounded-[18px] bg-[#f6f2ee] p-6"
-          style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.08)" }}
+          className="w-[268px] rounded-[18px] bg-white p-6"
+          style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.10)" }}
         >
-          <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-[#9a8c7e]">
+          <p className="text-[12px] font-semibold text-[color:var(--muted)]">
             Mistake I made
           </p>
-          <p className="mt-3 text-[13px] leading-[1.7] text-[color:var(--ink)]">
+          <p className="mt-2 text-[13px] leading-[1.72] text-[color:var(--ink)]">
             I told AI to &ldquo;make it look better.&rdquo; Spent
             40&nbsp;min fixing the mess. The prompt you need is in
             issue&nbsp;#1.
@@ -67,30 +69,30 @@ export default function NewsletterPage() {
       </div>
 
       {/* ── BR · laptop photo ────────────────────────────────────── */}
-      <div className="absolute bottom-[6%] right-[5%] hidden rotate-[5deg] lg:block">
+      <div className="absolute bottom-[6%] right-[7%] hidden rotate-[5deg] lg:block">
         <div
-          className="w-[228px] overflow-hidden rounded-[18px] bg-white"
+          className="w-[244px] overflow-hidden rounded-[18px] bg-white"
           style={{ boxShadow: "0 24px 64px rgba(0,0,0,0.12)" }}
         >
-          <div className="relative h-[256px] w-full bg-[#dde3e0]">
+          <div className="relative h-[272px] w-full bg-[#dde3e0]">
             <Image
               src="/photos/mariia-working.jpg"
               alt="Mariia working"
               fill
               className="object-cover"
-              sizes="228px"
+              sizes="244px"
             />
           </div>
-          <div className="px-4 py-3.5">
-            <p className="text-[10.5px] leading-[1.6] text-[color:var(--muted)]">
+          <div className="px-5 py-4">
+            <p className="text-[13px] leading-[1.65] text-[color:var(--muted)]">
               Focus on creativity —<br />leave execution to AI.
             </p>
           </div>
         </div>
       </div>
 
-      {/* ── Centre content · left-aligned ────────────────────────── */}
-      <div className="relative z-10 mx-auto flex w-full max-w-[500px] flex-col items-start">
+      {/* ── Centre content · centered ─────────────────────────────── */}
+      <div className="relative z-10 mx-auto flex w-full max-w-[500px] flex-col items-center text-center">
 
         <h1 className="leading-none">
           <span className="block" style={{ lineHeight: 0.92 }}>
@@ -127,17 +129,16 @@ export default function NewsletterPage() {
         </h1>
 
         <p className="mt-7 text-[17px] leading-[1.55] text-[color:var(--muted)]">
-          I&apos;m figuring it out in public,<br />
-          so you don&apos;t have to
+          I&apos;m figuring it out in public, so you don&apos;t have to
         </p>
 
-        <p className="mt-5 text-[14.5px] leading-[1.85] text-[color:var(--muted)]">
+        <p className="mt-4 max-w-[420px] text-[14.5px] leading-[1.85] text-[color:var(--muted)]">
           Every week I share what I&apos;m learning as I go: prompts,
           mistakes, tools, and workflows for designers and creatives.
         </p>
 
         <div className="mt-9 w-full">
-          <NewsletterForm />
+          <NewsletterForm centered />
         </div>
 
         <p className="mt-4 text-[11px] tracking-[0.04em] text-[color:var(--muted)]">
