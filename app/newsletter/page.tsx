@@ -83,8 +83,8 @@ export default function NewsletterPage() {
               sizes="244px"
             />
           </div>
-          <div className="px-5 py-4">
-            <p className="text-[13px] leading-[1.65] text-[color:var(--muted)]">
+          <div className="px-5 py-5">
+            <p className="text-[13px] leading-[1.7] text-[color:var(--muted)]">
               Focus on creativity —<br />leave execution to AI.
             </p>
           </div>
@@ -117,24 +117,25 @@ export default function NewsletterPage() {
             </span>
           </span>
           <span
-            className="block font-bold text-[color:var(--ink)]"
+            className="block font-normal text-[color:var(--ink)]"
             style={{
               fontSize: "clamp(3rem, 5.6vw, 5.1rem)",
               letterSpacing: "-0.035em",
               lineHeight: 1.0,
             }}
           >
-            creative work
+            designers
           </span>
         </h1>
 
-        <p className="mt-7 text-[17px] leading-[1.55] text-[color:var(--muted)]">
+        <p className="mt-8 text-[17px] leading-[1.55] text-[color:var(--muted)]">
           I&apos;m figuring it out in public, so you don&apos;t have to
         </p>
 
-        <p className="mt-4 max-w-[420px] text-[14.5px] leading-[1.85] text-[color:var(--muted)]">
+        <p className="mt-6 max-w-[420px] text-[14.5px] leading-[1.85] text-[color:var(--muted)]">
           Every week I share what I&apos;m learning as I go: prompts,
           mistakes, tools, and workflows for designers and creatives.
+          Follow along
         </p>
 
         <div className="mt-9 w-full">
