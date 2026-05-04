@@ -7,19 +7,19 @@ export default function NewsletterLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="px-8 pt-8">
+    <div className="flex min-h-screen w-full flex-col">
+      <header className="shrink-0 px-8 pt-8">
         <Link
           href="/"
-          className="font-serif text-sm font-bold tracking-tight text-[color:var(--ink)] transition-colors hover:text-[color:var(--accent)]"
+          className="text-sm font-semibold tracking-wide text-[color:var(--ink)] transition-colors hover:text-[color:var(--muted)]"
         >
           {siteConfig.name}
         </Link>
       </header>
 
-      <main className="flex flex-1 items-center">{children}</main>
+      <main className="relative min-h-0 flex-1">{children}</main>
 
-      <footer className="px-8 py-8">
+      <footer className="shrink-0 px-8 py-8">
         <p className="text-xs text-[color:var(--muted)]">
           © {new Date().getFullYear()} {siteConfig.name}
         </p>
