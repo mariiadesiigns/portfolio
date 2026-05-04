@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function NewsletterPage() {
   return (
-    <div className="relative flex min-h-[calc(100vh-130px)] items-center justify-center overflow-hidden px-4 py-16">
+    <div className="relative flex w-full min-h-[calc(100vh-130px)] items-center justify-center overflow-hidden px-4 py-16">
 
       {/* ── Floating cards (desktop only) ────────────────────────────── */}
 
