@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   description: "AI for creative work — figuring it out in public, so you don't have to.",
 };
 
+function nextFridayDate(): string {
+  const today = new Date();
+  const daysUntil = (5 - today.getDay() + 7) % 7;
+  const friday = new Date(today);
+  friday.setDate(today.getDate() + daysUntil);
+  const d = friday.getDate();
+  const m = (friday.getMonth() + 1).toString().padStart(2, "0");
+  return `${d}.${m}`;
+}
+
 export default function NewsletterPage() {
   return (
     <div className="relative flex flex-1 flex-col items-center justify-center overflow-hidden px-6 py-16 lg:px-8 lg:py-20">
@@ -42,7 +52,7 @@ export default function NewsletterPage() {
             First issue drops
           </p>
           <p className="text-[1.5rem] font-light leading-[1.1] tracking-[-0.02em] text-[color:var(--muted)]">
-            Friday, 8.05
+            Friday, {nextFridayDate()}
           </p>
           <div className="mt-3.5 h-px bg-[color:var(--line)]" />
           <p className="mt-3 text-[12px] leading-[1.6] text-[color:var(--muted)]">
