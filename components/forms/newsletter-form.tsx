@@ -6,9 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { newsletterSchema, type NewsletterValues } from "@/lib/validation/newsletter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
-export function NewsletterForm() {
+export function NewsletterForm({ centered = false }: { centered?: boolean }) {
   const [state, setState] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const {
@@ -29,12 +28,7 @@ export function NewsletterForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
-
-      if (!res.ok) {
-        setState("error");
-        return;
-      }
-
+      if (!res.ok) { setState("error"); return; }
       setState("success");
       reset();
     } catch {
@@ -44,32 +38,26 @@ export function NewsletterForm() {
 
   if (state === "success") {
     return (
-      <div className="space-y-3 rounded-2xl border border-[color:var(--line)] bg-[color:var(--soft)] px-8 py-10">
-        <div className="flex items-center gap-3">
-          <span className="h-px w-8 bg-[color:var(--accent)]" />
-          <p className="text-xs font-medium uppercase tracking-[0.25em] text-[color:var(--accent)]">
-            You&apos;re in
-          </p>
-        </div>
-        <p className="font-serif text-2xl font-bold tracking-tight">
-          Welcome to the list.
+      <div className="rounded-2xl border border-[color:var(--line)] bg-[color:var(--soft)] px-6 py-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[color:var(--muted)]">
+          You&apos;re in ✓
         </p>
-        <p className="text-sm leading-relaxed text-[color:var(--muted)]">
-          Expect real talk on branding, design process, and building a studio — straight
-          to your inbox, no fluff.
+        <p className="mt-2 text-lg font-bold">See you in your inbox.</p>
+        <p className="mt-1 text-sm text-[color:var(--muted)]">
+          First issue coming soon — real prompts, real mistakes, zero hype.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div className="space-y-2">
-          <Label htmlFor="firstName">First name</Label>
+    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      <div className={`flex flex-col gap-3 sm:flex-row ${centered ? "justify-center" : ""}`}>
+        <div className="flex flex-col gap-1">
           <Input
             id="firstName"
-            placeholder="Ada"
+            placeholder="First name"
+            className="h-11 min-w-0 sm:w-36"
             {...register("firstName")}
             aria-invalid={!!errors.firstName}
           />
@@ -78,12 +66,12 @@ export function NewsletterForm() {
           )}
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+        <div className="flex flex-col gap-1">
           <Input
             id="email"
             type="email"
-            placeholder="ada@studio.com"
+            placeholder="your@email.com"
+            className="h-11 min-w-0 sm:w-56"
             {...register("email")}
             aria-invalid={!!errors.email}
           />
@@ -91,22 +79,17 @@ export function NewsletterForm() {
             <p className="text-xs text-[color:var(--danger)]">{errors.email.message}</p>
           )}
         </div>
-      </div>
 
-      <div className="flex items-center gap-4 pt-1">
-        <Button type="submit" disabled={state === "loading"}>
-          {state === "loading" ? "Subscribing…" : "Subscribe"}
+        <Button type="submit" disabled={state === "loading"} className="h-11 shrink-0">
+          {state === "loading" ? "…" : "Join free"}
         </Button>
-        {state === "error" && (
-          <p className="text-sm text-[color:var(--danger)]">
-            Something went wrong — please try again.
-          </p>
-        )}
       </div>
 
-      <p className="text-xs text-[color:var(--muted)]">
-        No spam. Unsubscribe any time.
-      </p>
+      {state === "error" && (
+        <p className="mt-2 text-sm text-[color:var(--danger)]">
+          Something went wrong — please try again.
+        </p>
+      )}
     </form>
   );
 }
