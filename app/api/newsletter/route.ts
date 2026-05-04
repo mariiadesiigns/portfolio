@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { LumailRateLimitError } from "lumail";
-import { lumail } from "@/lib/lumail";
+import { getLumail } from "@/lib/lumail";
 import { newsletterSchema } from "@/lib/validation/newsletter";
 
 export async function POST(request: Request) {
@@ -17,7 +17,7 @@ export async function POST(request: Request) {
   const { email, firstName } = parsed.data;
 
   try {
-    const { subscriber } = await lumail.subscribers.create({
+    const { subscriber } = await getLumail().subscribers.create({
       email,
       name: firstName,
       tags: ["newsletter"],
