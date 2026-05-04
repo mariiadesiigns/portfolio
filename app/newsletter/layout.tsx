@@ -17,7 +17,7 @@ export default function NewsletterLayout({
         </Link>
       </header>
 
-      <main className="relative min-h-0 flex-1">{children}</main>
+      <main className="relative flex min-h-0 flex-1 flex-col">{children}</main>
 
       <footer className="shrink-0 px-8 py-8">
         <p className="text-xs text-[color:var(--muted)]">
