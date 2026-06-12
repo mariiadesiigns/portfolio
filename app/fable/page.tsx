@@ -135,7 +135,7 @@ export default function FablePage() {
           <NewsletterForm
             centered
             source="fable"
-            showFirstName={false}
+            showFirstName
             buttonLabel="Send me the tutorial"
             successTitle="Fable notes reserved."
             successDescription="You are on the Fable list. I will send the prompt and workflow to this email."
