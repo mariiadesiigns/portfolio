@@ -7,7 +7,23 @@ import { newsletterSchema, type NewsletterValues } from "@/lib/validation/newsle
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-export function NewsletterForm({ centered = false }: { centered?: boolean }) {
+type NewsletterFormProps = {
+  centered?: boolean;
+  source?: NewsletterValues["source"];
+  showFirstName?: boolean;
+  buttonLabel?: string;
+  successTitle?: string;
+  successDescription?: string;
+};
+
+export function NewsletterForm({
+  centered = false,
+  source = "newsletter",
+  showFirstName = true,
+  buttonLabel = "Join free",
+  successTitle = "See you in your inbox.",
+  successDescription = "First issue on its way. Real experiments, real mistakes, all straight to your inbox.",
+}: NewsletterFormProps) {
   const [state, setState] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const {
@@ -17,7 +33,7 @@ export function NewsletterForm({ centered = false }: { centered?: boolean }) {
     formState: { errors },
   } = useForm<NewsletterValues>({
     resolver: zodResolver(newsletterSchema),
-    defaultValues: { email: "", firstName: "" },
+    defaultValues: { email: "", firstName: "", source },
   });
 
   const onSubmit = async (values: NewsletterValues) => {
@@ -26,7 +42,7 @@ export function NewsletterForm({ centered = false }: { centered?: boolean }) {
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify({ ...values, source }),
       });
       if (!res.ok) { setState("error"); return; }
       setState("success");
@@ -40,11 +56,11 @@ export function NewsletterForm({ centered = false }: { centered?: boolean }) {
     return (
       <div className="rounded-2xl border border-[color:var(--line)] bg-white px-6 py-8">
         <p className="text-[12px] font-semibold text-[color:var(--muted)]">
-          You&apos;re in ✓
+          You&apos;re in
         </p>
-        <p className="mt-2 text-lg font-bold tracking-tight">See you in your inbox.</p>
+        <p className="mt-2 text-lg font-bold tracking-tight">{successTitle}</p>
         <p className="mt-1 text-sm leading-relaxed text-[color:var(--muted)]">
-          First issue on its way. Real experiments, real mistakes, all straight to your inbox.
+          {successDescription}
         </p>
       </div>
     );
@@ -54,18 +70,20 @@ export function NewsletterForm({ centered = false }: { centered?: boolean }) {
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <div className={`flex flex-col gap-2.5 sm:flex-row ${centered ? "sm:justify-center" : ""}`}>
 
-        <div className="flex flex-col gap-1">
-          <Input
-            id="firstName"
-            placeholder="First name"
-            className="h-12 min-w-0 sm:w-40"
-            {...register("firstName")}
-            aria-invalid={!!errors.firstName}
-          />
-          {errors.firstName && (
-            <p className="text-xs text-[color:var(--danger)]">{errors.firstName.message}</p>
-          )}
-        </div>
+        {showFirstName && (
+          <div className="flex flex-col gap-1">
+            <Input
+              id="firstName"
+              placeholder="First name"
+              className="h-12 min-w-0 sm:w-40"
+              {...register("firstName")}
+              aria-invalid={!!errors.firstName}
+            />
+            {errors.firstName && (
+              <p className="text-xs text-[color:var(--danger)]">{errors.firstName.message}</p>
+            )}
+          </div>
+        )}
 
         <div className="flex flex-col gap-1 sm:flex-1">
           <Input
@@ -86,7 +104,7 @@ export function NewsletterForm({ centered = false }: { centered?: boolean }) {
           disabled={state === "loading"}
           className="h-12 shrink-0 px-6"
         >
-          {state === "loading" ? "…" : "Join free"}
+          {state === "loading" ? "..." : buttonLabel}
         </Button>
       </div>
 

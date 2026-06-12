@@ -14,14 +14,18 @@ export async function POST(request: Request) {
     );
   }
 
-  const { email, firstName } = parsed.data;
+  const { email, firstName, source = "newsletter" } = parsed.data;
+  const tags = source === "fable" ? ["fable"] : ["newsletter"];
 
   try {
     const { subscriber } = await getLumail().subscribers.create({
       email,
       name: firstName,
-      tags: ["newsletter"],
-      fields: { signupDate: new Date().toISOString() },
+      tags,
+      fields: {
+        signupDate: new Date().toISOString(),
+        signupSource: source,
+      },
       triggerWorkflows: true,
     });
 
