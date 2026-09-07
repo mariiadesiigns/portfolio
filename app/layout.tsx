@@ -25,32 +25,32 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/favicon-dark.png?v=3",
+        url: "/favicon-dark.png?v=4",
         type: "image/png",
         sizes: "32x32",
         media: "(prefers-color-scheme: light)"
       },
       {
-        url: "/favicon-light.png?v=3",
+        url: "/favicon-light.png?v=4",
         type: "image/png",
         sizes: "32x32",
         media: "(prefers-color-scheme: dark)"
       },
       {
-        url: "/icon-dark.png?v=3",
+        url: "/icon-dark.png?v=4",
         type: "image/png",
         sizes: "192x192",
         media: "(prefers-color-scheme: light)"
       },
       {
-        url: "/icon-light.png?v=3",
+        url: "/icon-light.png?v=4",
         type: "image/png",
         sizes: "192x192",
         media: "(prefers-color-scheme: dark)"
       },
-      { url: "/favicon.ico?v=3", type: "image/x-icon", sizes: "48x48" }
+      { url: "/favicon.ico?v=4", type: "image/x-icon", sizes: "48x48" }
     ],
-    apple: [{ url: "/apple-touch-icon.png?v=3", sizes: "180x180", type: "image/png" }]
+    apple: [{ url: "/apple-touch-icon.png?v=4", sizes: "180x180", type: "image/png" }]
   }
 };
 
