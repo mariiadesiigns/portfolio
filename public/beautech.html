@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="BeauTech — an ongoing design partnership spanning brand identity, website design, social media, print, and merchandise." />
+    <link rel="canonical" href="https://mariia.io/beautech" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BeauTech design partnership | Mariia Baranska" />
+    <meta property="og:description" content="An ongoing design partnership spanning brand identity, website design, social media, print, and merchandise." />
+    <meta property="og:url" content="https://mariia.io/beautech" />
+    <meta property="og:image" content="https://mariia.io/beautech/hq-overview-laptop.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>BeauTech design partnership | Mariia Baranska</title>
+    <style>
+      :root {
+        --paper: #fff;
+        --mist: #efefef;
+        --ink: #000;
+        --muted: #898989;
+        --orange: #ed9236;
+        --black: #000;
+        --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        --home-paper: #fbfbfb;
+        --home-midnight: #0b1957;
+        --home-sapphire: #426bc2;
+        --home-bridal: #e9f3ff;
+        --home-bridal-hover: #dcebff;
+        --home-cta-bg: #e9f3ff;
+        --home-cta-bg-hover: #d4e6fa;
+        --home-cta-ink: #0b1957;
+        --home-cta-border: #c5d4ee;
+        --home-cta-border-hover: #b4c8ee;
+        --home-archivo: "Portfolio Archivo", Helvetica, Arial, sans-serif;
+        --home-serif: "Portfolio Serif", Georgia, serif;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        -webkit-font-smoothing: antialiased;
+      }
+      img, video { display: block; width: 100%; }
+      img { height: auto; }
+      h1, h2, p, figure, blockquote { margin: 0; }
+      a { color: inherit; text-decoration: none; }
+      ::selection { background: var(--orange); color: var(--ink); }
+      :focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+
+      .skip-link {
+        position: fixed;
+        z-index: 100;
+        top: 12px;
+        left: 12px;
+        transform: translateY(-180%);
+        padding: 10px 14px;
+        background: #fff;
+        font-size: 14px;
+      }
+      .skip-link:focus { transform: translateY(0); }
+
+      .case-chrome {
+        position: fixed;
+        z-index: 80;
+        top: 50%;
+        left: 18px;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+      .case-nav {
+        pointer-events: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 6px;
+        gap: 3px;
+        border: 1px solid #dfe5efb8;
+        background: #ffffffe6;
+        border-radius: 28px;
+        box-shadow:
+          0 2px 5px #14141412,
+          0 12px 30px #1414140d,
+          inset 0 1px 0 #fff;
+        backdrop-filter: blur(20px);
+        font-family: var(--home-archivo);
+      }
+      .case-nav a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 16px;
+        border-radius: 100px;
+        color: #545b61;
+        font-size: 12px;
+        font-weight: 400;
+        white-space: nowrap;
+        transition: color 0.25s, background-color 0.25s;
+      }
+      .case-nav a:hover,
+      .case-nav a:focus-visible {
+        color: var(--home-sapphire);
+        background: var(--home-bridal);
+      }
+      .case-nav a:focus-visible {
+        outline: 2px solid var(--home-sapphire);
+        outline-offset: 3px;
+      }
+      .case-nav svg { flex-shrink: 0; }
+      .case-nav a.case-nav-home {
+        justify-content: center;
+        font-family: var(--home-serif);
+        font-size: 17px;
+        letter-spacing: -0.025em;
+        color: var(--home-midnight);
+      }
+      .case-nav a.case-nav-home:hover,
+      .case-nav a.case-nav-home:focus-visible { color: var(--home-sapphire); }
+      .case-nav-rule {
+        height: 1px;
+        margin: 4px 10px;
+        border: 0;
+        background: #dfe5ef;
+      }
+      .case-nav-arrow { margin-left: 2px; }
+
+      @media (max-width: 1100px) {
+        .case-chrome {
+          top: 16px;
+          left: 50%;
+          right: auto;
+          transform: translateX(-50%);
+        }
+        .case-nav {
+          flex-direction: row;
+          border-radius: 100px;
+        }
+        .case-nav a { padding: 12px 14px; }
+        .case-nav-home { padding-inline: 16px; }
+        .case-nav-rule {
+          width: 1px;
+          height: 22px;
+          margin: auto 4px;
+        }
+      }
+      @media (max-width: 760px) {
+        .case-nav { gap: 0; padding: 5px; }
+        .case-nav a { padding: 12px 11px; font-size: 11px; }
+        .case-nav-arrow { display: none; }
+        .case-nav a svg { width: 13px; height: 13px; }
+      }
+      @media (max-width: 540px) {
+        .case-nav { border-radius: 24px; }
+        .case-nav a {
+          flex-direction: column;
+          gap: 5px;
+          min-width: 52px;
+          padding: 10px 8px;
+          font-size: 9px;
+          border-radius: 18px;
+        }
+        .case-nav-home {
+          min-width: 58px;
+          font-size: 13px;
+        }
+        .case-nav-rule { height: 28px; }
+        .case-nav a[href*="playground"] { min-width: 68px; }
+        .case-nav a svg { width: 15px; height: 15px; }
+      }
+
+      .figma-frame {
+        position: relative;
+        width: min(calc(100% - clamp(32px, 4vw, 72px)), 1440px, calc(100svh * 1.28));
+        aspect-ratio: 1440 / 11979;
+        margin: 0 auto min(43vw, 655px, 58.24svh);
+        overflow: visible;
+        container-type: inline-size;
+        background: #fff;
+      }
+
+      .case-section, .brand-lockup, .social-campaign { display: contents; }
+
+      .surface, .item, .text, .line { position: absolute; }
+      .surface--website { inset: 32.114534% 0 auto; height: 25.586443%; background: var(--mist); }
+      .surface--merch { inset: 84.307966% 0 auto; height: 16.153268%; background: var(--mist); }
+      .surface--feedback { inset: 100.461235% 0 auto; height: 5.008765%; background: #000; }
+      .surface--website, .surface--merch, .surface--feedback {
+        right: auto;
+        left: 50%;
+        width: 100vw;
+        transform: translateX(-50%);
+      }
+
+      .media {
+        overflow: hidden;
+        border-radius: 0.347222cqw;
+      }
+      .media > img, .media > video { width: 100%; height: 100%; object-fit: cover; }
+
+      .text {
+        z-index: 3;
+        font-weight: 300;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+      .text--60 { font-size: 4.166667cqw; font-weight: 400; letter-spacing: -0.04em; }
+      .text--30 { font-size: 2.083333cqw; font-weight: 500; }
+      .text--20 { font-size: 1.388889cqw; }
+      .text--muted { color: var(--muted); }
+      .text--white { color: #fff; }
+      .text p + p { margin-top: 1.666667cqw; }
+
+      .hero-bg { right: auto; left: 50%; top: 0; width: 100vw; height: 6.795225%; transform: translateX(-50%); }
+      .hero-engine { left: 28.472222%; top: 2.086986%; width: 43.055556%; height: 3.923533%; overflow: hidden; transform: scaleX(-1); }
+      .hero-bg img { width: 100%; height: 100%; object-fit: fill; }
+      .hero-engine img { position: absolute; top: -19.85%; left: -32.75%; width: 132.75%; height: 119.86%; max-width: none; }
+
+      .case-title { left: 11.25%; top: 7.404625%; width: 17.222222%; }
+      .case-type { left: 62.5%; top: 7.638367%; width: 26.736111%; white-space: nowrap; }
+      .intro-divider { left: 11.25%; top: 8.127724%; width: 77.570208%; height: 1px; background: #a8a8a8; }
+      .company-label { left: 11.25%; top: 8.765339%; }
+      .role-label { left: 45.416667%; top: 8.731948%; }
+      .company-copy { left: 11.25%; top: 9.199432%; width: 26.25%; }
+      .role-copy { left: 45.416667%; top: 9.199432%; width: 43.472222%; }
+      .overview { left: 11.180556%; top: 11.344853%; width: 77.638889%; height: 4.173971%; }
+
+      .meta-date-label { left: 11.111111%; top: 16.729276%; }
+      .meta-role-label { left: 33.75%; top: 16.729276%; }
+      .meta-scope-label { left: 63.402778%; top: 16.729276%; }
+      .meta-date { left: 11.111111%; top: 17.171717%; width: 9.166667%; }
+      .meta-role { left: 33.75%; top: 17.171717%; width: 15.277778%; }
+      .meta-scope { left: 63.402778%; top: 17.171717%; width: 26.388889%; }
+      .meta-line-1 { left: 26.597222%; top: 16.762668%; width: 1px; height: 0.776359%; }
+      .meta-line-2 { left: 55.486111%; top: 16.762668%; width: 1px; height: 0.776359%; }
+      .line { z-index: 3; background: #b8b8b8; }
+
+      .identity-label { left: 11.25%; top: 18.991569%; }
+      .identity-heading { left: 11.25%; top: 19.43401%; width: 29.166667%; }
+      .identity-copy { left: 45.416667%; top: 19.517489%; width: 43.472222%; }
+      .logo-primary-card {
+        left: 11.25%; top: 21.846565%; width: 51.597222%; height: 2.8383%;
+        border-radius: 0.347222cqw;
+        background: #fff;
+        box-shadow: 0 1.111111cqw 2.222222cqw -0.277778cqw rgba(12,12,13,.1), 0 .277778cqw .277778cqw -.277778cqw rgba(12,12,13,.05);
+      }
+      .logo-mark-card { left: 62.847222%; top: 21.846565%; width: 25.902778%; height: 2.8383%; border-radius: 0.347222cqw; background: #000; }
+      .logo-primary-mark { position: absolute; left: 29.879%; top: 39.412%; width: 9.105%; height: 21.294%; }
+      .logo-primary-wordmark { position: absolute; left: 41.05%; top: 48.235%; width: 29.206%; height: 5.588%; }
+      .logo-white-mark { position: absolute; left: 38.874%; top: 32.353%; width: 28.15%; height: 32.353%; filter: brightness(0) invert(1); }
+      .colour-orange { left: 11.111111%; top: 25.010435%; width: 25.902778%; height: 1.252191%; border-radius: 0.347222cqw; background: var(--orange); }
+      .colour-white { left: 36.944444%; top: 25.010435%; width: 25.902778%; height: 1.252191%; border: 1px solid #d4d4d4; border-radius: 0.347222cqw; background: #fff; }
+      .colour-black { left: 62.847222%; top: 25.010435%; width: 25.902778%; height: 1.252191%; border-radius: 0.347222cqw; background: #07070b; color: #fff; }
+      .colour-meta { display: flex; flex-direction: column; justify-content: space-between; padding: 1.388889cqw; font-size: 0.972222cqw; font-weight: 300; line-height: 1.3; letter-spacing: -0.01em; }
+      .colour-meta strong { font-size: 1.111111cqw; font-weight: 500; }
+      .brand-visual { left: 11.25%; top: 26.588196%; width: 77.638889%; height: 4.173971%; }
+      .brand-logo-mark { z-index: 4; left: 39.652778%; top: 28.374656%; width: 4.735528%; height: 0.595952%; }
+      .brand-logo-wordmark { z-index: 4; left: 45.416667%; top: 28.633442%; width: 15.069861%; height: 0.162671%; }
+
+      .website-label { left: 11.25%; top: 32.94098%; }
+      .website-heading { left: 11.111111%; top: 33.383421%; width: 27.083333%; }
+      .website-copy { left: 45.555556%; top: 33.383421%; width: 43.472222%; }
+      .laptop { left: 11.180556%; top: 36.029719%; width: 77.569444%; height: 5.626513%; }
+      .laptop__frame { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; }
+      .laptop video {
+        position: absolute; z-index: 3; top: 14.98%; left: 18.6%; width: 62.82%; height: 67.21%;
+        border-radius: 0.25cqw; background: #050507; object-fit: cover;
+      }
+      .laptop__notch { position: absolute; z-index: 4; top: 15.13%; left: 46.73%; width: 6.54%; height: 2.23%; border-radius: 0 0 0.347222cqw 0.347222cqw; background: #020203; }
+      .site-inventory { left: 11.180556%; top: 42.031889%; width: 42.152778%; height: 3.414308%; }
+      .site-why { left: 55.833333%; top: 42.031889%; width: 32.916667%; height: 3.414308%; }
+      .site-platforms { left: 11.25%; top: 45.930378%; width: 77.777778%; height: 6.761833%; }
+      .site-investor { left: 11.25%; top: 53.168044%; width: 42.152778%; height: 3.414308%; }
+      .site-map { left: 54.652778%; top: 53.168044%; width: 34.444444%; height: 3.414308%; }
+
+      .social-label { left: 11.25%; top: 58.652642%; }
+      .social-heading { left: 11.25%; top: 59.095083%; width: 27.083333%; }
+      .social-copy { left: 45.694444%; top: 59.095083%; width: 43.472222%; }
+      .social-video { left: 11.180556%; top: 60.430754%; width: 77.530833%; height: 5.242508%; }
+      .social-bg { left: 11.180556%; top: 65.948744%; width: 77.986111%; height: 7.037315%; }
+      .social-event { left: 33.055556%; top: 66.908757%; width: 33.888889%; height: 2.437599%; }
+      .social-news { left: 33.055556%; top: 69.747057%; width: 33.888889%; height: 2.287336%; }
+      .anniversary-card {
+        left: 11.180556%; top: 73.18641%; width: 77.638889%; height: 4.900242%;
+        background: #050507;
+      }
+      .social-post-1, .social-post-2 { width: 40.763889%; height: 4.900242%; }
+      .social-post-1 { left: 9.583333%; top: 78.36%; }
+      .social-post-2 { left: 50.069444%; top: 78.36%; }
+
+      .merch-label { left: 11.25%; top: 85.293024%; }
+      .merch-heading { left: 11.25%; top: 85.735465%; width: 27.083333%; }
+      .merch-copy { left: 45.694444%; top: 85.735465%; width: 43.472222%; }
+      .merch-lead { left: 11.25%; top: 87.354965%; width: 77.638889%; height: 3.756574%; }
+      .merch-luggage { left: 11.111111%; top: 91.27015%; width: 34.722222%; height: 3.756574%; }
+      .merch-model { left: 46.875%; top: 91.27015%; width: 20.486111%; height: 3.756574%; }
+      .merch-passport { left: 68.402778%; top: 91.27015%; width: 20.486111%; height: 3.756574%; overflow: hidden; border-radius: 0.347222cqw; background: #f7f8f8; }
+      .merch-passport > img { width: 100%; height: 100%; object-fit: cover; }
+      .merch-lanyard { left: 11.25%; top: 95.227075%; width: 20.486111%; height: 3.756574%; }
+      .merch-bottle { left: 32.777778%; top: 95.227075%; width: 20.486111%; height: 3.756574%; }
+      .merch-booklet { left: 54.305556%; top: 95.218727%; width: 34.722222%; height: 3.756574%; }
+
+      .feedback-label { left: 11.25%; top: 101.563163%; }
+      .feedback-heading { left: 11.388889%; top: 102.005604%; width: 27.083333%; }
+      .feedback-quote { left: 45.833333%; top: 102.005604%; width: 43.472222%; }
+      .feedback-cite { left: 45.694444%; top: 103.959022%; width: 43.472222%; color: var(--orange); }
+
+      @font-face {
+        font-family: "Portfolio Archivo";
+        src: url("/fonts/archivo-300-normal.ttf") format("truetype");
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Portfolio Archivo";
+        src: url("/fonts/archivo-400-normal.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Portfolio Serif";
+        src: url("/fonts/instrument-serif-400-normal.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Portfolio Serif";
+        src: url("/fonts/instrument-serif-400-italic.ttf") format("truetype");
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+      }
+      .contact {
+        width: 100%;
+        margin: 0;
+        padding: 80px 24px 96px;
+        background: linear-gradient(180deg, var(--home-paper), var(--home-bridal));
+        color: var(--home-midnight);
+        text-align: center;
+        font-family: var(--home-archivo);
+      }
+      .contact :is(h2, p, a, button, span, em) { font-family: var(--home-archivo); }
+      .contact button { cursor: pointer; }
+      .contact :focus-visible {
+        outline: 2px solid var(--home-sapphire);
+        outline-offset: 4px;
+      }
+      .contact h2 {
+        max-width: none;
+        margin: 0 0 25px;
+        color: var(--home-midnight);
+        font-family: var(--home-serif);
+        font-size: clamp(42px, 4.4vw, 60px);
+        font-weight: 400;
+        line-height: 1.04;
+        letter-spacing: -0.025em;
+      }
+      .contact h2 em {
+        font-family: var(--home-serif);
+        font-style: italic;
+        font-weight: 400;
+        color: var(--home-sapphire);
+      }
+      .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin-top: 26px;
+      }
+      .contact-button {
+        display: inline-flex;
+        min-width: 0;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 11px 14px 11px 16px;
+        background: var(--home-cta-bg);
+        border: 1px solid var(--home-cta-border);
+        border-radius: 7px;
+        color: var(--home-cta-ink);
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.5;
+        white-space: nowrap;
+        transition: scale 150ms cubic-bezier(0.2, 0, 0, 1), background-color 150ms cubic-bezier(0.2, 0, 0, 1), border-color 150ms cubic-bezier(0.2, 0, 0, 1);
+      }
+      .contact-button:hover {
+        background: var(--home-cta-bg-hover);
+        border-color: var(--home-cta-border-hover);
+        color: var(--home-cta-ink);
+      }
+      .contact-button svg { flex-shrink: 0; transition: translate 150ms cubic-bezier(0.2, 0, 0, 1); }
+      .contact-button:hover svg { translate: 2px 0; }
+      .contact-button:active { scale: 0.96; }
+      .contact-socials { display: flex; gap: 8px; }
+      .contact-social {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        color: #344454;
+        background: transparent;
+        border: 1px solid #c6d4e8;
+        border-radius: 6px;
+        transition: scale 150ms cubic-bezier(0.2, 0, 0, 1), color 150ms cubic-bezier(0.2, 0, 0, 1), background-color 150ms cubic-bezier(0.2, 0, 0, 1), border-color 150ms cubic-bezier(0.2, 0, 0, 1), box-shadow 150ms cubic-bezier(0.2, 0, 0, 1);
+      }
+      .contact-social:hover {
+        color: var(--home-sapphire);
+        background: #fff;
+        border-color: #426bc266;
+        box-shadow: 0 2px 8px #0b195712;
+      }
+      .contact-social:active { scale: 0.96; }
+      .email-line {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        margin-top: 20px;
+        color: #74849a;
+        font-size: 11px;
+      }
+      .email-line button {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border: none;
+        background: transparent;
+        border-radius: 5px;
+        color: inherit;
+      }
+      .email-line button:hover {
+        background: var(--home-bridal-hover);
+        color: var(--home-sapphire);
+      }
+      .copy-status {
+        display: block;
+        min-height: 16px;
+        margin-top: 5px;
+        color: var(--home-sapphire);
+        font-size: 10px;
+      }
+
+      @media (max-width: 1100px) {
+        .figma-frame {
+          display: block;
+          width: 100%;
+          aspect-ratio: auto;
+          margin-bottom: 0;
+          overflow: visible;
+          container-type: normal;
+        }
+        .case-section {
+          display: grid;
+          grid-template-columns: repeat(12, minmax(0, 1fr));
+          gap: clamp(18px, 2.6vw, 28px) clamp(18px, 3vw, 32px);
+          padding: clamp(64px, 9vw, 96px) clamp(28px, 6vw, 64px);
+        }
+        .case-section > *, .brand-lockup > *, .social-campaign > * { min-width: 0; }
+        .figma-frame .surface { display: none; }
+        .figma-frame .item,
+        .figma-frame .text,
+        .figma-frame .line {
+          position: static;
+          inset: auto;
+          width: auto;
+          height: auto;
+          white-space: normal;
+        }
+        .figma-frame .text { font-size: clamp(17px, 2.2vw, 20px); }
+        .figma-frame .text--60 { font-size: clamp(48px, 8vw, 72px); }
+        .figma-frame .text--30 { font-size: clamp(28px, 4.4vw, 38px); }
+        .figma-frame .text p + p { margin-top: 1.25em; }
+        .figma-frame .media > img,
+        .figma-frame .media > video { height: auto; }
+        .figma-frame .media,
+        .figma-frame .merch-passport { border-radius: 5px; }
+
+        .hero-section {
+          position: relative;
+          display: block;
+          min-height: min(70svh, 680px);
+          padding: 0;
+          overflow: hidden;
+          background: #090a0c;
+        }
+        .figma-frame .hero-bg {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          transform: none;
+        }
+        .hero-bg img { object-fit: cover; }
+        .figma-frame .hero-engine {
+          position: absolute;
+          right: 8%;
+          bottom: -5%;
+          left: auto;
+          width: min(72%, 650px);
+          height: 82%;
+          transform: scaleX(-1);
+        }
+        .figma-frame .hero-engine img {
+          position: static;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        .intro-section { padding-top: clamp(56px, 8vw, 84px); }
+        .case-title { grid-column: 1 / 6; grid-row: 1; }
+        .case-type { grid-column: 7 / -1; grid-row: 1; align-self: end; }
+        .intro-divider { grid-column: 1 / -1; grid-row: 2; width: 100%; height: 1px; margin: 8px 0 28px; }
+        .company-label { grid-column: 1 / 5; grid-row: 3; }
+        .role-label { grid-column: 6 / -1; grid-row: 3; }
+        .company-copy { grid-column: 1 / 5; grid-row: 4; }
+        .role-copy { grid-column: 6 / -1; grid-row: 4; }
+        .overview { grid-column: 1 / -1; grid-row: 5; margin-top: clamp(28px, 5vw, 56px); }
+        .meta-date-label, .meta-date { grid-column: 1 / 4; }
+        .meta-role-label, .meta-role { grid-column: 5 / 8; }
+        .meta-scope-label, .meta-scope { grid-column: 9 / -1; }
+        .meta-date-label, .meta-role-label, .meta-scope-label { grid-row: 6; margin-top: clamp(32px, 5vw, 52px); }
+        .meta-date, .meta-role, .meta-scope { grid-row: 7; }
+        .meta-line-1, .meta-line-2 { display: none; }
+
+        .identity-section { padding-top: clamp(72px, 10vw, 112px); }
+        .identity-label { grid-column: 1 / -1; }
+        .identity-heading { grid-column: 1 / 6; }
+        .identity-copy { grid-column: 7 / -1; }
+        .figma-frame .logo-primary-card {
+          position: relative;
+          grid-column: 1 / 9;
+          aspect-ratio: 743 / 340;
+          margin-top: clamp(24px, 4vw, 44px);
+        }
+        .figma-frame .logo-mark-card {
+          position: relative;
+          grid-column: 9 / -1;
+          aspect-ratio: 373 / 340;
+          margin-top: clamp(24px, 4vw, 44px);
+        }
+        .figma-frame .logo-primary-mark,
+        .figma-frame .logo-primary-wordmark,
+        .figma-frame .logo-white-mark { position: absolute; }
+        .colour-orange, .colour-white, .colour-black { grid-column: span 4; min-height: 138px; }
+        .colour-meta { padding: 18px; font-size: 14px; }
+        .colour-meta strong { font-size: 16px; }
+        .brand-lockup {
+          display: grid;
+          grid-column: 1 / -1;
+          grid-template: 1fr / 1fr;
+          margin-top: 12px;
+        }
+        .brand-lockup > * { grid-area: 1 / 1; }
+        .brand-visual { aspect-ratio: 1118 / 500; }
+        .figma-frame .brand-logo-mark,
+        .figma-frame .brand-logo-wordmark { position: relative; z-index: 4; align-self: center; }
+        .figma-frame .brand-logo-mark { width: 6.1%; margin-left: 36.6%; transform: translateY(-5%); }
+        .figma-frame .brand-logo-wordmark { width: 19.4%; margin-left: 44%; }
+
+        .website-section { background: var(--mist); }
+        .website-label, .social-label, .merch-label { grid-column: 1 / -1; }
+        .website-heading, .social-heading, .merch-heading { grid-column: 1 / 6; }
+        .website-copy, .social-copy, .merch-copy { grid-column: 7 / -1; }
+        .figma-frame .laptop {
+          position: relative;
+          grid-column: 1 / -1;
+          aspect-ratio: 1117 / 674;
+          margin-top: clamp(24px, 4vw, 48px);
+        }
+        .laptop__frame { height: 100%; }
+        .laptop video { height: 66.47%; }
+        .site-inventory, .site-investor { grid-column: 1 / 7; }
+        .site-why, .site-map { grid-column: 7 / -1; }
+        .site-platforms { grid-column: 1 / -1; }
+
+        .social-video { grid-column: 1 / -1; margin-top: clamp(24px, 4vw, 48px); }
+        .social-campaign {
+          display: grid;
+          grid-column: 1 / -1;
+          grid-template: 1fr / 1fr;
+        }
+        .social-campaign > * { grid-area: 1 / 1; }
+        .social-bg { aspect-ratio: 1123 / 843; }
+        .social-event, .social-news { z-index: 2; align-self: start; width: 44%; justify-self: center; }
+        .social-event { margin-top: 12.5%; }
+        .social-news { margin-top: 49.5%; }
+        .figma-frame .anniversary-card {
+          position: relative;
+          grid-column: 1 / -1;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          margin-top: clamp(18px, 3vw, 28px);
+        }
+        .figma-frame .anniversary-card > video { height: 100%; }
+        .social-post-1 { grid-column: 1 / 7; }
+        .social-post-2 { grid-column: 7 / -1; }
+
+        .merch-section { background: var(--mist); }
+        .merch-lead { grid-column: 1 / -1; margin-top: clamp(24px, 4vw, 48px); }
+        .merch-luggage { grid-column: 1 / 6; }
+        .merch-model { grid-column: 6 / 9; }
+        .merch-passport { grid-column: 9 / -1; }
+        .merch-lanyard { grid-column: 1 / 4; }
+        .merch-bottle { grid-column: 4 / 7; }
+        .merch-booklet { grid-column: 7 / -1; }
+        .merch-passport > img { height: auto; }
+
+        .feedback-section { background: #000; }
+        .feedback-label { grid-column: 1 / -1; }
+        .feedback-heading { grid-column: 1 / 6; }
+        .feedback-quote, .feedback-cite { grid-column: 7 / -1; }
+        .feedback-cite { margin-top: 8px; }
+
+        .contact { padding: 72px 24px 88px; }
+      }
+
+      @media (max-width: 640px) {
+        body { overflow-x: clip; }
+        .figma-frame * { min-width: 0; }
+        .case-section {
+          grid-template-columns: 1fr;
+          gap: 0;
+          padding: 64px 20px;
+        }
+        .figma-frame .text {
+          grid-column: 1;
+          max-width: 100%;
+          font-size: 16px;
+          line-height: 1.42;
+          letter-spacing: -0.015em;
+          overflow-wrap: break-word;
+        }
+        .figma-frame .text--60 { font-size: clamp(44px, 12.25vw, 50px); line-height: .98; }
+        .figma-frame .text--30 { font-size: clamp(27px, 7.7vw, 31px); line-height: 1.08; }
+        .figma-frame .text--muted,
+        .identity-label, .website-label, .social-label, .merch-label, .feedback-label { font-size: 14px; }
+        .figma-frame .media,
+        .figma-frame .merch-passport { overflow: hidden; border-radius: 4px; }
+        .figma-frame .media > img,
+        .figma-frame .media > video { width: 100%; height: auto; object-fit: cover; }
+
+        .hero-section { min-height: min(68svh, 560px); padding: 0; }
+        .figma-frame .hero-engine {
+          right: auto;
+          bottom: -1%;
+          left: 50%;
+          width: 98%;
+          height: 72%;
+          transform: translateX(-50%);
+        }
+        .figma-frame .hero-engine img {
+          position: relative;
+          left: 13.6%;
+          transform: scaleX(-1);
+          transform-origin: center;
+        }
+
+        .intro-section { padding-top: 56px; padding-bottom: 0; }
+        .case-title { grid-row: 1; }
+        .case-type { grid-row: 2; margin-top: 14px; }
+        .figma-frame .case-type {
+          width: 100%;
+          max-width: 12ch;
+          font-size: clamp(24px, 6.8vw, 27px);
+          line-height: 1.08;
+          overflow-wrap: normal;
+        }
+        .intro-divider { grid-row: 3; margin: 28px 0 32px; }
+        .company-label { grid-row: 4; margin-bottom: 8px; }
+        .company-copy { grid-row: 5; margin-bottom: 28px; }
+        .role-label { grid-row: 6; margin-bottom: 8px; }
+        .role-copy { grid-row: 7; }
+        .overview { grid-row: 8; margin-top: 36px; }
+        .meta-date-label { grid-row: 9; }
+        .meta-date { grid-row: 10; }
+        .meta-role-label { grid-row: 11; }
+        .meta-role { grid-row: 12; }
+        .meta-scope-label { grid-row: 13; }
+        .meta-scope { grid-row: 14; }
+        .meta-date-label, .meta-role-label, .meta-scope-label {
+          margin-top: 28px;
+          padding-top: 20px;
+          border-top: 1px solid #d7d7d7;
+        }
+        .meta-date, .meta-role, .meta-scope { margin-top: 7px; }
+
+        .identity-heading, .identity-copy,
+        .website-heading, .website-copy,
+        .social-heading, .social-copy,
+        .merch-heading, .merch-copy,
+        .feedback-heading, .feedback-quote, .feedback-cite { grid-column: 1; }
+        .identity-label, .website-label, .social-label, .merch-label, .feedback-label { margin-bottom: 16px; }
+        .identity-copy, .website-copy, .social-copy, .merch-copy, .feedback-quote { margin-top: 24px; }
+        .identity-section { padding-top: 68px; padding-bottom: 0; }
+        .identity-label { order: 1; }
+        .identity-heading { order: 2; }
+        .identity-copy { order: 3; }
+        .figma-frame .logo-primary-card { display: none; }
+        .figma-frame .logo-mark-card {
+          position: relative;
+          grid-column: 1;
+          width: 100%;
+          overflow: hidden;
+        }
+        .figma-frame .logo-mark-card { order: 5; aspect-ratio: 1.65 / 1; margin-top: 12px; }
+        .figma-frame .logo-primary-mark,
+        .figma-frame .logo-primary-wordmark,
+        .figma-frame .logo-white-mark { max-width: none; }
+        .figma-frame .logo-white-mark {
+          top: 50%;
+          left: 50%;
+          width: 88px;
+          height: auto;
+          transform: translate(-50%, -50%);
+          object-fit: contain;
+        }
+        .colour-orange, .colour-white, .colour-black {
+          grid-column: 1;
+          min-height: 116px;
+          margin-top: 12px;
+        }
+        .colour-orange { order: 6; }
+        .colour-white { order: 7; }
+        .colour-black { order: 8; }
+        .colour-meta { padding: 16px; }
+        .brand-lockup {
+          order: 4;
+          aspect-ratio: 1118 / 500;
+          margin-top: 36px;
+          overflow: hidden;
+          border-radius: 4px;
+        }
+        .figma-frame .brand-logo-mark,
+        .figma-frame .brand-logo-wordmark { pointer-events: none; }
+        .figma-frame .brand-logo-mark {
+          width: 9%;
+          margin-left: 30%;
+          transform: translateY(-5%);
+        }
+        .figma-frame .brand-logo-wordmark { width: 29%; margin-left: 41%; }
+        .brand-lockup, .laptop, .social-video, .social-campaign, .anniversary-card,
+        .site-inventory, .site-why, .site-platforms, .site-investor, .site-map,
+        .social-post-1, .social-post-2, .merch-lead, .merch-luggage,
+        .merch-model, .merch-passport, .merch-lanyard, .merch-bottle, .merch-booklet { grid-column: 1; }
+        .website-section, .social-section, .merch-section, .feedback-section {
+          padding-top: 68px;
+          padding-bottom: 0;
+        }
+        .website-section, .merch-section { background: #f3f3f2; }
+        .feedback-section { padding-bottom: 72px; }
+        .figma-frame .laptop,
+        .social-video,
+        .merch-lead { margin-top: 36px; }
+        .figma-frame .laptop {
+          display: grid;
+          aspect-ratio: 1676 / 1011;
+          place-items: center;
+          padding: 0;
+          overflow: hidden;
+          background: #171c23 url("beautech/website-video-background.png") center / cover no-repeat;
+        }
+        .figma-frame .laptop__frame,
+        .figma-frame .laptop__notch { display: none; }
+        .figma-frame .laptop video {
+          --video-inset: clamp(16px, 5.6vw, 22px);
+          position: absolute;
+          top: var(--video-inset);
+          left: var(--video-inset);
+          width: calc(100% - (var(--video-inset) * 2));
+          height: calc(100% - (var(--video-inset) * 2));
+          border-radius: 3px;
+          object-fit: cover;
+        }
+        .site-inventory, .site-why, .site-platforms, .site-investor, .site-map,
+        .social-campaign, .anniversary-card, .social-post-1, .social-post-2,
+        .merch-luggage, .merch-model, .merch-passport, .merch-lanyard,
+        .merch-bottle, .merch-booklet { margin-top: 16px; }
+        .site-inventory, .site-why, .site-investor, .site-map,
+        .merch-luggage, .merch-model, .merch-passport, .merch-lanyard,
+        .merch-bottle, .merch-booklet { aspect-ratio: auto; }
+        .figma-frame .social-campaign {
+          position: relative;
+          display: block;
+          aspect-ratio: 1685 / 1265;
+          overflow: hidden;
+          border-radius: 4px;
+        }
+        .figma-frame .social-bg {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .figma-frame .social-bg > img { width: 100%; height: 100%; object-fit: cover; }
+        .figma-frame .social-event,
+        .figma-frame .social-news {
+          position: absolute;
+          left: 50%;
+          width: 43.5%;
+          height: auto;
+          margin: 0;
+          transform: translateX(-50%);
+        }
+        .figma-frame .social-event { top: 13.65%; }
+        .figma-frame .social-news { top: 54%; }
+        .figma-frame .anniversary-card {
+          aspect-ratio: auto;
+          margin-top: 16px;
+          background: #050507;
+        }
+        .figma-frame .anniversary-card > video { height: auto; aspect-ratio: 16 / 9; }
+        .figma-frame .social-post-1,
+        .figma-frame .social-post-2 {
+          width: 100%;
+          aspect-ratio: 1;
+          overflow: hidden;
+          border-radius: 4px;
+        }
+        .figma-frame .social-post-1 img,
+        .figma-frame .social-post-2 img { width: 100%; height: 100%; object-fit: cover; }
+        .merch-section { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 12px; }
+        .figma-frame .merch-label,
+        .figma-frame .merch-heading,
+        .figma-frame .merch-copy,
+        .merch-lead, .merch-luggage, .merch-booklet { grid-column: 1 / -1; }
+        .merch-model, .merch-lanyard { grid-column: 1; }
+        .merch-passport, .merch-bottle { grid-column: 2; }
+        .feedback-cite { margin-top: 28px; color: var(--orange); }
+
+        .contact { padding: 64px 20px 80px; }
+        .contact h2 { font-size: clamp(36px, 10vw, 42px); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition-duration: .001ms !important; }
+        .contact-button:hover svg { translate: none; }
+        .contact-button:active, .contact-social:active { scale: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#case-study">Skip to case study</a>
+
+    <header class="case-chrome">
+      <nav class="case-nav" aria-label="Main navigation">
+        <a class="case-nav-home" href="/">Mariia</a>
+        <hr class="case-nav-rule" />
+        <a href="/#work">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+          <span>Work</span>
+        </a>
+        <a href="/#services">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M3 12h18"/><path d="m6.8 6.8 10.4 10.4"/><path d="m17.2 6.8-10.4 10.4"/></svg>
+          <span>Services</span>
+        </a>
+        <a href="/#about">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+          <span>About</span>
+        </a>
+        <a href="/playground">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+          <span>Playground</span>
+        </a>
+        <a href="/#contact">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          <span>Let’s talk</span>
+          <svg class="case-nav-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+      </nav>
+    </header>
+
+    <main id="case-study">
+      <article class="figma-frame" aria-labelledby="case-title">
+        <div class="surface surface--website" aria-hidden="true"></div>
+        <div class="surface surface--merch" aria-hidden="true"></div>
+        <div class="surface surface--feedback" aria-hidden="true"></div>
+
+        <section class="case-section hero-section" aria-label="BeauTech case study introduction">
+          <figure class="item hero-bg"><img src="beautech/figma-hero-background.png" alt="" width="1440" height="814" /></figure>
+          <figure class="item hero-engine"><img src="beautech/bt-hero-engine.png" alt="Aircraft engine introducing the BeauTech case study" width="1250" height="856" /></figure>
+        </section>
+
+        <section class="case-section intro-section" aria-label="Project overview">
+          <h1 class="text text--60 case-title" id="case-title">BeauTech</h1>
+          <p class="text text--30 case-type">Design Partner Collaboration</p>
+          <span class="line intro-divider" aria-hidden="true"></span>
+          <p class="text text--20 text--muted company-label">Company</p>
+          <p class="text text--20 text--muted role-label">My role</p>
+          <p class="text text--20 company-copy">BeauTech is an aviation company working across aircraft-engine leasing, trading, portfolio management, and related services.</p>
+          <div class="text text--20 role-copy">
+            <p>I work with BeauTech as an ongoing freelance design partner and creative lead—shaping the brand’s identity, messaging, and creative direction, then carrying that thinking across digital and physical experiences.</p>
+            <p>The partnership combines long-term brand thinking with hands-on design for everything the company needs day to day.</p>
+          </div>
+          <figure class="item media overview"><img src="beautech/hq-overview-laptop.png" alt="BeauTech website presented on a MacBook Air" width="2042" height="962" /></figure>
+
+          <p class="text text--20 text--muted meta-date-label">Selected work</p>
+          <p class="text text--20 text--muted meta-role-label">Role</p>
+          <p class="text text--20 text--muted meta-scope-label">Scope</p>
+          <p class="text text--20 meta-date">2025 - Ongoing</p>
+          <p class="text text--20 meta-role">Freelance Design Partner &amp; Creative Lead</p>
+          <p class="text text--20 meta-scope">Brand strategy, identity, art direction, website, social media, print, and merchandise</p>
+          <span class="line meta-line-1" aria-hidden="true"></span>
+          <span class="line meta-line-2" aria-hidden="true"></span>
+        </section>
+
+        <section class="case-section identity-section" aria-label="Brand identity">
+          <p class="text text--20 identity-label">Brand Identity</p>
+          <h2 class="text text--30 identity-heading">A clear foundation for everything that followed.</h2>
+          <div class="text text--20 identity-copy">
+            <p>We retained BeauTech’s logo and core colour palette while repositioning the brand from a conventional corporate business to a premium, trusted aviation leasing partner.</p>
+            <p>New typography, messaging and abstract imagery created a more sophisticated, forward-looking identity, balancing innovation with the credibility built over 15 years.</p>
+          </div>
+          <div class="item logo-primary-card" aria-label="BeauTech primary logo">
+            <img class="logo-primary-mark" src="beautech/figma-logo-mark-black.svg" alt="" />
+            <img class="logo-primary-wordmark" src="beautech/figma-logo-wordmark-black.svg" alt="BeauTech" />
+          </div>
+          <div class="item logo-mark-card" aria-label="BeauTech brand mark">
+            <img class="logo-white-mark" src="beautech/figma-brand-logo-mark.svg" alt="BeauTech brand mark" />
+          </div>
+          <div class="item colour-orange colour-meta" aria-label="BeauTech orange, hex ED9236, RGB 237 146 54"><strong>BeauTech Orange</strong><span>HEX #ED9236<br />RGB 237 · 146 · 54</span></div>
+          <div class="item colour-white colour-meta" aria-label="White, hex FFFFFF, RGB 255 255 255"><strong>White</strong><span>HEX #FFFFFF<br />RGB 255 · 255 · 255</span></div>
+          <div class="item colour-black colour-meta" aria-label="Carbon Black, hex 07070B, RGB 7 7 11"><strong>Carbon Black</strong><span>HEX #07070B<br />RGB 7 · 7 · 11</span></div>
+          <div class="brand-lockup">
+            <figure class="item media brand-visual"><img src="beautech/figma-brand-visual.png" alt="Abstract black turbine-inspired BeauTech brand visual" width="1118" height="500" loading="lazy" /></figure>
+            <img class="item brand-logo-mark" src="beautech/figma-brand-logo-mark.svg" alt="" aria-hidden="true" />
+            <img class="item brand-logo-wordmark" src="beautech/figma-brand-logo-wordmark.svg" alt="BeauTech" />
+          </div>
+        </section>
+
+        <section class="case-section website-section" aria-label="Website design">
+          <p class="text text--20 website-label">Website</p>
+          <h2 class="text text--30 website-heading">A complete digital expression of the brand.</h2>
+          <div class="text text--20 website-copy">
+            <p>The website brings the identity, messaging, and business structure together in one system, from the first impression to detailed service and inventory pages.</p>
+            <p>It has to introduce the brand and organise real operational information at the same time. Clear hierarchy keeps the technical content readable; the visual system keeps every page unmistakably BeauTech.</p>
+          </div>
+          <figure class="item media laptop" aria-label="Animated BeauTech homepage inside a MacBook Pro mockup">
+            <img class="laptop__frame" src="beautech/figma-laptop-frame.png" alt="" width="1117" height="674" />
+            <video id="website-motion" autoplay muted loop playsinline preload="metadata" poster="beautech/homepage-hero.jpg" aria-label="Scrolling tour of the BeauTech homepage">
+              <source src="beautech/beautech-homepage-scroll.mp4" type="video/mp4" />
+            </video>
+            <span class="laptop__notch" aria-hidden="true"></span>
+          </figure>
+          <figure class="item media site-inventory"><img src="beautech/hq-site-inventory.png" alt="BeauTech engine inventory website interface" width="1821" height="1227" loading="lazy" /></figure>
+          <figure class="item media site-why"><img src="beautech/hq-site-why.png" alt="BeauTech website section describing the company’s engine expertise" width="1422" height="1227" loading="lazy" /></figure>
+          <figure class="item media site-platforms"><img src="beautech/hq-site-platforms.png" alt="BeauTech engine-platform website experience" width="2240" height="1620" loading="lazy" /></figure>
+          <figure class="item media site-investor"><img src="beautech/hq-site-investor.png" alt="BeauTech institutional-investor website page" width="1821" height="1227" loading="lazy" /></figure>
+          <figure class="item media site-map"><img src="beautech/hq-site-map.png" alt="BeauTech global-presence map" width="1488" height="1227" loading="lazy" /></figure>
+        </section>
+
+        <section class="case-section social-section" aria-label="Social media design">
+          <p class="text text--20 social-label">Social Media</p>
+          <h2 class="text text--30 social-heading">A system built for everyday communication.</h2>
+          <p class="text text--20 social-copy">Flexible layouts keep company news, events, and seasonal moments connected without making every post look the same.</p>
+          <figure class="item media social-video">
+            <video id="social-motion" autoplay muted loop playsinline preload="metadata" poster="beautech/social-system.jpg" aria-label="Animated BeauTech social-media visuals">
+              <source src="beautech/beautech-social-motion.mp4" type="video/mp4" />
+            </video>
+          </figure>
+          <div class="social-campaign">
+            <figure class="item media social-bg"><img src="beautech/social-campaign-background.png" alt="Black turbine-inspired campaign background" width="1685" height="1265" loading="lazy" /></figure>
+            <figure class="item social-event"><img src="beautech/social-campaign-event.png" alt="Engines at a Crossroads event campaign" width="1464" height="876" loading="lazy" /></figure>
+            <figure class="item social-news"><img src="beautech/social-campaign-news.png" alt="BeauTech company news campaign" width="1464" height="822" loading="lazy" /></figure>
+          </div>
+          <figure class="item media anniversary-card">
+            <video id="anniversary-motion" autoplay muted loop playsinline preload="metadata" poster="beautech/beautech-anniversary-poster.png" aria-label="Animated BeauTech anniversary story">
+              <source src="beautech/beautech-anniversary.mp4" type="video/mp4" />
+            </video>
+          </figure>
+          <figure class="item social-post-1"><img src="beautech/figma-social-post-engine.png" alt="BeauTech engine acquisition social post" width="587" height="587" /></figure>
+          <figure class="item social-post-2"><img src="beautech/figma-social-post-results.png" alt="BeauTech twelve engines sold social post" width="587" height="587" /></figure>
+        </section>
+
+        <section class="case-section merch-section" aria-label="Merchandise and printed applications">
+          <p class="text text--20 merch-label">Print &amp; Merchandise</p>
+          <h2 class="text text--30 merch-heading">The brand, carried into the real world.</h2>
+          <p class="text text--20 merch-copy">Stationery, event materials, travel accessories, and branded objects extend the identity beyond the screen—keeping every physical touchpoint consistent, useful, and unmistakably BeauTech.</p>
+          <figure class="item media merch-lead"><img src="beautech/hq-merch-stationery.png" alt="BeauTech stationery and Engine Solutions booklet" width="2240" height="1400" loading="lazy" /></figure>
+          <figure class="item media merch-luggage"><img src="beautech/figma-merch-luggage.png" alt="BeauTech luggage tag" width="500" height="450" loading="lazy" /></figure>
+          <figure class="item media merch-model"><img src="beautech/figma-merch-model.png" alt="BeauTech branded aircraft model" width="295" height="450" loading="lazy" /></figure>
+          <figure class="item merch-passport"><img src="beautech/passport-beautech.png" alt="BeauTech passport cover with boarding pass" width="443" height="675" loading="lazy" /></figure>
+          <figure class="item media merch-lanyard"><img src="beautech/figma-merch-lanyard.png" alt="BeauTech event lanyard" width="295" height="450" loading="lazy" /></figure>
+          <figure class="item media merch-bottle"><img src="beautech/figma-merch-bottle.png" alt="BeauTech bottle" width="295" height="450" loading="lazy" /></figure>
+          <figure class="item media merch-booklet"><img src="beautech/figma-merch-booklet.png" alt="BeauTech Engine Solutions booklet" width="500" height="450" loading="lazy" /></figure>
+        </section>
+
+        <section class="case-section feedback-section" aria-label="Client feedback">
+          <p class="text text--20 text--white feedback-label">Client Feedback</p>
+          <h2 class="text text--30 text--white feedback-heading">What BeauTech says about our collaboration</h2>
+          <blockquote class="text text--20 text--white feedback-quote">
+            <p>“The biggest value has been the consistency and recognisability Mariia brought to our brand. She helped elevate how BeauTech presents itself, making it more cohesive and instantly recognisable across different channels.</p>
+            <p>The process has always been smooth and reliable. Mariia is proactive, detail-oriented, careful with timelines, and consistently delivers high-quality work.”</p>
+          </blockquote>
+          <p class="text text--20 text--white feedback-cite">Ashvin Sivajothi<br />Global Communications and Marketing Director, BeauTech</p>
+        </section>
+      </article>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">
+          Let’s bring your
+          <br />
+          <em>vision to life.</em>
+        </h2>
+        <div class="contact-actions">
+          <a class="contact-button" href="mailto:hey@mariia.io?subject=Let’s%20create%20something%20together">
+            Let’s talk
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+          <div class="contact-socials">
+            <a class="contact-social" href="https://www.instagram.com/mariia.desiigns/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a class="contact-social" href="https://www.linkedin.com/in/mariia-baranska/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="email-line">
+          <a href="mailto:hey@mariia.io">hey@mariia.io</a>
+          <button type="button" data-copy-email="hey@mariia.io" aria-label="Copy email address">
+            <svg data-copy-icon width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          </button>
+        </div>
+        <span class="copy-status" role="status"></span>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        document.querySelectorAll("video").forEach(function (video) { video.pause(); });
+      }());
+
+      (function () {
+        var button = document.querySelector("[data-copy-email]");
+        var status = document.querySelector(".copy-status");
+        if (!button || !status) return;
+        var email = button.getAttribute("data-copy-email");
+        var checkIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+        button.addEventListener("click", function () {
+          var done = function () {
+            button.innerHTML = checkIcon;
+            status.textContent = "Email copied";
+          };
+          var fail = function () {
+            status.textContent = "Select the email address to copy it.";
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(done).catch(fail);
+          } else {
+            fail();
+          }
+        });
+      }());
+
+    </script>
+  </body>
+</html>

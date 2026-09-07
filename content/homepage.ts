@@ -60,7 +60,7 @@ export const homepageProjects = [
     category: "Design Partner",
     description: "Brand direction · Website · Campaigns",
     image: "/homepage/beautech-preview.webp",
-    href: "https://beautech.mariia.io/",
+    href: "/beautech",
     status: "View case study",
   },
   {
