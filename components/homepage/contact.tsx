@@ -3,7 +3,22 @@
 import { useState } from "react";
 import { ArrowUpRight, Check, Copy, Instagram, Linkedin } from "lucide-react";
 import { homepageContact, projectEmail } from "@/content/homepage";
-import styles from "./homepage.module.css";
+import { cn } from "@/lib/utils";
+import {
+  contactActions,
+  contactSection,
+  contactSocials,
+  copyStatus as copyStatusClass,
+  emailLine,
+  homeCta,
+  homeContainer,
+  homeFooter,
+  homeFooterCopy,
+  homeFooterRow,
+  homeWordmark,
+  socialButton,
+  textLink,
+} from "./classes";
 
 export function HomeContact() {
   const [copyStatus, setCopyStatus] = useState("");
@@ -17,19 +32,19 @@ export function HomeContact() {
   }
   return (
     <>
-      <section id="contact" className={styles.contact}>
+      <section id="contact" className={contactSection}>
         <h2>
           Let’s bring your
           <br />
           <em>vision to life.</em>
         </h2>
-        <div className={styles.contactActions}>
-          <a href={projectEmail()} className={styles.primaryButton}>
+        <div className={contactActions}>
+          <a href={projectEmail()} className={homeCta}>
             Let’s talk <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden="true" />
           </a>
-          <div className={styles.contactSocials}>
+          <div className={contactSocials}>
             <a
-              className={styles.socialButton}
+              className={socialButton}
               href={homepageContact.instagram}
               target="_blank"
               rel="noopener noreferrer"
@@ -39,7 +54,7 @@ export function HomeContact() {
               <Instagram size={18} aria-hidden="true" />
             </a>
             <a
-              className={styles.socialButton}
+              className={socialButton}
               href={homepageContact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
@@ -51,7 +66,7 @@ export function HomeContact() {
           </div>
           {homepageContact.bookingUrl && (
             <a
-              className={styles.textLink}
+              className={textLink}
               href={homepageContact.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -60,7 +75,7 @@ export function HomeContact() {
             </a>
           )}
         </div>
-        <div className={styles.emailLine}>
+        <div className={emailLine}>
           <a href={`mailto:${homepageContact.email}`}>
             {homepageContact.email}
           </a>
@@ -72,16 +87,16 @@ export function HomeContact() {
             )}
           </button>
         </div>
-        <span className={styles.copyStatus} role="status">
+        <span className={copyStatusClass} role="status">
           {copyStatus}
         </span>
       </section>
-      <footer className={styles.footer}>
-        <div className={`${styles.container} ${styles.footerRow}`}>
-          <a href="#homepage" className={styles.wordmark}>
+      <footer className={homeFooter}>
+        <div className={cn(homeContainer, homeFooterRow)}>
+          <a href="#homepage" className={homeWordmark}>
             mariia<span>.desiigns</span>
           </a>
-          <span className={styles.footerCopy}>© {new Date().getFullYear()}</span>
+          <span className={homeFooterCopy}>© {new Date().getFullYear()}</span>
         </div>
       </footer>
     </>

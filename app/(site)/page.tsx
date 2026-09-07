@@ -6,20 +6,26 @@ import { HomeAbout } from "@/components/homepage/about";
 import { HomeTestimonials } from "@/components/homepage/testimonials";
 import { HomePlayground } from "@/components/homepage/playground";
 import { HomeContact } from "@/components/homepage/contact";
-import styles from "@/components/homepage/homepage.module.css";
+import {
+  homeAvailability,
+  homeHero,
+  homeHeroEyebrow,
+  homeHeroTitle,
+  homePage,
+} from "@/components/homepage/classes";
 
 export default function HomePage() {
   return (
-    <div id="homepage" className={styles.homepage}>
-      <section className={styles.hero} id="intro">
-        <p className={styles.heroEyebrow}>Brand designer & Creative Partner</p>
-        <h1>
-          <span className={styles.heroLine}>Design that speaks for</span>
-          <span className={styles.heroLine}>
-            your brand <span className={styles.heroAccent}>before you do.</span>
+    <div id="homepage" data-homepage className={homePage}>
+      <section className={homeHero} id="intro">
+        <p className={homeHeroEyebrow}>Brand designer & Creative Partner</p>
+        <h1 className={homeHeroTitle}>
+          <span className="block whitespace-nowrap">Design that speaks for</span>
+          <span className="block whitespace-nowrap">
+            your brand <span className="text-inherit">before you do.</span>
           </span>
         </h1>
-        <a href="#contact" className={styles.availability}>
+        <a href="#contact" className={homeAvailability}>
           <i />
           Available for work
         </a>

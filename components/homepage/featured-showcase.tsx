@@ -4,7 +4,17 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 import { featuredSlides } from "@/content/homepage";
-import styles from "./showcase.module.css";
+import {
+  showcase,
+  showcaseCanvas,
+  showcaseControls,
+  showcaseCounter,
+  showcaseGroup,
+  showcaseImage,
+  showcasePlayToggle,
+  showcaseSlide,
+  showcaseTrack,
+} from "./classes";
 
 // Default Studio's ticker settings: a 12px gap and a steady 40px/second.
 const SPEED = 40;
@@ -46,7 +56,7 @@ export function FeaturedShowcase() {
     if (sectionRef.current) observer.observe(sectionRef.current);
     const resize = new ResizeObserver(() => {
       const progress = offset.current / step.current;
-      const slide = trackRef.current?.querySelector<HTMLElement>(`.${styles.slide}`);
+      const slide = trackRef.current?.querySelector<HTMLElement>("[data-slide]");
       step.current = (slide?.getBoundingClientRect().width ?? 933) + GAP;
       offset.current = progress * step.current;
       paint();
@@ -83,14 +93,14 @@ export function FeaturedShowcase() {
   }
 
   return (
-    <section className={styles.showcase} ref={sectionRef} aria-label="Featured design projects" aria-roledescription="carousel"
+    <section className={showcase} ref={sectionRef} aria-label="Featured design projects" aria-roledescription="carousel"
       onKeyDown={(event) => {
         if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
           event.preventDefault();
           navigate(event.key === "ArrowRight" ? 1 : -1);
         }
       }}>
-      <div className={styles.canvas} ref={canvasRef}
+      <div className={showcaseCanvas} ref={canvasRef}
         onPointerDown={(event) => {
           if (event.button !== 0) return;
           drag.current = { x: event.clientX, offset: offset.current };
@@ -104,14 +114,14 @@ export function FeaturedShowcase() {
         onPointerUp={() => { drag.current = null; }}
         onPointerCancel={() => { drag.current = null; }}
         onLostPointerCapture={() => { drag.current = null; }}>
-        <div className={styles.track} ref={trackRef}>
+        <div className={showcaseTrack} ref={trackRef}>
           {[0, 1].map((copy) => (
-            <div className={styles.group} key={copy} aria-hidden={copy === 1 ? true : undefined}>
+            <div className={showcaseGroup} key={copy} aria-hidden={copy === 1 ? true : undefined}>
               {featuredSlides.map((slide, index) => (
-                <div className={styles.slide} key={slide.image} style={{ backgroundColor: slide.background }}>
+                <div className={showcaseSlide} data-slide key={slide.image} style={{ backgroundColor: slide.background }}>
                   <Image src={slide.image} alt={copy === 0 ? slide.alt : ""} fill draggable={false} unoptimized={slide.image.endsWith("-4k.png")}
                     sizes="(max-width: 809px) 666px, (max-width: 1199px) 800px, 933px"
-                    loading="eager" priority={copy === 0 && index === 0} className={styles.image}
+                    loading="eager" priority={copy === 0 && index === 0} className={showcaseImage}
                     onLoad={() => setLoaded((current) => current.includes(slide.image) ? current : [...current, slide.image])} />
                 </div>
               ))}
@@ -119,17 +129,17 @@ export function FeaturedShowcase() {
           ))}
         </div>
       </div>
-      <div className={styles.controls}>
+      <div className={showcaseControls}>
         <button aria-label="Previous project image" onClick={() => navigate(-1)} disabled={!ready}>
           <ArrowLeft size={16} aria-hidden="true" />
         </button>
-        <span className={styles.counter} aria-live={paused || reducedMotion ? "polite" : "off"}>
+        <span className={showcaseCounter} aria-live={paused || reducedMotion ? "polite" : "off"}>
           {String(active + 1).padStart(2, "0")} <span>/ {String(featuredSlides.length).padStart(2, "0")}</span>
         </span>
         <button aria-label="Next project image" onClick={() => navigate(1)} disabled={!ready}>
           <ArrowRight size={16} aria-hidden="true" />
         </button>
-        {!reducedMotion && <button aria-label={paused ? "Play slideshow" : "Pause slideshow"} onClick={() => setPaused(!paused)} className={styles.playToggle}>
+        {!reducedMotion && <button aria-label={paused ? "Play slideshow" : "Pause slideshow"} onClick={() => setPaused(!paused)} className={showcasePlayToggle}>
           {paused ? <Play size={13} aria-hidden="true" /> : <Pause size={13} aria-hidden="true" />}
         </button>}
       </div>

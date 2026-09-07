@@ -4,16 +4,19 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Move, RotateCcw } from "lucide-react";
 import { playgroundIntro, playgroundPrints } from "@/content/playground";
-import styles from "./playground.module.css";
-
-const PRINT_CLASS: Record<string, string> = {
-  "bvj-cards": styles.bvjCards,
-  "bvj-welcome": styles.bvjWelcome,
-  "lyra-campaign": styles.lyraCampaign,
-  "lyra-packaging": styles.lyraPackaging,
-  "bloom-menu": styles.bloomMenu,
-  "bloom-identity": styles.bloomIdentity,
-};
+import { cn } from "@/lib/utils";
+import {
+  playgroundCenter,
+  playgroundField,
+  playgroundHint,
+  playgroundItem,
+  playgroundLede,
+  playgroundPage,
+  playgroundPrint,
+  playgroundPrints as printPositions,
+  playgroundRecenter,
+  playgroundWorld,
+} from "./classes";
 
 type Limits = { minX: number; maxX: number; minY: number; maxY: number };
 
@@ -229,29 +232,29 @@ export function PlaygroundField() {
   }, [apply, centre, clamp]);
 
   return (
-    <div className={styles.page}>
+    <div className={playgroundPage} data-playground>
       <div
         ref={fieldRef}
-        className={styles.field}
+        className={playgroundField}
         data-dragging={dragging}
         tabIndex={0}
         role="application"
         aria-label="Playground canvas. Drag, scroll, or use the arrow keys to explore."
       >
-        <div ref={worldRef} className={styles.world}>
+        <div ref={worldRef} className={playgroundWorld}>
           <div
-            className={`${styles.item} ${styles.center}`}
+            className={cn(playgroundItem, playgroundCenter)}
             data-item
             style={{ "--delay": "0ms" } as never}
           >
             <h1 id="pg-title">{playgroundIntro.title}</h1>
-            <p className={styles.lede}>{playgroundIntro.description}</p>
+            <p className={playgroundLede}>{playgroundIntro.description}</p>
           </div>
 
           {playgroundPrints.map((print, index) => (
             <div
               key={print.id}
-              className={`${styles.item} ${styles.print} ${PRINT_CLASS[print.id]}`}
+              className={cn(playgroundItem, playgroundPrint, printPositions[print.id])}
               data-item
               style={{ "--delay": `${140 + index * 80}ms` } as never}
             >
@@ -268,11 +271,11 @@ export function PlaygroundField() {
         </div>
       </div>
 
-      <p className={styles.hint}>
+      <p className={playgroundHint}>
         <Move size={14} strokeWidth={1.6} aria-hidden="true" />
         <span>Drag to move around</span>
       </p>
-      <button className={styles.recenter} type="button" onClick={() => centre(true)}>
+      <button className={playgroundRecenter} type="button" onClick={() => centre(true)}>
         <RotateCcw size={13} strokeWidth={1.7} aria-hidden="true" />
         Re-centre
       </button>

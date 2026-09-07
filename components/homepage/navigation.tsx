@@ -10,7 +10,15 @@ import {
   UserRound,
   type LucideProps,
 } from "lucide-react";
-import styles from "./homepage.module.css";
+import { cn } from "@/lib/utils";
+import {
+  homeHeader,
+  homeNav,
+  homeNavArrow,
+  homeNavHighlight,
+  homeNavLink,
+  homeSkipLink,
+} from "./classes";
 
 function LightStroke({
   size = 24,
@@ -57,6 +65,7 @@ export function HomeNavigation() {
   const onPlayground = pathname === "/playground";
   const [active, setActive] = useState(onPlayground ? "playground" : "work");
   const [scrolled, setScrolled] = useState(onPlayground);
+  const [highlightReady, setHighlightReady] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const highlightRef = useRef<HTMLSpanElement>(null);
   const activeRef = useRef(active);
@@ -89,7 +98,7 @@ export function HomeNavigation() {
     const highlight = highlightRef.current;
     if (!highlight) return;
     const frame = requestAnimationFrame(() => {
-      highlight.classList.add(styles.navHighlightReady);
+      setHighlightReady(true);
     });
     return () => cancelAnimationFrame(frame);
   }, [active]);
@@ -135,13 +144,13 @@ export function HomeNavigation() {
   }, [onPlayground]);
 
   return (
-    <header className={styles.header}>
-      <a className={styles.skipLink} href={onPlayground ? "#pg-title" : "#homepage"}>
+    <header className={homeHeader}>
+      <a className={homeSkipLink} href={onPlayground ? "#pg-title" : "#homepage"}>
         Skip to content
       </a>
       <nav
         ref={navRef}
-        className={styles.nav}
+        className={homeNav}
         data-scrolled={scrolled}
         aria-label="Main navigation"
         onMouseLeave={() => {
@@ -153,7 +162,7 @@ export function HomeNavigation() {
           <a
             key={id}
             href={hrefFor(id)}
-            className={active === id ? styles.navActive : undefined}
+            className={homeNavLink}
             aria-current={active === id ? "location" : undefined}
             onClick={() => setActive(id)}
             onMouseEnter={() => {
@@ -176,7 +185,7 @@ export function HomeNavigation() {
               <ArrowUpRight
                 size={13}
                 strokeWidth={1.5}
-                className={styles.navArrow}
+                className={homeNavArrow}
                 aria-hidden="true"
               />
             )}
@@ -184,7 +193,7 @@ export function HomeNavigation() {
         ))}
         <span
           ref={highlightRef}
-          className={styles.navHighlight}
+          className={cn(homeNavHighlight, highlightReady && "opacity-100")}
           aria-hidden="true"
         />
       </nav>

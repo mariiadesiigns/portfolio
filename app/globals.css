@@ -1,5 +1,55 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Portfolio Archivo";
+  src: url("/fonts/archivo-300-normal.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Portfolio Archivo";
+  src: url("/fonts/archivo-400-normal.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Portfolio Archivo";
+  src: url("/fonts/archivo-500-normal.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Portfolio Archivo";
+  src: url("/fonts/archivo-600-normal.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Portfolio Archivo";
+  src: url("/fonts/archivo-300-italic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Portfolio Serif";
+  src: url("/fonts/instrument-serif-400-normal.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Portfolio Serif";
+  src: url("/fonts/instrument-serif-400-italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --paper: #ffffff;
   --soft: #ffffff;
@@ -12,46 +62,88 @@
 }
 
 @theme inline {
-  --font-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "Portfolio Archivo", sans-serif;
+  --font-serif: "Portfolio Serif", Georgia, serif;
+  --font-archivo: "Portfolio Archivo", sans-serif;
+  --font-instrument: "Portfolio Serif", Georgia, serif;
+
+  --color-home-paper: #fbfbfb;
+  --color-home-ink: #25282d;
+  --color-home-muted: #727a84;
+  --color-home-midnight: #0b1957;
+  --color-home-midnight-hover: #172a78;
+  --color-home-sapphire: #426bc2;
+  --color-home-sapphire-hover: #3459a8;
+  --color-home-bridal: #e9f3ff;
+  --color-home-bridal-hover: #dcebff;
+  --color-home-cta-hover: #d4e6fa;
+  --color-home-cta-border: #c5d4ee;
+  --color-home-cta-border-hover: #b4c8ee;
+
+  --shadow-home-card:
+    0 1px 2px #0b195708,
+    0 8px 24px #0b19570a,
+    0 24px 48px #0b195705;
+  --shadow-home-card-hover:
+    0 2px 4px #0b19570a,
+    0 16px 36px #0b195712,
+    0 32px 64px #0b195708;
+
+  --animate-arrive: arrive 700ms both;
+  --animate-arrive-80: arrive 700ms 80ms both;
+  --animate-arrive-160: arrive 700ms 160ms both;
+  --animate-rise: rise 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-rise-center: rise-center 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-first-statement: first-statement 900ms cubic-bezier(0.22, 1, 0.36, 1)
+    both;
 }
 
-* {
-  border-color: var(--line);
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 
-body {
-  line-height: 1.5;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@keyframes rise-center {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 16px));
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    filter: blur(0);
+  }
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  letter-spacing: -0.01em;
-}
-
-p,
-a,
-li,
-span,
-button,
-input,
-textarea,
-select {
-  font-family: var(--font-sans), sans-serif;
-}
-
-.reveal {
-  animation: revealUp 700ms ease both;
+@keyframes first-statement {
+  from {
+    clip-path: inset(0 0 100% 0);
+    filter: blur(5px);
+  }
+  to {
+    clip-path: inset(0);
+    filter: blur(0);
+  }
 }
 
 @keyframes revealUp {
@@ -62,5 +154,58 @@ select {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    line-height: 1.5;
+    font-family: var(--font-sans), sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  a,
+  li,
+  span,
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+  }
+}
+
+.reveal {
+  animation: revealUp 700ms ease both;
+}
+
+html:has([data-homepage]) {
+  scroll-behavior: smooth;
+  scroll-padding-top: 106px;
+}
+
+html:has([data-playground]),
+body:has([data-playground]) {
+  overflow: hidden;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has([data-homepage]) {
+    scroll-behavior: auto;
   }
 }
