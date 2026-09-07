@@ -50,7 +50,7 @@ export const homeNav =
   "[&_a]:focus-visible:outline-2 [&_a]:focus-visible:outline-offset-[5px] [&_a]:focus-visible:outline-home-sapphire";
 
 export const homeNavLink =
-  "relative z-[1] flex items-center gap-1.5 rounded-full px-[19px] py-[13px] text-xs font-normal text-[#545b61] transition-colors duration-200 " +
+  "relative z-[1] flex items-center gap-1.5 rounded-full px-[19px] py-[13px] text-[12px] leading-[1.5] font-normal text-[#545b61] transition-colors duration-200 " +
   "hover:text-home-sapphire focus-visible:text-home-sapphire aria-[current=location]:text-home-sapphire " +
   "max-[760px]:px-[13px] max-[760px]:py-3 max-[760px]:text-[11px] " +
   "max-[760px]:[&_svg]:w-[13px] " +
@@ -69,12 +69,12 @@ export const homeNavHighlight =
 export const homeHero =
   "flex min-h-[510px] flex-col items-center justify-center px-6 pt-[145px] pb-[62px] text-center " +
   "min-[1600px]:min-h-[560px] " +
-  "max-[760px]:min-h-[470px] max-[760px]:px-5 max-[760px]:pt-[137px] max-[760px]:pb-[66px] " +
-  "max-[540px]:min-h-[420px] max-[540px]:px-[18px] max-[540px]:pt-[132px] max-[540px]:pb-[61px]";
+  "max-[760px]:min-h-0 max-[760px]:px-5 max-[760px]:pt-[137px] max-[760px]:pb-8 " +
+  "max-[540px]:px-[18px] max-[540px]:pt-[132px] max-[540px]:pb-5";
 
 export const homeHeroEyebrow =
-  "mb-6 animate-arrive font-instrument! text-[28px] font-normal text-home-sapphire " +
-  "max-[760px]:text-[25px] max-[540px]:mb-[22px] max-[540px]:text-[23px]";
+  "mb-9! animate-arrive font-instrument! text-[21px] font-normal text-home-sapphire " +
+  "max-[760px]:text-[18px] max-[540px]:mb-7! max-[540px]:text-[16px]";
 
 export const homeHeroTitle =
   "animate-arrive-80 text-[clamp(45px,4.5vw,65px)] font-light leading-[1.08] tracking-[-0.049em] text-black " +
@@ -82,9 +82,9 @@ export const homeHeroTitle =
   "max-[540px]:text-[clamp(25px,7.25vw,38px)] max-[540px]:leading-[1.16] max-[540px]:tracking-[-0.045em]";
 
 export const homeAvailability =
-  "mt-7 inline-flex items-center gap-1.5 rounded-full bg-home-bridal px-[13px] py-2 text-[11px] font-normal leading-[1.4] text-home-sapphire " +
+  "mt-9 inline-flex items-center gap-1.5 rounded-full bg-home-bridal px-[13px] py-2 text-[11px] font-normal leading-[1.4] text-home-sapphire " +
   "animate-arrive-160 transition-colors duration-200 hover:bg-home-bridal-hover " +
-  "max-[540px]:mt-6 " +
+  "max-[540px]:mt-7 " +
   "[&>i]:h-[5px] [&>i]:w-[5px] [&>i]:shrink-0 [&>i]:rounded-full [&>i]:bg-home-sapphire [&>i]:shadow-[0_0_0_3px_#426bc21f]";
 
 export const workSection =
@@ -143,25 +143,26 @@ export const cursorPreview =
 
 export const manifesto =
   "relative isolate flex min-h-[500px] items-center overflow-hidden bg-home-bridal py-[110px] " +
-  "max-[760px]:min-h-0 max-[760px]:py-[88px] max-[540px]:py-20";
+  "max-[760px]:min-h-[420px] max-[760px]:py-[88px] max-[540px]:min-h-[440px] max-[540px]:py-20";
 
 export const manifestoText =
-  "mx-auto w-[min(1200px,calc(100%-112px))] text-left max-[760px]:w-[calc(100%-44px)] " +
+  "relative z-[1] mx-auto w-[min(1200px,calc(100%-112px))] text-left max-[760px]:w-[calc(100%-44px)] " +
   "[&_p]:max-w-[855px] [&_p]:text-[clamp(34px,3.5vw,50px)] [&_p]:font-light [&_p]:leading-[1.1] [&_p]:tracking-[-0.035em] [&_p]:text-home-ink " +
   "[&_p+p]:mt-[1.1em] [&_p:first-child]:text-home-sapphire " +
-  "max-[760px]:[&_p]:text-[clamp(32px,5.3vw,40px)] max-[760px]:[&_p]:leading-[1.16] " +
-  "max-[540px]:[&_p]:text-[32px] max-[540px]:[&_p+p]:mt-[1em] " +
+  "max-[760px]:[&_p]:text-[clamp(30px,5.1vw,38px)] max-[760px]:[&_p]:leading-[1.16] " +
+  "max-[540px]:[&_p]:text-[28px] max-[540px]:[&_p+p]:mt-[0.9em] " +
   "[&_[data-word]]:opacity-[0.16] [&_[data-word]]:transition-opacity [&_[data-word]]:duration-[220ms] [&_[data-word]]:ease-linear " +
   "motion-reduce:[&_[data-word]]:opacity-100!";
 
 export const manifestoLine =
   "pointer-events-none absolute top-1/2 right-[4.1%] z-[-1] aspect-[588.135/495.262] w-[min(583px,40.5%)] -translate-y-1/2 text-home-sapphire " +
-  "max-[760px]:right-[-15%] max-[760px]:w-[68%] " +
+  "max-[760px]:top-[-8%] max-[760px]:right-[-8%] max-[760px]:h-[116%] max-[760px]:w-auto max-[760px]:max-w-none max-[760px]:translate-y-0 max-[760px]:opacity-60 " +
+  "max-[760px]:[mask-image:linear-gradient(to_right,transparent,black_18%)] " +
   "[&_path]:[stroke-dashoffset:1] [&_path]:transition-[stroke-dashoffset] [&_path]:duration-300 [&_path]:ease-linear " +
   "motion-reduce:[&_path]:[stroke-dashoffset:0]!";
 
 export const serviceGrid =
-  "mx-auto grid max-w-[1060px] grid-cols-2 gap-7 max-[760px]:max-w-[520px] max-[760px]:grid-cols-1 max-[760px]:gap-[22px]";
+  "mx-auto grid max-w-[1060px] grid-cols-2 gap-x-12 gap-y-7 max-[760px]:max-w-[520px] max-[760px]:grid-cols-1 max-[760px]:gap-[22px]";
 
 export const serviceCard =
   "group grid grid-rows-subgrid row-span-5 gap-y-0 rounded-2xl border border-[#e0e5ec] bg-white p-9 shadow-home-card " +
@@ -177,7 +178,7 @@ export const serviceTopline =
   "mb-6 flex flex-row-reverse items-center justify-between gap-3 max-[540px]:mb-[25px]";
 
 export const serviceLabel =
-  "rounded-[50px] bg-home-bridal px-[11px] py-1.5 text-xs font-normal text-home-midnight";
+  "rounded-[50px] bg-home-bridal px-[11px] py-1.5 text-[12px] leading-[18px] font-normal text-home-midnight";
 
 export const serviceIcon =
   "grid size-[34px] place-items-center rounded-lg border border-[#d8e6fa] bg-home-bridal text-home-sapphire " +
@@ -189,7 +190,7 @@ export const serviceIcon =
 export const serviceDescription =
   "text-[15px] font-normal leading-[1.7] text-[#20252b] max-[760px]:max-w-[410px]";
 
-export const serviceFit = "mt-[18px] text-[13px] leading-[1.6] text-[#536171]";
+export const serviceFit = "mt-[18px]! text-[13px] leading-[1.6] text-[#536171]";
 
 export const serviceDetails =
   "mt-7 border-t border-[#e7ebf0] pt-7 pb-8 max-[760px]:mt-[25px] max-[760px]:pb-[29px] " +
@@ -198,15 +199,15 @@ export const serviceDetails =
   "max-[540px]:[&_li]:text-[13px] " +
   "[&_li_svg]:mt-[3px] [&_li_svg]:shrink-0 [&_li_svg]:text-home-sapphire";
 
-export const serviceCta = `${homeCta} justify-self-start self-end max-[760px]:self-start max-[540px]:text-xs`;
+export const serviceCta = `${homeCta} justify-self-start self-end max-[760px]:self-start max-[540px]:text-[12px] max-[540px]:leading-[18px]`;
 
 export const contactSection =
   "bg-[linear-gradient(180deg,var(--color-home-paper),var(--color-home-bridal))] px-6 pt-20 pb-24 text-center " +
   "max-[760px]:px-6 max-[760px]:pt-[55px] max-[760px]:pb-[65px] " +
   "[&>h2]:mb-[25px] [&>h2]:font-instrument! [&>h2]:text-[clamp(42px,4.4vw,60px)] [&>h2]:leading-[1.04] [&>h2]:font-normal [&>h2]:tracking-[-0.025em] " +
-  "max-[540px]:[&>h2]:text-[46px] " +
+  "max-[540px]:[&>h2]:text-[38px] " +
   "[&>h2_em]:font-instrument! [&>h2_em]:text-home-sapphire " +
-  "[&>p]:text-[13px] [&>p]:leading-[1.4] [&>p]:text-[#798798] max-[540px]:[&>p]:text-xs";
+  "[&>p]:text-[13px] [&>p]:leading-[1.4] [&>p]:text-[#798798] max-[540px]:[&>p]:text-[12px] max-[540px]:[&>p]:leading-[18px]";
 
 export const contactActions = "mt-[26px] flex flex-wrap items-center justify-center gap-3";
 
@@ -221,7 +222,7 @@ export const socialButton =
   "motion-reduce:transition-none motion-reduce:active:scale-none";
 
 export const textLink =
-  "inline-flex items-center gap-1.5 border-b border-[#b4c8ee] pb-1.5 text-xs font-normal text-home-sapphire";
+  "inline-flex items-center gap-1.5 border-b border-[#b4c8ee] pb-1.5 text-[12px] leading-[18px] font-normal text-home-sapphire";
 
 export const emailLine =
   "mt-5 flex items-center justify-center gap-1 text-[11px] text-[#74849a] " +
@@ -238,25 +239,26 @@ export const homeFooterRow =
   "max-[540px]:flex-col max-[540px]:justify-center max-[540px]:gap-[18px] max-[540px]:text-center";
 
 export const homeWordmark =
-  "font-instrument! text-[26px] text-black max-[760px]:text-2xl [&_span]:font-instrument! [&_span]:text-black";
+  "font-instrument! text-[26px] leading-[1.5] text-black max-[760px]:text-[24px] [&_span]:font-instrument! [&_span]:text-black";
 
 export const homeFooterCopy = "text-[10px] text-[#70849c]";
 
 export const aboutSection =
-  "bg-home-bridal px-6 pt-[112px] pb-[108px] max-[640px]:px-[22px] max-[640px]:pt-24 max-[640px]:pb-[88px]";
+  "bg-home-bridal px-6 pt-24 pb-24 max-[640px]:px-[22px] max-[640px]:pt-20 max-[640px]:pb-[72px]";
 
-export const aboutHeading = `${homeSectionHeading} mb-[30px] max-[640px]:mb-[38px]`;
+export const aboutHeading =
+  "mb-[30px] text-center max-[640px]:mb-7";
 
 export const aboutTitle = `${homeSectionTitle} italic text-home-midnight`;
 
 export const aboutComposition =
-  "relative mx-auto h-[480px] w-[min(900px,100%)] min-[641px]:max-[900px]:h-[450px] max-[640px]:h-[460px] max-[640px]:max-w-[390px]";
+  "relative mx-auto h-[480px] w-[min(900px,100%)] min-[641px]:max-[900px]:h-[450px] max-[640px]:h-[410px] max-[640px]:max-w-[390px]";
 
 export const aboutPhoto =
   "absolute top-[60px] left-[33%] z-[1] aspect-[533/648] w-[34.111%] overflow-hidden rounded-[10px] " +
   "shadow-[0_2px_4px_#0b195710,0_18px_40px_#0b195718,0_36px_72px_#0b19570d] " +
   "[&_img]:origin-[72%_70%] [&_img]:scale-[1.45] [&_img]:object-cover [&_img]:object-[50%_90%] " +
-  "max-[640px]:top-[88px] max-[640px]:left-[calc(50%-110px)] max-[640px]:w-[220px]";
+  "max-[640px]:top-[84px] max-[640px]:left-1/2 max-[640px]:w-[210px] max-[640px]:-translate-x-1/2";
 
 export const aboutCard =
   "absolute rounded-[5px] border border-white bg-white " +
@@ -269,37 +271,39 @@ export const aboutCard =
   "[&_h3]:text-[20px] [&_h3]:font-light [&_h3]:leading-none [&_h3]:tracking-[-0.035em] [&_h3]:text-[#20252a] " +
   "[&_p]:mt-[25px]! [&_p]:max-w-[176px] [&_p]:text-[20px] [&_p]:leading-none [&_p]:tracking-[-0.03em] [&_p]:text-[#626b74] " +
   "min-[641px]:max-[900px]:[&_h3]:text-[18px] min-[641px]:max-[900px]:[&_p]:text-[17px] min-[641px]:max-[900px]:[&_p]:leading-[1.15] " +
-  "max-[640px]:[&_h3]:text-[17px] max-[640px]:[&_p]:mt-[15px]! max-[640px]:[&_p]:text-sm max-[640px]:[&_p]:leading-[1.3] " +
+  "max-[640px]:[&_h3]:text-[14px] max-[640px]:[&_p]:mt-[18px]! max-[640px]:[&_p]:max-w-[122px] max-[640px]:[&_p]:text-[14px] max-[640px]:[&_p]:leading-[1.15] " +
   "motion-reduce:[transform:none] motion-reduce:transition-none motion-reduce:hover:translate-none";
 
 export const aboutSketchLeft =
-  "top-0 left-[8.111%] h-[143px] w-[21.333%] [--from-x:-150px] [&_img]:object-contain [&_img]:py-2.5 " +
-  "max-[640px]:top-auto max-[640px]:left-3 max-[640px]:h-[81px] max-[640px]:w-[109px] max-[640px]:[--from-x:-28px]";
+  "top-0 left-[8.111%] h-[143px] w-[21.333%] overflow-hidden [--from-x:-150px] " +
+  "[&_img]:object-contain [&_img]:p-0.5 " +
+  "max-[640px]:top-1 max-[640px]:left-[42px] max-[640px]:h-[68px] max-[640px]:w-[108px] max-[640px]:[--from-x:-36px]";
 
 export const aboutPartner =
   "top-[166px] left-[0.778%] min-h-[153px] w-[28.667%] px-[15px] pt-[55px] pb-[13px] [--from-x:-110px] " +
   "min-[641px]:max-[900px]:pt-11 min-[641px]:max-[900px]:pb-[15px] " +
-  "max-[640px]:top-[270px] max-[640px]:left-0 max-[640px]:z-[2] max-[640px]:min-h-[128px] max-[640px]:w-[159px] max-[640px]:px-[15px] max-[640px]:py-5 max-[640px]:[--from-x:-24px]";
+  "max-[640px]:top-[199px] max-[640px]:left-[22px] max-[640px]:z-[2] max-[640px]:min-h-[108px] max-[640px]:w-[146px] max-[640px]:px-2.5 max-[640px]:pt-7 max-[640px]:pb-2 max-[640px]:[--from-x:-32px]";
 
 export const aboutExperience =
   "top-[35px] left-[60.333%] z-[2] min-h-[116px] w-[15.889%] rounded-[5px] px-[15px] pt-3 pb-[13px] [--from-x:105px] " +
   "[&_h3]:leading-none " +
   "min-[641px]:max-[900px]:w-[130px] " +
-  "max-[640px]:top-[38px] max-[640px]:right-0 max-[640px]:left-auto max-[640px]:min-h-[98px] max-[640px]:w-[109px] max-[640px]:px-[15px] max-[640px]:py-3 max-[640px]:[--from-x:24px] " +
-  "max-[640px]:[&_h3]:text-[15px]";
+  "max-[640px]:top-[57px] max-[640px]:right-2 max-[640px]:left-auto max-[640px]:min-h-[68px] max-[640px]:w-[108px] max-[640px]:px-2.5 max-[640px]:pt-2 max-[640px]:pb-2 max-[640px]:[--from-x:36px] " +
+  "max-[640px]:[&_h3]:text-[13px]";
 
 export const aboutNumber =
-  "mb-4 block text-[45px] leading-[35px] font-light tracking-[-0.04em] max-[640px]:mb-2.5 max-[640px]:text-[36px]";
+  "mb-4 block text-[45px] leading-[35px] font-light tracking-[-0.04em] max-[640px]:mb-1.5 max-[640px]:text-[28px] max-[640px]:leading-[22px]";
 
 export const aboutSketchRight =
-  "top-[211px] left-[69.333%] h-[173px] w-[29.444%] [--from-x:150px] [&_svg]:h-full [&_svg]:w-full [&_svg]:pt-2.5 [&_svg]:pb-[18px] " +
+  "top-[211px] left-[69.333%] h-[173px] w-[29.444%] overflow-hidden [--from-x:150px] " +
+  "[&_svg]:h-full [&_svg]:w-full [&_svg]:p-0.5 " +
   "min-[641px]:max-[900px]:top-[205px] min-[641px]:max-[900px]:h-[150px] " +
-  "max-[640px]:top-[198px] max-[640px]:right-0 max-[640px]:left-auto max-[640px]:z-[2] max-[640px]:h-[81px] max-[640px]:w-[102px] max-[640px]:[--from-x:28px]";
+  "max-[640px]:top-[239px] max-[640px]:right-2 max-[640px]:left-auto max-[640px]:z-[2] max-[640px]:h-[68px] max-[640px]:w-[108px] max-[640px]:[--from-x:36px]";
 
 export const aboutWorldwide =
   "top-[358px] left-[24.889%] z-[2] min-h-[108px] w-[16.111%] px-[15px] pt-[55px] pb-[13px] [--from-x:-85px] " +
   "min-[641px]:max-[900px]:top-80 min-[641px]:max-[900px]:w-[145px] " +
-  "max-[640px]:top-[350px] max-[640px]:right-2 max-[640px]:left-auto max-[640px]:min-h-[99px] max-[640px]:w-[125px] max-[640px]:px-[15px] max-[640px]:pt-[35px] max-[640px]:pb-5 max-[640px]:[--from-x:24px]";
+  "max-[640px]:top-[328px] max-[640px]:left-[calc(50%-64px)] max-[640px]:right-auto max-[640px]:z-[2] max-[640px]:min-h-[68px] max-[640px]:w-[128px] max-[640px]:px-2.5 max-[640px]:pt-7 max-[640px]:pb-2 max-[640px]:[--from-x:0]";
 
 export const showcase =
   "relative mx-auto w-full overflow-hidden bg-home-paper motion-reduce:[&_*]:transition-none!";
@@ -311,7 +315,7 @@ export const showcaseCanvas =
 export const showcaseTrack =
   "flex h-full w-max will-change-transform motion-reduce:will-change-auto";
 
-export const showcaseGroup = "flex h-full shrink-0 gap-3 pr-3";
+export const showcaseGroup = "flex h-full shrink-0 gap-8 pr-8";
 
 export const showcaseSlide =
   "relative h-full w-[933px] shrink-0 overflow-hidden max-[1199px]:w-[800px] max-[809px]:w-[666px]";
@@ -343,21 +347,24 @@ export const testimonialTrack =
   "data-[settling=true]:snap-none data-[dragging=true]:cursor-grabbing data-[dragging=true]:snap-none data-[dragging=true]:select-none " +
   "focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-home-sapphire " +
   "max-[1050px]:px-9 max-[1050px]:-mx-9 max-[1050px]:[scroll-padding-inline:36px] " +
-  "max-[760px]:auto-cols-full max-[760px]:gap-[18px] max-[760px]:px-[22px] max-[760px]:-mx-[22px] max-[760px]:[scroll-padding-inline:22px]";
+  "max-[760px]:auto-cols-[100%] max-[760px]:gap-[18px] max-[760px]:px-[22px] max-[760px]:-mx-[22px] max-[760px]:[scroll-padding-inline:22px]";
 
 export const testimonialCard =
   "flex min-h-[330px] snap-start flex-col rounded-2xl border border-[#dfe4eb] bg-white p-9 shadow-home-card transition-[border-color,box-shadow] duration-300 " +
   "[@media(hover:hover)]:hover:border-[#b7c8ea] [@media(hover:hover)]:hover:shadow-home-card-hover " +
-  "max-[760px]:min-h-[276px] max-[760px]:p-[30px] " +
+  "max-[760px]:min-h-[220px] max-[760px]:p-[22px] " +
   "[&_blockquote]:mb-[30px] [&_blockquote]:text-[clamp(18px,1.5vw,20px)] [&_blockquote]:font-normal [&_blockquote]:leading-[1.6] [&_blockquote]:tracking-[-0.022em] [&_blockquote]:text-[#252b32] " +
-  "max-[760px]:[&_blockquote]:text-[19px] max-[760px]:[&_blockquote]:leading-[1.6] " +
+  "max-[760px]:[&_blockquote]:mb-5 max-[760px]:[&_blockquote]:text-[16px] max-[760px]:[&_blockquote]:leading-[1.5] " +
   "[&_figcaption]:mt-auto [&_figcaption]:flex [&_figcaption]:items-center [&_figcaption]:gap-3.5 " +
   "[&_strong]:block [&_strong]:text-[15px] [&_strong]:leading-[1.35] [&_strong]:font-medium [&_strong]:text-[#333b45] " +
+  "max-[760px]:[&_strong]:text-[13px] " +
   "[&_small]:mt-1 [&_small]:block [&_small]:max-w-[310px] [&_small]:text-[13px] [&_small]:leading-[1.45] [&_small]:text-[#616b77] " +
+  "max-[760px]:[&_small]:text-[12px] " +
   "motion-reduce:transition-none";
 
 export const testimonialAvatar =
   "grid size-12 shrink-0 place-items-center overflow-hidden rounded-full bg-home-bridal text-[10px] text-home-midnight shadow-[inset_0_0_0_1px_#c5d4ee] " +
+  "max-[760px]:size-10 " +
   "[&_img]:h-full [&_img]:w-full [&_img]:object-cover";
 
 export const testimonialNav =
@@ -388,7 +395,7 @@ export const playgroundCopy =
   "[&_p]:text-[13px] [&_p]:leading-[1.8] [&_p]:text-[#6b7280]";
 
 export const playgroundLink =
-  "mt-6 inline-flex items-center gap-1.5 border-b border-[#b4c8ee] pb-1.5 text-xs font-normal text-home-sapphire";
+  "mt-6 inline-flex items-center gap-1.5 border-b border-[#b4c8ee] pb-1.5 text-[12px] leading-[18px] font-normal text-home-sapphire";
 
 export const playgroundImage =
   "absolute z-[1] cursor-grab touch-none overflow-hidden rounded select-none drop-shadow-[0_10px_18px_#0b195714] " +
@@ -396,11 +403,11 @@ export const playgroundImage =
 
 export const playgroundPrints = {
   "lyra-campaign":
-    "top-[6.68%] left-[5.08%] aspect-[160/191] w-[15.63%] max-[1099px]:top-[6%] max-[1099px]:left-[4%] max-[1099px]:w-[17.5%] max-[760px]:top-[4.5%] max-[760px]:left-[5%] max-[760px]:w-[30%]",
+    "top-[6.68%] left-[5.08%] aspect-[160/191] w-[15.63%] max-[1099px]:top-[6%] max-[1099px]:left-[4%] max-[1099px]:w-[17.5%] max-[760px]:top-[4.5%] max-[760px]:left-[4%] max-[760px]:w-[24%]",
   "lyra-packaging":
-    "top-[57.28%] left-[19.82%] aspect-[119/140] w-[11.62%] max-[1099px]:top-[56%] max-[1099px]:left-[18%] max-[1099px]:w-[13.5%] max-[760px]:top-auto max-[760px]:bottom-[5%] max-[760px]:left-[18%] max-[760px]:w-[28%]",
+    "top-[57.28%] left-[19.82%] aspect-[119/140] w-[11.62%] max-[1099px]:top-[56%] max-[1099px]:left-[18%] max-[1099px]:w-[13.5%] max-[760px]:top-auto max-[760px]:bottom-[6%] max-[760px]:left-[8%] max-[760px]:w-[22%]",
   "bloom-identity":
-    "top-[6.92%] left-[84.08%] aspect-[119/141] w-[11.62%] max-[1099px]:top-[6%] max-[1099px]:left-[82.5%] max-[1099px]:w-[13.5%] max-[760px]:top-[7%] max-[760px]:left-[66%] max-[760px]:w-[28%]",
+    "top-[6.92%] left-[84.08%] aspect-[119/141] w-[11.62%] max-[1099px]:top-[6%] max-[1099px]:left-[82.5%] max-[1099px]:w-[13.5%] max-[760px]:top-[6%] max-[760px]:left-[72%] max-[760px]:w-[22%]",
   "bloom-menu":
-    "top-[44.63%] left-[65.23%] aspect-[170/205] w-[16.6%] max-[1099px]:top-[43%] max-[1099px]:left-[63%] max-[1099px]:w-[18%] max-[760px]:top-auto max-[760px]:bottom-[5%] max-[760px]:left-[52%] max-[760px]:w-[28%]",
+    "top-[44.63%] left-[65.23%] aspect-[170/205] w-[16.6%] max-[1099px]:top-[43%] max-[1099px]:left-[63%] max-[1099px]:w-[18%] max-[760px]:top-auto max-[760px]:bottom-[6%] max-[760px]:left-[68%] max-[760px]:w-[24%]",
 } as const;

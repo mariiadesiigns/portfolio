@@ -16,9 +16,9 @@ import {
   showcaseTrack,
 } from "./classes";
 
-// Default Studio's ticker settings: a 12px gap and a steady 40px/second.
+// Marquee step: slide width + GAP. Keep GAP in sync with showcaseGroup.
 const SPEED = 40;
-const GAP = 12;
+const GAP = 32;
 const wrap = (value: number, length: number) => ((value % length) + length) % length;
 
 export function FeaturedShowcase() {
