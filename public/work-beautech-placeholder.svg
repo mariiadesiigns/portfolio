@@ -1,0 +1,31 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder composition for the BeauTech Engine Leasing rebrand">
+  <rect width="1400" height="900" fill="#DFE4E9"/>
+
+  <!-- left plate: identity sheet -->
+  <rect x="64" y="64" width="596" height="772" fill="#F4F5F6"/>
+  <circle cx="362" cy="330" r="132" stroke="#1F262E" stroke-width="10"/>
+  <circle cx="362" cy="330" r="46" fill="#1F262E"/>
+  <path d="M362 198v-46M362 508v-46M232 330h-46M538 330h46" stroke="#1F262E" stroke-width="10" stroke-linecap="square"/>
+  <path d="M270 238l-33-33M454 238l33-33M270 422l-33 33M454 422l33 33" stroke="#8A9AA9" stroke-width="8" stroke-linecap="square"/>
+  <rect x="152" y="560" width="420" height="26" fill="#1F262E"/>
+  <rect x="152" y="612" width="300" height="14" fill="#8A9AA9"/>
+  <rect x="152" y="644" width="352" height="14" fill="#8A9AA9"/>
+  <rect x="152" y="676" width="224" height="14" fill="#8A9AA9"/>
+
+  <!-- right column top: dark application -->
+  <rect x="724" y="64" width="612" height="368" fill="#1F262E"/>
+  <rect x="784" y="132" width="256" height="22" fill="#F4F5F6"/>
+  <rect x="784" y="180" width="164" height="12" fill="#6C7C8B"/>
+  <path d="M784 300h492" stroke="#3B4753" stroke-width="2"/>
+  <rect x="784" y="332" width="96" height="12" fill="#6C7C8B"/>
+  <rect x="920" y="332" width="96" height="12" fill="#6C7C8B"/>
+  <rect x="1056" y="332" width="96" height="12" fill="#6C7C8B"/>
+  <circle cx="1240" cy="168" r="52" stroke="#FFD34F" stroke-width="8"/>
+
+  <!-- right column bottom: steel field -->
+  <rect x="724" y="468" width="296" height="368" fill="#8A9AA9"/>
+  <rect x="1040" y="468" width="296" height="368" fill="#F4F5F6"/>
+  <path d="M784 700h176M784 748h116" stroke="#F4F5F6" stroke-width="10" stroke-linecap="square"/>
+  <rect x="1100" y="528" width="176" height="176" fill="#1F262E"/>
+  <rect x="1100" y="744" width="112" height="12" fill="#8A9AA9"/>
+</svg>

@@ -12,13 +12,16 @@ export function HeroSection() {
             Brand & Graphic Designer
           </p>
           <h1 className="mt-8 max-w-2xl text-3xl leading-[1.2] md:text-5xl">
-            I build story-led brand identities for founders and the brands they build.
+            Design with feeling.
+            <br />
+            Visual identities and art direction for brands that want to feel more like themselves.
           </h1>
         </div>
         <div className="reveal max-w-md space-y-9 md:justify-self-end md:pb-5">
           <p className="text-base leading-relaxed text-[color:var(--muted)] md:text-lg">
-            For people building something meaningful and ready for a brand that
-            feels clear, intentional, and unmistakably theirs.
+            I&apos;m Mariia, a brand designer. I work closely with founders and
+            teams to shape identities, campaigns, and everyday brand materials
+            with care, structure, and a strong sense of feeling.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link href="/work">

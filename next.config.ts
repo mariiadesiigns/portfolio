@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com"
       }
     ]
+  },
+  async rewrites() {
+    return [{ source: "/dreamers", destination: "/dreamers.html" }];
   }
 };
 

@@ -8,11 +8,11 @@ export function CtaSection() {
       <Container className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
         <div>
           <h2 className="text-4xl leading-tight md:text-5xl">
-            Building something intentional?
+            Building something with a feeling to protect?
           </h2>
           <p className="mt-4 max-w-xl text-sm text-[color:var(--muted)] md:text-base">
-            Let&apos;s shape a brand identity that tells the right story and supports
-            where your business is going next.
+            Tell me what you are making, what feels important, and where the
+            brand needs to go next. We can shape the visual side from there.
           </p>
         </div>
         <Link href="/contact">

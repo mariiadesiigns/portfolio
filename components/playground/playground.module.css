@@ -1,0 +1,345 @@
+/*
+THESIS: A bridal-blue field you drag through in every direction.
+OWN-WORLD: Homepage bridal ground and midnight dots. Independent prints
+at mixed sizes, no overlap, project pieces nearby but separate.
+STORY: Land on a short centered title, then roam to find work.
+FIRST VIEWPORT: Title dead-center. Prints peek from all four edges.
+FORM: Xhulia board — inertia pan, staggered rise, hint pill.
+*/
+
+.page {
+  --home-paper: #fbfbfb;
+  --home-ink: #25282d;
+  --home-muted: #727a84;
+  --home-midnight: #0b1957;
+  --home-sapphire: #426bc2;
+  --home-bridal: #e9f3ff;
+  --home-dot: #0b195726;
+  --serif: "Portfolio Serif", Georgia, serif;
+  --sans: "Portfolio Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  position: relative;
+  min-height: 100dvh;
+  color: var(--home-ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  background: var(--home-bridal);
+}
+
+.page :is(h1, p) {
+  margin: 0;
+}
+
+.page :is(button, a):focus-visible {
+  outline: 2px solid var(--home-sapphire);
+  outline-offset: 5px;
+}
+
+:global(html):has(.page),
+:global(body):has(.page) {
+  overflow: hidden;
+  height: 100%;
+}
+
+.field {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  background-color: var(--home-bridal);
+  background-image: radial-gradient(var(--home-dot) 0.8px, transparent 0.8px);
+  background-size: 18px 18px;
+}
+
+.field[data-dragging="true"] {
+  cursor: grabbing;
+}
+
+.world {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  will-change: transform;
+}
+
+.item {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  opacity: 0;
+  animation: rise 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.center {
+  left: 0;
+  top: 0;
+  width: max-content;
+  max-width: 17em;
+  text-align: center;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.center.item {
+  animation-name: riseCenter;
+}
+
+@keyframes riseCenter {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 16px));
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    filter: blur(0);
+  }
+}
+
+.center h1 {
+  font-family: var(--serif);
+  font-size: clamp(48px, 5vw, 56px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--home-ink);
+}
+
+.lede {
+  margin-top: 28px;
+  color: var(--home-muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.print {
+  overflow: hidden;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 16px 36px -26px #0b195766;
+  transition:
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 400ms ease;
+}
+
+.print:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 50px -24px #0b195790;
+}
+
+.print img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Independent prints — same project nearby, never overlapping, mixed sizes */
+.bvjWelcome {
+  --x: -290px;
+  --y: -430px;
+  --w: 168px;
+}
+
+.bvjCards {
+  --x: -520px;
+  --y: -200px;
+  --w: 340px;
+}
+
+.lyraCampaign {
+  --x: 175px;
+  --y: -410px;
+  --w: 196px;
+}
+
+.lyraPackaging {
+  --x: 210px;
+  --y: -28px;
+  --w: 300px;
+}
+
+.bloomMenu {
+  --x: -175px;
+  --y: 175px;
+  --w: 196px;
+}
+
+.bloomIdentity {
+  --x: 58px;
+  --y: 355px;
+  --w: 255px;
+}
+
+.hint,
+.recenter {
+  position: fixed;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid #dfe5efb8;
+  border-radius: 100px;
+  background: #ffffffe6;
+  box-shadow:
+    0 2px 5px #0b195710,
+    0 12px 30px #0b195708,
+    inset 0 1px 0 #fff;
+  backdrop-filter: blur(20px);
+  color: var(--home-ink);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.hint {
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.recenter {
+  right: 20px;
+  bottom: 22px;
+  cursor: pointer;
+  color: var(--home-muted);
+}
+
+.recenter:hover {
+  color: var(--home-ink);
+}
+
+@media (max-width: 1280px) {
+  .bvjWelcome {
+    --x: -230px;
+    --y: -340px;
+    --w: 140px;
+  }
+
+  .bvjCards {
+    --x: -400px;
+    --y: -150px;
+    --w: 260px;
+  }
+
+  .lyraCampaign {
+    --x: 140px;
+    --y: -330px;
+    --w: 150px;
+  }
+
+  .lyraPackaging {
+    --x: 165px;
+    --y: -16px;
+    --w: 220px;
+  }
+
+  .bloomMenu {
+    --x: -130px;
+    --y: 190px;
+    --w: 150px;
+  }
+
+  .bloomIdentity {
+    --x: 20px;
+    --y: 270px;
+    --w: 196px;
+  }
+}
+
+@media (max-width: 860px) {
+  .center h1 {
+    font-size: 42px;
+  }
+
+  .bvjWelcome {
+    --x: -190px;
+    --y: -250px;
+    --w: 112px;
+  }
+
+  .bvjCards {
+    --x: -250px;
+    --y: -90px;
+    --w: 168px;
+  }
+
+  .lyraCampaign {
+    --x: 100px;
+    --y: -240px;
+    --w: 108px;
+  }
+
+  .lyraPackaging {
+    --x: 130px;
+    --y: -20px;
+    --w: 148px;
+  }
+
+  .bloomMenu {
+    --x: -150px;
+    --y: 130px;
+    --w: 118px;
+  }
+
+  .bloomIdentity {
+    --x: 20px;
+    --y: 155px;
+    --w: 150px;
+  }
+}
+
+@media (max-width: 540px) {
+  .hint span {
+    display: none;
+  }
+
+  .hint {
+    padding: 0 12px;
+  }
+
+  .recenter {
+    right: 14px;
+    bottom: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item,
+  .center.item {
+    opacity: 1;
+    animation: none;
+    filter: none;
+  }
+
+  .center {
+    transform: translate(-50%, -50%);
+  }
+
+  .print:hover {
+    transform: none;
+  }
+}

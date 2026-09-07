@@ -1,0 +1,33 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder composition for the Dreamers project">
+  <rect width="1400" height="900" fill="#F0E7DC"/>
+
+  <!-- left column: warm field with soft mark -->
+  <rect x="64" y="64" width="520" height="772" fill="#FF8C69"/>
+  <path d="M180 470c0-80 65-145 145-145s145 65 145 145" stroke="#FFF6EC" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="325" cy="326" r="58" fill="#FFF6EC"/>
+  <path d="M180 470h290" stroke="#FFF6EC" stroke-width="14" stroke-linecap="round"/>
+  <rect x="180" y="580" width="230" height="20" fill="#FFF6EC"/>
+  <rect x="180" y="624" width="150" height="12" fill="#FFC9B5"/>
+
+  <!-- middle column: paper sheet -->
+  <rect x="620" y="64" width="380" height="472" fill="#FFF6EC"/>
+  <rect x="676" y="132" width="180" height="20" fill="#2B2118"/>
+  <rect x="676" y="176" width="268" height="10" fill="#B7A895"/>
+  <rect x="676" y="204" width="230" height="10" fill="#B7A895"/>
+  <rect x="676" y="232" width="252" height="10" fill="#B7A895"/>
+  <circle cx="812" cy="380" r="86" fill="#D9C9FF"/>
+  <path d="M726 380a86 86 0 0 1 172 0" fill="#B8EDCE"/>
+
+  <!-- middle column bottom -->
+  <rect x="620" y="572" width="380" height="264" fill="#FFD34F"/>
+  <path d="M676 704h268" stroke="#2B2118" stroke-width="12" stroke-linecap="round"/>
+  <path d="M676 752h160" stroke="#2B2118" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- right column -->
+  <rect x="1036" y="64" width="300" height="300" fill="#B8EDCE"/>
+  <circle cx="1186" cy="214" r="70" stroke="#2B2118" stroke-width="12"/>
+  <rect x="1036" y="400" width="300" height="436" fill="#FFF6EC"/>
+  <rect x="1088" y="452" width="196" height="196" fill="#D9C9FF"/>
+  <rect x="1088" y="688" width="196" height="14" fill="#2B2118"/>
+  <rect x="1088" y="726" width="132" height="10" fill="#B7A895"/>
+</svg>

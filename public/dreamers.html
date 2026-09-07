@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Dreamers — a brand identity for a hospitality, investment, and development group." />
+    <link rel="canonical" href="https://mariia.io/dreamers" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dreamers brand identity | Mariia Baranska" />
+    <meta property="og:description" content="A brand identity for a team building hospitality projects across Europe." />
+    <meta property="og:url" content="https://mariia.io/dreamers" />
+    <meta property="og:image" content="https://mariia.io/dreamers/hero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Dreamers brand identity | Mariia Baranska</title>
+    <style>
+      :root {
+        --paper: #fff;
+        --mist: #f1f9ff;
+        --ink: #000;
+        --muted: #898989;
+        --coral: #ff6f43;
+        --sky: #b4d8eb;
+        --cloud: #eff0f0;
+        --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        --home-paper: #fbfbfb;
+        --home-midnight: #0b1957;
+        --home-sapphire: #426bc2;
+        --home-bridal: #e9f3ff;
+        --home-bridal-hover: #dcebff;
+        --home-cta-bg: #e9f3ff;
+        --home-archivo: "Portfolio Archivo", Helvetica, Arial, sans-serif;
+        --home-serif: "Portfolio Serif", Georgia, serif;
+        --home-cta-bg-hover: #d4e6fa;
+        --home-cta-ink: #0b1957;
+        --home-cta-border: #c5d4ee;
+        --home-cta-border-hover: #b4c8ee;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        -webkit-font-smoothing: antialiased;
+      }
+      img, video { display: block; width: 100%; }
+      img { height: auto; }
+      h1, h2, p, figure, blockquote { margin: 0; }
+      a { color: inherit; text-decoration: none; }
+      ::selection { background: var(--coral); color: #fff; }
+      :focus-visible { outline: 2px solid var(--coral); outline-offset: 4px; }
+
+      .skip-link {
+        position: fixed;
+        z-index: 100;
+        top: 12px;
+        left: 12px;
+        transform: translateY(-180%);
+        padding: 10px 14px;
+        background: #fff;
+        font-size: 14px;
+      }
+      .skip-link:focus { transform: translateY(0); }
+
+      .case-chrome {
+        position: fixed;
+        z-index: 80;
+        top: 50%;
+        left: 18px;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+      .case-nav {
+        pointer-events: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 6px;
+        gap: 3px;
+        border: 1px solid #dfe5efb8;
+        background: #ffffffe6;
+        border-radius: 28px;
+        box-shadow:
+          0 2px 5px #14141412,
+          0 12px 30px #1414140d,
+          inset 0 1px 0 #fff;
+        backdrop-filter: blur(20px);
+        font-family: var(--home-archivo);
+      }
+      .case-nav a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 16px;
+        border-radius: 100px;
+        color: #545b61;
+        font-size: 12px;
+        font-weight: 400;
+        white-space: nowrap;
+        transition: color 0.25s, background-color 0.25s;
+      }
+      .case-nav a:hover,
+      .case-nav a:focus-visible {
+        color: var(--home-sapphire);
+        background: var(--home-bridal);
+      }
+      .case-nav a:focus-visible {
+        outline: 2px solid var(--home-sapphire);
+        outline-offset: 3px;
+      }
+      .case-nav svg { flex-shrink: 0; }
+      .case-nav a.case-nav-home {
+        justify-content: center;
+        font-family: var(--home-serif);
+        font-size: 17px;
+        letter-spacing: -0.025em;
+        color: var(--home-midnight);
+      }
+      .case-nav a.case-nav-home:hover,
+      .case-nav a.case-nav-home:focus-visible { color: var(--home-sapphire); }
+      .case-nav-rule {
+        height: 1px;
+        margin: 4px 10px;
+        border: 0;
+        background: #dfe5ef;
+      }
+      .case-nav-arrow { margin-left: 2px; }
+
+      @media (max-width: 1100px) {
+        .case-chrome {
+          top: 16px;
+          left: 50%;
+          right: auto;
+          transform: translateX(-50%);
+        }
+        .case-nav {
+          flex-direction: row;
+          border-radius: 100px;
+        }
+        .case-nav a { padding: 12px 14px; }
+        .case-nav-home { padding-inline: 16px; }
+        .case-nav-rule {
+          width: 1px;
+          height: 22px;
+          margin: auto 4px;
+        }
+      }
+      @media (max-width: 760px) {
+        .case-nav { gap: 0; padding: 5px; }
+        .case-nav a { padding: 12px 11px; font-size: 11px; }
+        .case-nav-arrow { display: none; }
+        .case-nav a svg { width: 13px; height: 13px; }
+      }
+      @media (max-width: 540px) {
+        .case-nav { border-radius: 24px; }
+        .case-nav a {
+          flex-direction: column;
+          gap: 5px;
+          min-width: 52px;
+          padding: 10px 8px;
+          font-size: 9px;
+          border-radius: 18px;
+        }
+        .case-nav-home {
+          min-width: 58px;
+          font-size: 13px;
+        }
+        .case-nav-rule { height: 28px; }
+        .case-nav a[href*="playground"] { min-width: 68px; }
+        .case-nav a svg { width: 15px; height: 15px; }
+      }
+
+      .figma-frame {
+        position: relative;
+        width: min(calc(100% - clamp(32px, 4vw, 72px)), 1440px, calc(100svh * 1.28));
+        aspect-ratio: 1440 / 10200;
+        margin: 0 auto;
+        overflow: visible;
+        container-type: inline-size;
+        background: #fff;
+      }
+
+      .case-section { display: contents; }
+
+      .surface, .item, .text, .line { position: absolute; }
+      .surface--applications {
+        top: 39.098039%;
+        right: auto;
+        bottom: 0;
+        left: 50%;
+        width: 100vw;
+        background: var(--mist);
+        transform: translateX(-50%);
+      }
+
+      .media {
+        overflow: hidden;
+        border-radius: 0.347222cqw;
+      }
+      .media > img, .media > video { width: 100%; height: 100%; object-fit: cover; }
+
+      .text {
+        z-index: 3;
+        font-weight: 300;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+      .text--60 { font-size: 4.166667cqw; font-weight: 400; letter-spacing: -0.04em; }
+      .text--30 { font-size: 2.083333cqw; font-weight: 500; }
+      .text--20 { font-size: 1.388889cqw; }
+      .text--muted { color: var(--muted); }
+      .text p + p { margin-top: 1.666667cqw; }
+
+      .hero-bg { right: auto; left: 50%; top: 0; width: 100vw; height: 7.980392%; transform: translateX(-50%); }
+      .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+      .case-title { left: 11.25%; top: 8.607843%; width: 17.222222%; }
+      .case-type { left: 75.833333%; top: 8.882353%; width: 13.055556%; white-space: nowrap; }
+      .intro-divider { left: 11.25%; top: 9.607843%; width: 77.570208%; height: 1px; background: #a8a8a8; }
+      .company-label { left: 11.25%; top: 10.294118%; }
+      .role-label { left: 45.416667%; top: 10.254902%; }
+      .company-copy { left: 11.25%; top: 10.803922%; width: 26.25%; }
+      .role-copy { left: 45.416667%; top: 10.803922%; width: 43.472222%; }
+      .overview { left: 11.180556%; top: 13.323529%; width: 77.638889%; height: 4.901961%; }
+
+      .meta-date-label { left: 11.111111%; top: 19.647059%; }
+      .meta-role-label { left: 33.75%; top: 19.647059%; }
+      .meta-scope-label { left: 63.402778%; top: 19.647059%; }
+      .meta-date { left: 11.111111%; top: 20.166667%; width: 9.166667%; }
+      .meta-role { left: 33.75%; top: 20.166667%; width: 15.277778%; }
+      .meta-scope { left: 63.402778%; top: 20.166667%; width: 26.388889%; }
+      .meta-line-1 { left: 26.597222%; top: 20.107843%; width: 1px; height: 0.776359%; }
+      .meta-line-2 { left: 55.486111%; top: 20.107843%; width: 1px; height: 0.776359%; }
+      .line { z-index: 3; background: #b8b8b8; }
+
+      .identity-label { left: 11.25%; top: 22.303922%; }
+      .identity-heading { left: 11.25%; top: 22.823529%; width: 29.166667%; }
+      .identity-copy { left: 45.416667%; top: 22.921569%; width: 43.472222%; }
+      .logo-primary-card {
+        left: 11.25%; top: 25.656863%; width: 51.597222%; height: 3.333333%;
+        overflow: hidden;
+        border-radius: 0.347222cqw;
+        background: #f2f2f2;
+        box-shadow: 0 1.111111cqw 2.222222cqw -0.277778cqw rgba(12,12,13,.1), 0 .277778cqw .277778cqw -.277778cqw rgba(12,12,13,.05);
+      }
+      .logo-primary-card > img:first-child { width: 100%; height: 100%; object-fit: cover; object-position: center 62%; }
+      .logo-primary-wordmark {
+        position: absolute;
+        left: 21.5%;
+        top: 50%;
+        width: 56.5%;
+        transform: translateY(-50%);
+        filter: drop-shadow(0 0.2cqw 0.6cqw rgba(0,0,0,.18));
+      }
+      .logo-mark-card {
+        left: 62.847222%; top: 25.656863%; width: 25.902778%; height: 3.333333%;
+        border-radius: 0.347222cqw;
+        background: #000;
+      }
+      .logo-white-mark {
+        position: absolute;
+        left: 38.9%;
+        top: 28.2%;
+        width: 22%;
+        height: auto;
+      }
+      .colour-cloud { left: 11.111111%; top: 29.372549%; width: 25.902778%; height: 1.470588%; border-radius: 0.347222cqw; background: var(--cloud); }
+      .colour-sky { left: 36.944444%; top: 29.372549%; width: 25.902778%; height: 1.470588%; border-radius: 0.347222cqw; background: var(--sky); }
+      .colour-coral { left: 62.847222%; top: 29.372549%; width: 25.902778%; height: 1.470588%; border-radius: 0.347222cqw; background: var(--coral); }
+      .colour-meta { display: flex; flex-direction: column; justify-content: space-between; padding: 1.388889cqw; font-size: 0.972222cqw; font-weight: 300; line-height: 1.3; letter-spacing: -0.01em; }
+      .colour-meta strong { font-size: 1.111111cqw; font-weight: 500; }
+      .brand-motion { left: 11.111111%; top: 31.22549%; width: 77.916667%; height: 6.186275%; background: #d7ebf6; }
+      .brand-motion > video { width: 100%; height: 100%; object-fit: cover; }
+
+      .ig-profile { left: 11.25%; top: 39.803922%; width: 77.777778%; height: 5.95098%; }
+      .social-reel { left: 11.25%; top: 46.147059%; width: 77.638889%; height: 5.892157%; background: #000; }
+      .campaign-career { left: 11.25%; top: 52.431373%; width: 77.777778%; height: 6.176471%; }
+      .dream-line { left: 11.25%; top: 59.009804%; width: 77.569444%; height: 6.156863%; background: #ececec; }
+      .dream-line > video { width: 100%; height: 100%; object-fit: cover; }
+
+      .linkedin-well { left: 11.180556%; top: 65.558824%; width: 77.638889%; height: 5.892157%; background: #000; }
+
+      .billboard { left: 11.180556%; top: 71.843137%; width: 77.569444%; height: 6.166667%; }
+      .graphic-card { left: 11.180556%; top: 78.401961%; width: 77.638889%; height: 5.892157%; background: #000; }
+
+      .merch-cap { left: 11.25%; top: 84.686275%; width: 77.638889%; height: 7.313725%; }
+      .merch-hoodie { left: 11.180556%; top: 92.392157%; width: 77.430556%; height: 7.294118%; }
+
+      @font-face {
+        font-family: "Portfolio Archivo";
+        src: url("/fonts/archivo-300-normal.ttf") format("truetype");
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Portfolio Archivo";
+        src: url("/fonts/archivo-400-normal.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Portfolio Serif";
+        src: url("/fonts/instrument-serif-400-normal.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Portfolio Serif";
+        src: url("/fonts/instrument-serif-400-italic.ttf") format("truetype");
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+      }
+      .contact {
+        width: 100%;
+        margin: 0;
+        padding: 80px 24px 96px;
+        background: linear-gradient(180deg, var(--home-paper), var(--home-bridal));
+        color: var(--home-midnight);
+        text-align: center;
+        font-family: var(--home-archivo);
+      }
+      .contact :is(h2, p, a, button, span, em) { font-family: var(--home-archivo); }
+      .contact button { cursor: pointer; }
+      .contact :focus-visible {
+        outline: 2px solid var(--home-sapphire);
+        outline-offset: 4px;
+      }
+      .contact h2 {
+        max-width: none;
+        margin: 0 0 25px;
+        color: var(--home-midnight);
+        font-family: var(--home-serif);
+        font-size: clamp(42px, 4.4vw, 60px);
+        font-weight: 400;
+        line-height: 1.04;
+        letter-spacing: -0.025em;
+      }
+      .contact h2 em {
+        font-family: var(--home-serif);
+        font-style: italic;
+        font-weight: 400;
+        color: var(--home-sapphire);
+      }
+      .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin-top: 26px;
+      }
+      .contact-button {
+        display: inline-flex;
+        min-width: 0;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 11px 14px 11px 16px;
+        background: var(--home-cta-bg);
+        border: 1px solid var(--home-cta-border);
+        border-radius: 7px;
+        color: var(--home-cta-ink);
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.5;
+        white-space: nowrap;
+        transition: scale 150ms cubic-bezier(0.2, 0, 0, 1), background-color 150ms cubic-bezier(0.2, 0, 0, 1), border-color 150ms cubic-bezier(0.2, 0, 0, 1);
+      }
+      .contact-button:hover {
+        background: var(--home-cta-bg-hover);
+        border-color: var(--home-cta-border-hover);
+        color: var(--home-cta-ink);
+      }
+      .contact-button svg { flex-shrink: 0; transition: translate 150ms cubic-bezier(0.2, 0, 0, 1); }
+      .contact-button:hover svg { translate: 2px 0; }
+      .contact-button:active { scale: 0.96; }
+      .contact-socials { display: flex; gap: 8px; }
+      .contact-social {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        color: #344454;
+        background: transparent;
+        border: 1px solid #c6d4e8;
+        border-radius: 6px;
+        transition: scale 150ms cubic-bezier(0.2, 0, 0, 1), color 150ms cubic-bezier(0.2, 0, 0, 1), background-color 150ms cubic-bezier(0.2, 0, 0, 1), border-color 150ms cubic-bezier(0.2, 0, 0, 1), box-shadow 150ms cubic-bezier(0.2, 0, 0, 1);
+      }
+      .contact-social:hover {
+        color: var(--home-sapphire);
+        background: #fff;
+        border-color: #426bc266;
+        box-shadow: 0 2px 8px #0b195712;
+      }
+      .contact-social:active { scale: 0.96; }
+      .email-line {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        margin-top: 20px;
+        color: #74849a;
+        font-size: 11px;
+      }
+      .email-line button {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border: none;
+        background: transparent;
+        border-radius: 5px;
+        color: inherit;
+      }
+      .email-line button:hover {
+        background: var(--home-bridal-hover);
+        color: var(--home-sapphire);
+      }
+      .copy-status {
+        display: block;
+        min-height: 16px;
+        margin-top: 5px;
+        color: var(--home-sapphire);
+        font-size: 10px;
+      }
+
+      @media (max-width: 1100px) {
+        .figma-frame {
+          display: block;
+          width: 100%;
+          aspect-ratio: auto;
+          margin-bottom: 0;
+          overflow: visible;
+          container-type: normal;
+        }
+        .case-section {
+          display: grid;
+          grid-template-columns: repeat(12, minmax(0, 1fr));
+          gap: clamp(18px, 2.6vw, 28px) clamp(18px, 3vw, 32px);
+          padding: clamp(64px, 9vw, 96px) clamp(20px, 3.2vw, 36px);
+        }
+        .case-section > *, .linkedin-well { min-width: 0; }
+        .figma-frame .surface { display: none; }
+        .figma-frame .item,
+        .figma-frame .text,
+        .figma-frame .line {
+          position: static;
+          inset: auto;
+          width: auto;
+          height: auto;
+          white-space: normal;
+        }
+        .figma-frame .text { font-size: clamp(17px, 2.2vw, 20px); }
+        .figma-frame .text--60 { font-size: clamp(48px, 8vw, 72px); }
+        .figma-frame .text--30 { font-size: clamp(28px, 4.4vw, 38px); }
+        .figma-frame .text p + p { margin-top: 1.25em; }
+        .figma-frame .media > img,
+        .figma-frame .media > video { height: auto; }
+        .figma-frame .media { border-radius: 5px; }
+
+        .hero-section {
+          position: relative;
+          display: block;
+          min-height: min(70svh, 680px);
+          padding: 0;
+          overflow: hidden;
+          background: #0a2740;
+        }
+        .figma-frame .hero-bg {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          transform: none;
+        }
+        .hero-bg img { object-fit: cover; }
+
+        .intro-section { padding-top: clamp(56px, 8vw, 84px); }
+        .case-title { grid-column: 1 / 6; grid-row: 1; }
+        .case-type { grid-column: 7 / -1; grid-row: 1; align-self: end; }
+        .intro-divider { grid-column: 1 / -1; grid-row: 2; width: 100%; height: 1px; margin: 8px 0 28px; }
+        .company-label { grid-column: 1 / 5; grid-row: 3; }
+        .role-label { grid-column: 6 / -1; grid-row: 3; }
+        .company-copy { grid-column: 1 / 5; grid-row: 4; }
+        .role-copy { grid-column: 6 / -1; grid-row: 4; }
+        .overview { grid-column: 1 / -1; grid-row: 5; margin-top: clamp(28px, 5vw, 56px); }
+        .meta-date-label, .meta-date { grid-column: 1 / 4; }
+        .meta-role-label, .meta-role { grid-column: 5 / 8; }
+        .meta-scope-label, .meta-scope { grid-column: 9 / -1; }
+        .meta-date-label, .meta-role-label, .meta-scope-label { grid-row: 6; margin-top: clamp(32px, 5vw, 52px); }
+        .meta-date, .meta-role, .meta-scope { grid-row: 7; }
+        .meta-line-1, .meta-line-2 { display: none; }
+
+        .identity-section { padding-top: clamp(72px, 10vw, 112px); }
+        .identity-label { grid-column: 1 / -1; }
+        .identity-heading { grid-column: 1 / 6; }
+        .identity-copy { grid-column: 7 / -1; }
+        .figma-frame .logo-primary-card {
+          position: relative;
+          grid-column: 1 / 9;
+          aspect-ratio: 743 / 340;
+          margin-top: clamp(24px, 4vw, 44px);
+        }
+        .figma-frame .logo-mark-card {
+          position: relative;
+          grid-column: 9 / -1;
+          aspect-ratio: 373 / 340;
+          margin-top: clamp(24px, 4vw, 44px);
+        }
+        .figma-frame .logo-primary-wordmark,
+        .figma-frame .logo-white-mark { position: absolute; }
+        .colour-cloud, .colour-sky, .colour-coral { grid-column: span 4; min-height: 138px; }
+        .colour-meta { padding: 18px; font-size: 14px; }
+        .colour-meta strong { font-size: 16px; }
+        .brand-motion { grid-column: 1 / -1; aspect-ratio: 1122 / 631; }
+
+        .applications-section { background: var(--mist); }
+        .ig-profile, .social-reel, .campaign-career, .dream-line, .linkedin-well, .billboard, .graphic-card, .merch-cap, .merch-hoodie { grid-column: 1 / -1; }
+        .ig-profile, .social-reel, .campaign-career, .dream-line, .linkedin-well, .billboard, .graphic-card, .merch-cap { margin-top: clamp(16px, 2.4vw, 24px); }
+
+        .contact { padding: 72px 24px 88px; }
+      }
+
+      @media (max-width: 640px) {
+        body { overflow-x: clip; }
+        .figma-frame * { min-width: 0; }
+        .case-section {
+          grid-template-columns: 1fr;
+          gap: 0;
+          padding: 64px 20px;
+        }
+        .figma-frame .text {
+          grid-column: 1;
+          max-width: 100%;
+          font-size: 16px;
+          line-height: 1.42;
+          letter-spacing: -0.015em;
+          overflow-wrap: break-word;
+        }
+        .figma-frame .text--60 { font-size: clamp(44px, 12.25vw, 50px); line-height: .98; }
+        .figma-frame .text--30 { font-size: clamp(27px, 7.7vw, 31px); line-height: 1.08; }
+        .figma-frame .text--muted,
+        .identity-label { font-size: 14px; }
+        .figma-frame .media { overflow: hidden; border-radius: 4px; }
+        .figma-frame .media > img,
+        .figma-frame .media > video { width: 100%; height: auto; object-fit: cover; }
+
+        .hero-section { min-height: min(68svh, 560px); padding: 0; }
+
+        .intro-section { padding-top: 56px; padding-bottom: 0; }
+        .case-title { grid-row: 1; }
+        .case-type { grid-row: 2; margin-top: 14px; }
+        .figma-frame .case-type {
+          width: 100%;
+          max-width: 12ch;
+          font-size: clamp(24px, 6.8vw, 27px);
+          line-height: 1.08;
+        }
+        .intro-divider { grid-row: 3; margin: 28px 0 32px; }
+        .company-label { grid-row: 4; margin-bottom: 8px; }
+        .company-copy { grid-row: 5; margin-bottom: 28px; }
+        .role-label { grid-row: 6; margin-bottom: 8px; }
+        .role-copy { grid-row: 7; }
+        .overview { grid-row: 8; margin-top: 36px; }
+        .meta-date-label { grid-row: 9; }
+        .meta-date { grid-row: 10; }
+        .meta-role-label { grid-row: 11; }
+        .meta-role { grid-row: 12; }
+        .meta-scope-label { grid-row: 13; }
+        .meta-scope { grid-row: 14; }
+        .meta-date-label, .meta-role-label, .meta-scope-label {
+          margin-top: 28px;
+          padding-top: 20px;
+          border-top: 1px solid #d7d7d7;
+        }
+        .meta-date, .meta-role, .meta-scope { margin-top: 7px; }
+
+        .identity-heading, .identity-copy { grid-column: 1; }
+        .identity-label { margin-bottom: 16px; }
+        .identity-copy { margin-top: 24px; }
+        .identity-section { padding-top: 68px; padding-bottom: 0; }
+        .figma-frame .logo-primary-card,
+        .figma-frame .logo-mark-card,
+        .colour-cloud, .colour-sky, .colour-coral,
+        .brand-motion, .ig-profile, .social-reel, .campaign-career,
+        .dream-line, .linkedin-well, .billboard, .graphic-card,
+        .merch-cap, .merch-hoodie { grid-column: 1; }
+        .figma-frame .logo-primary-card { margin-top: 36px; }
+        .figma-frame .logo-mark-card { aspect-ratio: 1.65 / 1; margin-top: 12px; }
+        .figma-frame .logo-white-mark {
+          top: 50%;
+          left: 50%;
+          width: 72px;
+          transform: translate(-50%, -50%);
+        }
+        .colour-cloud, .colour-sky, .colour-coral { min-height: 116px; margin-top: 12px; }
+        .colour-meta { padding: 16px; }
+        .applications-section, .identity-section { padding-top: 68px; padding-bottom: 0; }
+        .applications-section { background: #f1f9ff; padding-bottom: 8px; }
+        .ig-profile, .social-reel, .campaign-career, .dream-line,
+        .linkedin-well, .billboard, .graphic-card, .merch-cap, .merch-hoodie { margin-top: 16px; }
+
+        .contact { padding: 64px 20px 80px; }
+        .contact h2 { font-size: clamp(36px, 10vw, 42px); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition-duration: .001ms !important; }
+        .contact-button:hover svg { translate: none; }
+        .contact-button:active, .contact-social:active { scale: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#case-study">Skip to case study</a>
+
+    <header class="case-chrome">
+      <nav class="case-nav" aria-label="Main navigation">
+        <a class="case-nav-home" href="/">Mariia</a>
+        <hr class="case-nav-rule" />
+        <a href="/#work">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+          <span>Work</span>
+        </a>
+        <a href="/#services">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M3 12h18"/><path d="m6.8 6.8 10.4 10.4"/><path d="m17.2 6.8-10.4 10.4"/></svg>
+          <span>Services</span>
+        </a>
+        <a href="/#about">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+          <span>About</span>
+        </a>
+        <a href="/playground">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+          <span>Playground</span>
+        </a>
+        <a href="/#contact">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          <span>Let’s talk</span>
+          <svg class="case-nav-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+      </nav>
+    </header>
+
+    <main id="case-study">
+      <article class="figma-frame" aria-labelledby="case-title">
+        <div class="surface surface--applications" aria-hidden="true"></div>
+
+        <section class="case-section hero-section" aria-label="Dreamers case study introduction">
+          <figure class="item hero-bg"><img src="dreamers/hero.jpg" alt="Dreamers identity on a large event screen: the mark, wordmark, and the line Мріємо і втілюємо" width="3840" height="2160" /></figure>
+        </section>
+
+        <section class="case-section intro-section" aria-label="Project overview">
+          <h1 class="text text--60 case-title" id="case-title">Dreamers</h1>
+          <p class="text text--30 case-type">Brand Identity</p>
+          <span class="line intro-divider" aria-hidden="true"></span>
+          <p class="text text--20 text--muted company-label">Company</p>
+          <p class="text text--20 text--muted role-label">My role</p>
+          <p class="text text--20 company-copy">Dreamers is a Kyiv-based team working across investments, development, and hospitality — building projects that change how people stay, gather, and belong.</p>
+          <div class="text text--20 role-copy">
+            <p>I designed the brand identity for Dreamers: a visual system that could hold several hospitality projects under one name, without flattening what makes each of them distinct.</p>
+            <p>The work covers the mark, colour, and graphic language, then carries that thinking into social, events, and physical applications.</p>
+          </div>
+          <figure class="item media overview"><img src="dreamers/overview-laptop.jpg" alt="Dreamers website on a laptop, held against a pale blue sky" width="1174" height="783" /></figure>
+
+          <p class="text text--20 text--muted meta-date-label">Selected work</p>
+          <p class="text text--20 text--muted meta-role-label">Role</p>
+          <p class="text text--20 text--muted meta-scope-label">Scope</p>
+          <p class="text text--20 meta-date">2026</p>
+          <p class="text text--20 meta-role">Brand Designer</p>
+          <p class="text text--20 meta-scope">Brand strategy, visual identity, art direction, and brand applications</p>
+          <span class="line meta-line-1" aria-hidden="true"></span>
+          <span class="line meta-line-2" aria-hidden="true"></span>
+        </section>
+
+        <section class="case-section identity-section" aria-label="Brand identity">
+          <p class="text text--20 identity-label">Brand Identity</p>
+          <h2 class="text text--30 identity-heading">A clear foundation for everything that followed.</h2>
+          <div class="text text--20 identity-copy">
+            <p>Dreamers needed one visual language for a group of hospitality projects — Ulis, Dream Hostel, Druzi, Reytarska Circle — that could still leave room for each place to feel like itself.</p>
+            <p>The system is built around a simple pin mark, a sky-and-coral palette, and a looping line that can move from a hiring post to an event screen without turning into a template.</p>
+          </div>
+          <div class="item logo-primary-card" aria-label="Dreamers primary logo">
+            <img src="dreamers/logo-landscape.jpg" alt="" width="1032" height="383" />
+            <img class="logo-primary-wordmark" src="dreamers/logo-white.png" alt="Dreamers" />
+          </div>
+          <div class="item logo-mark-card" aria-label="Dreamers brand mark">
+            <img class="logo-white-mark" src="dreamers/logo-mark-white.png" alt="Dreamers brand mark" />
+          </div>
+          <div class="item colour-cloud colour-meta" aria-label="Cloud Grey, hex EFF0F0, RGB 239 240 240"><strong>Cloud Grey</strong><span>HEX #EFF0F0<br />RGB 239 · 240 · 240</span></div>
+          <div class="item colour-sky colour-meta" aria-label="Sky Blue, hex B4D8EB, RGB 180 216 235"><strong>Sky Blue</strong><span>HEX #B4D8EB<br />RGB 180 · 216 · 235</span></div>
+          <div class="item colour-coral colour-meta" aria-label="Coral, hex FF6F43, RGB 255 111 67"><strong>Coral</strong><span>HEX #FF6F43<br />RGB 255 · 111 · 67</span></div>
+          <figure class="item media brand-motion">
+            <video id="brand-motion" autoplay muted loop playsinline preload="metadata" poster="dreamers/brand-motion-poster.jpg" aria-label="Animated Dreamers identity moving through the group’s projects">
+              <source src="dreamers/brand-motion.mp4" type="video/mp4" />
+            </video>
+          </figure>
+        </section>
+
+        <section class="case-section applications-section" aria-label="Brand applications">
+          <figure class="item media ig-profile"><img src="dreamers/instagram-profile.jpg" alt="Dreamers Instagram profile on a phone" width="1120" height="607" loading="lazy" /></figure>
+          <figure class="item media social-reel"><img src="dreamers/social-reel.jpg" alt="Three Dreamers social posts: an event, a landscape with the hospitality line, and an Ulis hiring post" width="1118" height="601" loading="lazy" /></figure>
+          <figure class="item media campaign-career"><img src="dreamers/campaign-career.jpg" alt="Campaign still: a career that moves you, with the Dreamers line running through the frame" width="1120" height="630" loading="lazy" /></figure>
+          <figure class="item media dream-line">
+            <video id="dream-line" autoplay muted loop playsinline preload="metadata" poster="dreamers/dream-line-poster.jpg" aria-label="Animated Dreamers line and the phrase Мрії, що стають спільним рухом">
+              <source src="dreamers/dream-line.mp4" type="video/mp4" />
+            </video>
+          </figure>
+          <figure class="item media linkedin-well"><img src="dreamers/linkedin-well.jpg" alt="Dreamers LinkedIn profile: sky banner, coral mark, and the line about hospitality in Kyiv" width="2236" height="1202" loading="lazy" /></figure>
+          <figure class="item media billboard"><img src="dreamers/billboard.jpg" alt="Dreamers outdoor billboard: learn, share, collaborate, ideas in action" width="1117" height="629" loading="lazy" /></figure>
+          <figure class="item media graphic-card"><img src="dreamers/graphic-banner.jpg" alt="Dreamers graphic: Там, де мрії стають спільним рухом, with the looping line and a balloon photograph" width="2236" height="1202" loading="lazy" /></figure>
+          <figure class="item media merch-cap"><img src="dreamers/merch-cap.jpg" alt="Dreamers cap worn outdoors" width="1118" height="746" loading="lazy" /></figure>
+          <figure class="item media merch-hoodie"><img src="dreamers/merch-hoodie.jpg" alt="Dreamers hoodie with the wordmark and looping line on the back" width="1115" height="744" loading="lazy" /></figure>
+        </section>
+      </article>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">
+          Let’s bring your
+          <br />
+          <em>vision to life.</em>
+        </h2>
+        <div class="contact-actions">
+          <a class="contact-button" href="mailto:hey@mariia.io?subject=Let’s%20create%20something%20together">
+            Let’s talk
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+          <div class="contact-socials">
+            <a class="contact-social" href="https://www.instagram.com/mariia.desiigns/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a class="contact-social" href="https://www.linkedin.com/in/mariia-baranska/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="email-line">
+          <a href="mailto:hey@mariia.io">hey@mariia.io</a>
+          <button type="button" data-copy-email="hey@mariia.io" aria-label="Copy email address">
+            <svg data-copy-icon width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          </button>
+        </div>
+        <span class="copy-status" role="status"></span>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        document.querySelectorAll("video").forEach(function (video) { video.pause(); });
+      }());
+
+      (function () {
+        var button = document.querySelector("[data-copy-email]");
+        var status = document.querySelector(".copy-status");
+        if (!button || !status) return;
+        var email = button.getAttribute("data-copy-email");
+        var checkIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+        button.addEventListener("click", function () {
+          var done = function () {
+            button.innerHTML = checkIcon;
+            status.textContent = "Email copied";
+          };
+          var fail = function () {
+            status.textContent = "Select the email address to copy it.";
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(done).catch(fail);
+          } else {
+            fail();
+          }
+        });
+      }());
+    </script>
+  </body>
+</html>

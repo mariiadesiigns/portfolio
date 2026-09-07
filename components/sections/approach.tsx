@@ -3,18 +3,18 @@ import { Container } from "@/components/layout/container";
 const pillars = [
   {
     num: "01",
-    label: "Brand Story",
-    text: "The narrative behind the brand — where it came from, where it's going, and why it exists."
+    label: "What is already there",
+    text: "The idea, the people, the mood, the small details, and the parts of the brand that should not get lost."
   },
   {
     num: "02",
-    label: "Core Values",
-    text: "The principles that shape every decision, message, and design choice you make."
+    label: "A visual direction",
+    text: "I turn those details into a language of type, color, image, layout, and art direction that feels natural to the brand."
   },
   {
     num: "03",
-    label: "Target Audience",
-    text: "The specific people the brand exists to serve and the language that speaks to them."
+    label: "Everyday use",
+    text: "The identity becomes something the team can actually use for launches, content, decks, packaging, and daily decisions."
   }
 ];
 
@@ -25,14 +25,15 @@ export function ApproachSection() {
         <div className="grid gap-16 md:grid-cols-[1fr_1.2fr] md:gap-24">
           <div>
             <p className="mb-5 text-xs font-medium uppercase tracking-[0.22em] text-[color:var(--accent)]">
-              The Approach
+              How it usually unfolds
             </p>
             <h2 className="font-serif text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
-              Every strong brand starts with a clear story
+              Before it looks beautiful, it needs to feel true.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-[color:var(--muted)]">
-              Many brands start with visuals. But without meaning behind them,
-              design becomes decoration. I work differently.
+              I like to begin with what is already there: the idea, the people,
+              the mood, the small details. Then I turn it into a visual
+              direction that feels natural and useful.
             </p>
           </div>
 
@@ -56,7 +57,7 @@ export function ApproachSection() {
               </div>
             ))}
             <p className="mt-7 text-sm text-[color:var(--muted)]">
-              From there, the visual language becomes intentional.
+              A good identity should make decisions easier, not add more noise.
             </p>
           </div>
         </div>

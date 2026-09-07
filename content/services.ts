@@ -2,8 +2,8 @@ import type { Service } from "@/types";
 
 export const mainServices: Service[] = [
   {
-    title: "Brand Identity for Founders",
-    bestFor: ["Coaches", "Experts", "Creators building a personal brand"],
+    title: "A new brand world",
+    bestFor: ["Launches", "Rebrands", "Ideas that need a visual language"],
     includes: [
       "Brand strategy foundation",
       "Visual identity",
@@ -12,11 +12,11 @@ export const mainServices: Service[] = [
       "Social media templates",
       "Brand guidelines"
     ],
-    result: "A personal brand that feels clear, intentional and recognizable."
+    result: "A complete visual direction with the core pieces your brand needs to feel recognizable, thoughtful, and ready to use."
   },
   {
-    title: "Brand Identity for Businesses",
-    bestFor: ["Startups", "Modern companies", "Brands building long-term positioning"],
+    title: "Ongoing design care",
+    bestFor: ["Growing brands", "Monthly design needs", "Campaigns and everyday materials"],
     includes: [
       "Brand story and positioning",
       "Visual identity system",
@@ -24,7 +24,7 @@ export const mainServices: Service[] = [
       "Brand assets",
       "Guidelines"
     ],
-    result: "A scalable brand identity that supports growth."
+    result: "Close, ongoing support for the visual side of the brand, so new materials keep feeling consistent, alive, and considered."
   }
 ];
 
@@ -38,15 +38,15 @@ export const addOns = [
 
 export const processSteps = [
   {
-    title: "Story and Strategy",
-    body: "We clarify what your brand stands for, what it needs to communicate, and the people it is speaking to."
+    title: "What is already there",
+    body: "We look at the idea, the people, the references, the mood, and the details that should shape the brand."
   },
   {
-    title: "Identity Design",
-    body: "I translate your positioning into a visual system with typography, logo direction, color, and brand language."
+    title: "The visual world",
+    body: "I turn that into a direction with typography, color, image style, layout, and practical brand pieces."
   },
   {
-    title: "Rollout and Support",
-    body: "You leave with clear guidelines and practical assets for launch, content, and everyday brand consistency."
+    title: "How it lives",
+    body: "You leave with materials and guidance that help the brand stay consistent in real use."
   }
 ];

@@ -5,9 +5,12 @@ import { usePathname } from "next/navigation";
 import { Container } from "@/components/layout/container";
 import { siteConfig } from "@/content/site";
 import { cn } from "@/lib/utils";
+import { HomeNavigation } from "@/components/homepage/navigation";
 
 export function SiteHeader() {
   const pathname = usePathname();
+
+  if (pathname === "/") return <HomeNavigation />;
 
   return (
     <header className="sticky top-0 z-30 border-b border-[color:var(--line)] bg-[color:var(--paper)]/90 backdrop-blur">
