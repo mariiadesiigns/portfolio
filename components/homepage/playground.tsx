@@ -4,14 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { useRef, useState, type PointerEvent, type ReactNode } from "react";
-import styles from "./homepage.module.css";
-import playground from "./playground.module.css";
+import { cn } from "@/lib/utils";
+import {
+  homeContainer,
+  playgroundCanvas,
+  playgroundCopy,
+  playgroundImage,
+  playgroundLink,
+  playgroundPrints,
+  playgroundTeaser,
+} from "./classes";
 
 const playgroundImages = [
-  { name: "lyra-campaign", position: playground.lyraCampaign, alt: "Lyra jewellery campaign on a station billboard" },
-  { name: "lyra-packaging", position: playground.lyraPackaging, alt: "Lyra jewellery packaging in soft blue" },
-  { name: "bloom-menu", position: playground.bloomMenu, alt: "Bloom Cafe menu with a floral backdrop" },
-  { name: "bloom-identity", position: playground.bloomIdentity, alt: "Bloom Cafe identity over a pink lily" },
+  { name: "lyra-campaign", position: playgroundPrints["lyra-campaign"], alt: "Lyra jewellery campaign on a station billboard" },
+  { name: "lyra-packaging", position: playgroundPrints["lyra-packaging"], alt: "Lyra jewellery packaging in soft blue" },
+  { name: "bloom-menu", position: playgroundPrints["bloom-menu"], alt: "Bloom Cafe menu with a floral backdrop" },
+  { name: "bloom-identity", position: playgroundPrints["bloom-identity"], alt: "Bloom Cafe identity over a pink lily" },
 ];
 
 function clamp(value: number, min: number, max: number) {
@@ -93,9 +101,9 @@ export function HomePlayground() {
   const moved = useRef(false);
 
   return (
-    <section id="playground" className={playground.section}>
+    <section id="playground" className={playgroundTeaser}>
       <Link
-        className={`${styles.container} ${playground.canvas}`}
+        className={cn(homeContainer, playgroundCanvas)}
         href="/playground"
         aria-labelledby="playground-title playground-link"
         onClick={(event) => {
@@ -106,7 +114,7 @@ export function HomePlayground() {
       >
         {playgroundImages.map(({ name, position, alt }) => (
           <DraggablePrint
-            className={`${playground.image} ${position}`}
+            className={cn(playgroundImage, position)}
             key={name}
             onMoved={() => {
               moved.current = true;
@@ -121,12 +129,12 @@ export function HomePlayground() {
             />
           </DraggablePrint>
         ))}
-        <div className={playground.copy}>
+        <div className={playgroundCopy}>
           <h2 id="playground-title">
             Explore the <em>playground.</em>
           </h2>
           <p>More work and collaborations</p>
-          <span className={playground.link} id="playground-link">
+          <span className={playgroundLink} id="playground-link">
             Take a look around <ArrowUpRight size={17} strokeWidth={1.5} aria-hidden="true" />
           </span>
         </div>

@@ -14,7 +14,33 @@ import {
   Unbounded,
 } from "next/font/google";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import styles from "./heroes.module.css";
+import {
+  boardHeader,
+  boardIdentity,
+  boardIntro,
+  boardKicker,
+  boardSummary,
+  exploreLink,
+  headline,
+  heroAction,
+  heroCanvas,
+  heroNav,
+  heroesPage,
+  intro,
+  motif,
+  navAction,
+  navLeft,
+  navRight,
+  preview,
+  services,
+  signature,
+  studies,
+  study,
+  studyIndex,
+  studyMeta,
+  variantClass,
+  wordmark,
+} from "./classes";
 
 const body = Manrope({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 const instrument = Instrument_Serif({ subsets: ["latin"], weight: "400" });
@@ -33,7 +59,7 @@ export const metadata: Metadata = {
   description: "Ten typography-led directions for the Mariia Design portfolio.",
 };
 
-const studies = [
+const directions = [
   { font: "Instrument Serif", mood: "Poetic restraint", typeface: instrument.className },
   { font: "Archivo Black", mood: "Graphic conviction", typeface: archivo.className },
   { font: "Bodoni Moda", mood: "Editorial elegance", typeface: bodoni.className },
@@ -48,19 +74,19 @@ const studies = [
 
 function HeroNavigation({ number }: { number: number }) {
   return (
-    <header className={styles.heroNav}>
-      <nav className={styles.navLeft} aria-label={`Direction ${number} navigation`}>
+    <header className={variantClass(number, "nav", heroNav)}>
+      <nav className={navLeft} aria-label={`Direction ${number} navigation`}>
         <Link href="/work">Work</Link>
         <Link href="/#services">Services</Link>
         <Link href="/#about">About</Link>
       </nav>
 
-      <Link href="/" className={styles.wordmark} aria-label="Together home">
+      <Link href="/" className={wordmark} aria-label="Together home">
         TOGETHER
       </Link>
 
-      <div className={styles.navRight}>
-        <Link href="/contact" className={styles.navAction}>
+      <div className={navRight}>
+        <Link href="/contact" className={variantClass(number, "navAction", navAction)}>
           Start a project
         </Link>
       </div>
@@ -68,9 +94,9 @@ function HeroNavigation({ number }: { number: number }) {
   );
 }
 
-function TypographicMotif() {
+function TypographicMotif({ number }: { number: number }) {
   return (
-    <div className={styles.motif} aria-hidden="true">
+    <div className={variantClass(number, "motif", motif)} aria-hidden="true">
       <span>
         <b>Idea</b>
         <small>What is true</small>
@@ -89,68 +115,68 @@ function TypographicMotif() {
 
 export default function HeroesPage() {
   return (
-    <main className={`${styles.page} ${body.className}`}>
-      <header className={styles.boardHeader}>
-        <div className={styles.boardIdentity}>
+    <main className={`${heroesPage} ${body.className}`}>
+      <header className={boardHeader}>
+        <div className={boardIdentity}>
           <Link href="/">mariia.desiigns</Link>
           <span>Hero direction lab</span>
         </div>
 
-        <nav className={styles.studyIndex} aria-label="Jump to a hero direction">
-          {studies.map((study, index) => (
-            <Link key={study.font} href={`#study-${index + 1}`} aria-label={`Go to ${study.font} direction`}>
+        <nav className={studyIndex} aria-label="Jump to a hero direction">
+          {directions.map((direction, index) => (
+            <Link key={direction.font} href={`#study-${index + 1}`} aria-label={`Go to ${direction.font} direction`}>
               {String(index + 1).padStart(2, "0")}
             </Link>
           ))}
         </nav>
 
-        <Link href="#study-1" className={styles.exploreLink}>
+        <Link href="#study-1" className={exploreLink}>
           See directions <ArrowDown size={15} strokeWidth={1.8} />
         </Link>
       </header>
 
-      <section className={styles.boardIntro} aria-labelledby="board-heading">
-        <p className={styles.boardKicker}>One idea. Ten distinct voices.</p>
+      <section className={boardIntro} aria-labelledby="board-heading">
+        <p className={boardKicker}>One idea. Ten distinct voices.</p>
         <h1 id="board-heading" className={instrument.className}>
           How should the story begin?
         </h1>
-        <p className={styles.boardSummary}>
+        <p className={boardSummary}>
           Ten ways to introduce a practice built around feeling, clarity, and memorable visual worlds.
         </p>
       </section>
 
-      <section className={styles.studies} aria-label="Hero direction studies">
-        {studies.map((study, index) => {
+      <section className={studies} aria-label="Hero direction studies">
+        {directions.map((direction, index) => {
           const number = index + 1;
 
           return (
-            <article
-              className={`${styles.study} ${styles[`variant${number}`]}`}
-              id={`study-${number}`}
-              key={study.font}
-            >
-              <div className={styles.studyMeta}>
+            <article className={study} id={`study-${number}`} key={direction.font}>
+              <div className={studyMeta}>
                 <span>{String(number).padStart(2, "0")}</span>
-                <strong>{study.font}</strong>
-                <span>{study.mood}</span>
+                <strong>{direction.font}</strong>
+                <span>{direction.mood}</span>
               </div>
 
-              <div className={styles.preview}>
+              <div className={variantClass(number, "preview", preview)}>
                 <HeroNavigation number={number} />
-                <div className={styles.heroCanvas}>
-                  <p className={styles.services}>Brand identity / Art direction / Graphic design</p>
-                  <h2 className={`${styles.headline} ${study.typeface}`}>
+                <div className={variantClass(number, "canvas", heroCanvas)}>
+                  <p className={variantClass(number, "services", services)}>
+                    Brand identity / Art direction / Graphic design
+                  </p>
+                  <h2 className={`${variantClass(number, "headline", headline)} ${direction.typeface}`}>
                     <span>Design tells</span>
                     <span>stories.</span>
                   </h2>
-                  <p className={styles.intro}>
+                  <p className={variantClass(number, "intro", intro)}>
                     I turn what a brand believes into a visual language people can feel, use, and remember.
                   </p>
-                  <Link href="/work" className={styles.heroAction}>
+                  <Link href="/work" className={variantClass(number, "action", heroAction)}>
                     Explore selected work <ArrowUpRight size={17} strokeWidth={1.8} />
                   </Link>
-                  <p className={styles.signature}>Mariia / Independent brand designer</p>
-                  <TypographicMotif />
+                  <p className={variantClass(number, "signature", signature)}>
+                    Mariia / Independent brand designer
+                  </p>
+                  <TypographicMotif number={number} />
                 </div>
               </div>
             </article>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import styles from "./homepage.module.css";
+import { manifesto, manifestoText } from "./classes";
 import { ManifestoLine } from "./manifesto-line";
 
 const paragraphs = [
@@ -64,12 +64,12 @@ export function ScrollManifesto() {
 
   return (
     <section
-      className={styles.manifesto}
+      className={manifesto}
       ref={sectionRef}
       aria-label="My design philosophy"
     >
       <ManifestoLine />
-      <div className={styles.manifestoText} ref={textRef}>
+      <div className={manifestoText} ref={textRef}>
         {paragraphs.map((paragraph) => (
           <p key={paragraph}>
             {paragraph.split(" ").map((word, index) => (

@@ -4,8 +4,16 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { homepageTestimonials } from "@/content/homepage";
-import styles from "./homepage.module.css";
-import carousel from "./testimonials.module.css";
+import {
+  homeContainer,
+  homeSectionHeading,
+  homeSectionTitle,
+  testimonialAvatar,
+  testimonialCard,
+  testimonialNav,
+  testimonialSection,
+  testimonialTrack,
+} from "./classes";
 
 export function HomeTestimonials() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -81,15 +89,15 @@ export function HomeTestimonials() {
 
   return (
     <section
-      className={`${styles.section} ${carousel.section}`}
+      className={testimonialSection}
       aria-label="Client testimonials"
     >
-      <div className={styles.container}>
-        <div className={styles.sectionHeading}>
-          <h2>What people say</h2>
+      <div className={homeContainer}>
+        <div className={homeSectionHeading}>
+          <h2 className={homeSectionTitle}>What people say</h2>
         </div>
         <div
-          className={carousel.track}
+          className={testimonialTrack}
           data-dragging={dragging}
           onWheel={() => { cancelAnimationFrame(animation.current); animation.current = 0; if (trackRef.current) delete trackRef.current.dataset.settling; }}
           onTouchStart={() => { cancelAnimationFrame(animation.current); animation.current = 0; if (trackRef.current) delete trackRef.current.dataset.settling; }}
@@ -120,10 +128,10 @@ export function HomeTestimonials() {
           }}
         >
           {homepageTestimonials.map((item) => (
-            <figure className={carousel.card} key={item.name}>
+            <figure className={testimonialCard} key={item.name}>
               <blockquote>{item.quote}</blockquote>
               <figcaption>
-                <span className={carousel.avatar} aria-hidden="true">
+                <span className={testimonialAvatar} aria-hidden="true">
                   {item.photo ? <Image src={item.photo} alt="" width={48} height={48} draggable={false} /> : item.initials}
                 </span>
                 <span>
@@ -134,7 +142,7 @@ export function HomeTestimonials() {
             </figure>
           ))}
         </div>
-        <div className={carousel.navigation} aria-label="Testimonial navigation">
+        <div className={testimonialNav} aria-label="Testimonial navigation">
           <button aria-label="Previous testimonials" aria-controls="testimonial-track"
             disabled={position.index === 0} onClick={() => slideTo(requestedIndex.current - 1)}>
             <ArrowLeft size={20} strokeWidth={1.5} aria-hidden="true" />

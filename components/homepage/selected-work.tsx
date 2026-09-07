@@ -4,8 +4,23 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { homepageProjects } from "@/content/homepage";
-import styles from "./homepage.module.css";
 import type { PointerEvent } from "react";
+import {
+  cursorPreview,
+  homeContainer,
+  homeSectionHeading,
+  homeSectionTitle,
+  workArrow,
+  workCallout,
+  workCategory,
+  workList,
+  workMeta,
+  workName,
+  workNumber,
+  workRow,
+  workSection,
+  workThumbnail,
+} from "./classes";
 
 export function HomeSelectedWork() {
   const previewRef = useRef<HTMLDivElement>(null);
@@ -21,6 +36,12 @@ export function HomeSelectedWork() {
   function hidePreview() {
     position.current.visible = false;
     previewRef.current?.removeAttribute("data-visible");
+    previewRef.current?.removeAttribute("data-project");
+    if (previewRef.current) {
+      for (const child of previewRef.current.children) {
+        delete (child as HTMLElement).dataset.active;
+      }
+    }
     cancelAnimationFrame(animationRef.current);
   }
 
@@ -65,6 +86,11 @@ export function HomeSelectedWork() {
       Math.min(event.clientY - height / 2, window.innerHeight - height - 16),
     );
     preview.dataset.project = String(index);
+    for (const child of preview.children) {
+      const el = child as HTMLElement;
+      if (el.dataset.previewIndex === String(index)) el.dataset.active = "";
+      else delete el.dataset.active;
+    }
     if (point.visible) return;
     point.x = point.targetX;
     point.y = point.targetY;
@@ -74,15 +100,15 @@ export function HomeSelectedWork() {
   }
 
   return (
-    <section id="work" className={`${styles.section} ${styles.work}`}>
-      <div className={styles.container}>
-        <div className={styles.sectionHeading}>
-          <h2>Selected work</h2>
+    <section id="work" className={workSection}>
+      <div className={homeContainer}>
+        <div className={homeSectionHeading}>
+          <h2 className={homeSectionTitle}>Selected work</h2>
         </div>
-        <div className={styles.workList}>
+        <div className={workList}>
           {homepageProjects.map((project, index) => (
             <a
-              className={styles.workRow}
+              className={workRow}
               draggable={false}
               key={project.title}
               href={project.href}
@@ -94,18 +120,18 @@ export function HomeSelectedWork() {
               onPointerLeave={hidePreview}
               onBlur={hidePreview}
             >
-              <span className={styles.workNumber}>0{index + 1}</span>
-              <div className={styles.workName}>
+              <span className={workNumber}>0{index + 1}</span>
+              <div className={workName}>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
               </div>
-              <span className={styles.workMeta}>
-                <span className={styles.workCategory}>
+              <span className={workMeta}>
+                <span className={workCategory}>
                   ({project.category})
                 </span>
-                <span className={styles.workCallout}>{project.status}</span>
+                <span className={workCallout}>{project.status}</span>
               </span>
-              <div className={styles.workThumbnail}>
+              <div className={workThumbnail}>
                 <Image
                   src={project.image}
                   alt={`${project.title} design preview`}
@@ -113,9 +139,9 @@ export function HomeSelectedWork() {
                   sizes="(max-width: 640px) 85vw, 240px"
                 />
               </div>
-              <span className={styles.workArrow}>
+              <span className={workArrow}>
                 <ArrowUpRight size={24} strokeWidth={1.3} aria-hidden="true" />
-                <span className={styles.srOnly}>
+                <span className="sr-only">
                   {project.href.startsWith("http")
                     ? `${project.status} (opens in a new tab)`
                     : project.status}
@@ -125,9 +151,13 @@ export function HomeSelectedWork() {
           ))}
         </div>
       </div>
-      <div className={styles.cursorPreview} ref={previewRef} aria-hidden="true">
+      <div className={cursorPreview} ref={previewRef} aria-hidden="true">
         {homepageProjects.map((project, index) => (
-          <div key={project.title} data-preview-index={index}>
+          <div
+            key={project.title}
+            data-preview-index={index}
+            className="data-active:opacity-100"
+          >
             <Image src={project.image} alt="" fill sizes="400px" />
             <span>
               {project.status}

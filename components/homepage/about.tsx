@@ -4,8 +4,21 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { homepageAbout } from "@/content/homepage";
 import { AboutSketch } from "./about-sketch";
-import styles from "./homepage.module.css";
-import portrait from "./portrait.module.css";
+import { cn } from "@/lib/utils";
+import {
+  aboutCard,
+  aboutComposition,
+  aboutExperience,
+  aboutHeading,
+  aboutNumber,
+  aboutPartner,
+  aboutPhoto,
+  aboutSection,
+  aboutSketchLeft,
+  aboutSketchRight,
+  aboutTitle,
+  aboutWorldwide,
+} from "./classes";
 
 export function HomeAbout() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -76,15 +89,15 @@ export function HomeAbout() {
   }, []);
 
   return (
-    <section className={portrait.about} id="about" ref={sectionRef}>
-      <div className={`${styles.sectionHeading} ${portrait.heading}`}>
-        <h2>About me</h2>
+    <section className={aboutSection} id="about" ref={sectionRef}>
+      <div className={aboutHeading}>
+        <h2 className={aboutTitle}>About me</h2>
       </div>
-      <div className={portrait.composition} ref={compositionRef}>
-        <div className={`${portrait.card} ${portrait.sketchLeft}`} aria-hidden="true">
+      <div className={aboutComposition} ref={compositionRef}>
+        <div className={cn(aboutCard, aboutSketchLeft)} aria-hidden="true">
           <Image src="/homepage/about/sketch-line.svg" alt="" fill sizes="192px" />
         </div>
-        <figure className={portrait.photo}>
+        <figure className={aboutPhoto}>
           <Image
             src="/homepage/mariia-portrait-new.jpg"
             alt="Mariia working on her laptop at an oceanfront café"
@@ -92,18 +105,18 @@ export function HomeAbout() {
             sizes="(max-width: 640px) 220px, 307px"
           />
         </figure>
-        <div className={`${portrait.card} ${portrait.partner}`}>
+        <div className={cn(aboutCard, aboutPartner)}>
           <h3>{homepageAbout.partner.title}</h3>
           <p>{homepageAbout.partner.text}</p>
         </div>
-        <div className={`${portrait.card} ${portrait.experience}`}>
-          <span className={portrait.number}>{homepageAbout.experience.years}</span>
+        <div className={cn(aboutCard, aboutExperience)}>
+          <span className={aboutNumber}>{homepageAbout.experience.years}</span>
           <h3>{homepageAbout.experience.label}</h3>
         </div>
-        <div className={`${portrait.card} ${portrait.sketchRight}`} aria-hidden="true">
+        <div className={cn(aboutCard, aboutSketchRight)} aria-hidden="true">
           <AboutSketch />
         </div>
-        <div className={`${portrait.card} ${portrait.worldwide}`}>
+        <div className={cn(aboutCard, aboutWorldwide)}>
           <h3>{homepageAbout.worldwide}</h3>
         </div>
       </div>
