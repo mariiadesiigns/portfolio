@@ -23,7 +23,34 @@ export const metadata: Metadata = {
     description: siteConfig.description
   },
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }]
+    icon: [
+      {
+        url: "/favicon-light.png?v=2",
+        type: "image/png",
+        sizes: "32x32",
+        media: "(prefers-color-scheme: light)"
+      },
+      {
+        url: "/favicon-dark.png?v=2",
+        type: "image/png",
+        sizes: "32x32",
+        media: "(prefers-color-scheme: dark)"
+      },
+      {
+        url: "/icon-light.png?v=2",
+        type: "image/png",
+        sizes: "192x192",
+        media: "(prefers-color-scheme: light)"
+      },
+      {
+        url: "/icon-dark.png?v=2",
+        type: "image/png",
+        sizes: "192x192",
+        media: "(prefers-color-scheme: dark)"
+      },
+      { url: "/favicon.ico?v=2", type: "image/x-icon", sizes: "48x48" }
+    ],
+    apple: [{ url: "/apple-touch-icon.png?v=2", sizes: "180x180", type: "image/png" }]
   }
 };
 
