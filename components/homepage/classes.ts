@@ -276,7 +276,7 @@ export const aboutCard =
 
 export const aboutSketchLeft =
   "top-0 left-[8.111%] h-[143px] w-[21.333%] overflow-hidden [--from-x:-150px] " +
-  "[&_img]:object-contain [&_img]:p-0.5 " +
+  "[&_img]:object-contain [&_img]:p-0 [&_img]:[transform:scale(2.1)] " +
   "max-[640px]:top-1 max-[640px]:left-[42px] max-[640px]:h-[68px] max-[640px]:w-[108px] max-[640px]:[--from-x:-36px]";
 
 export const aboutPartner =
@@ -296,7 +296,7 @@ export const aboutNumber =
 
 export const aboutSketchRight =
   "top-[211px] left-[69.333%] h-[173px] w-[29.444%] overflow-hidden [--from-x:150px] " +
-  "[&_svg]:h-full [&_svg]:w-full [&_svg]:p-0.5 " +
+  "[&_svg]:h-full [&_svg]:w-full [&_svg]:p-0 [&_svg]:[transform:scale(2.1)] " +
   "min-[641px]:max-[900px]:top-[205px] min-[641px]:max-[900px]:h-[150px] " +
   "max-[640px]:top-[239px] max-[640px]:right-2 max-[640px]:left-auto max-[640px]:z-[2] max-[640px]:h-[68px] max-[640px]:w-[108px] max-[640px]:[--from-x:36px]";
 
