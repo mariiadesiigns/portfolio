@@ -1,8 +1,7 @@
 export const siteConfig = {
   name: "mariia.desiigns",
-  role: "Brand & Graphic Designer",
-  description:
-    "Visual identities and art direction for brands that want to feel more like themselves.",
+  role: "Brand designer & Creative Partner",
+  description: "Design that speaks for your brand before you do.",
   url: "https://mariia.io",
   nav: [
     { href: "/", label: "Home" },
