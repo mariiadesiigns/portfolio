@@ -26,7 +26,7 @@ export function FeaturedShowcase() {
   const [reducedMotion, setReducedMotion] = useState(false);
   const [inView, setInView] = useState(false);
   const [active, setActive] = useState(0);
-  const [loaded, setLoaded] = useState<string[]>([]);
+  const [firstImageReady, setFirstImageReady] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -34,7 +34,8 @@ export function FeaturedShowcase() {
   const step = useRef(1);
   const activeRef = useRef(0);
   const drag = useRef<{ x: number; offset: number } | null>(null);
-  const ready = loaded.length === featuredSlides.length;
+  // Transformed slides can enter view before native lazy loading catches up.
+  const upcomingSlides = [active, wrap(active + 1, featuredSlides.length), wrap(active + 2, featuredSlides.length)];
 
   function paint() {
     const cycle = step.current * featuredSlides.length;
@@ -70,7 +71,7 @@ export function FeaturedShowcase() {
   }, []);
 
   useEffect(() => {
-    if (paused || reducedMotion || !inView || !ready) return;
+    if (paused || reducedMotion || !inView || !firstImageReady) return;
     let frame = 0;
     let lastTime = 0;
     function animate(time: number) {
@@ -84,7 +85,7 @@ export function FeaturedShowcase() {
     }
     frame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frame);
-  }, [paused, reducedMotion, inView, ready]);
+  }, [paused, reducedMotion, inView, firstImageReady]);
 
   function navigate(direction: number) {
     setPaused(true);
@@ -119,10 +120,13 @@ export function FeaturedShowcase() {
             <div className={showcaseGroup} key={copy} aria-hidden={copy === 1 ? true : undefined}>
               {featuredSlides.map((slide, index) => (
                 <div className={showcaseSlide} data-slide key={slide.image} style={{ backgroundColor: slide.background }}>
-                  <Image src={slide.image} alt={copy === 0 ? slide.alt : ""} fill draggable={false} unoptimized={slide.image.endsWith("-4k.png")}
+                  <Image src={slide.image} alt={copy === 0 ? slide.alt : ""} fill draggable={false}
+                    quality={index === 0 ? 85 : 75}
                     sizes="(max-width: 809px) 666px, (max-width: 1199px) 800px, 933px"
-                    loading="eager" priority={copy === 0 && index === 0} className={showcaseImage}
-                    onLoad={() => setLoaded((current) => current.includes(slide.image) ? current : [...current, slide.image])} />
+                    loading={(copy === 0 && index < 2) || (firstImageReady && upcomingSlides.includes(index)) ? "eager" : "lazy"}
+                    preload={copy === 0 && index === 0} className={showcaseImage}
+                    onLoad={index === 0 ? () => setFirstImageReady(true) : undefined}
+                    onError={index === 0 ? () => setFirstImageReady(true) : undefined} />
                 </div>
               ))}
             </div>
@@ -130,13 +134,13 @@ export function FeaturedShowcase() {
         </div>
       </div>
       <div className={showcaseControls}>
-        <button aria-label="Previous project image" onClick={() => navigate(-1)} disabled={!ready}>
+        <button aria-label="Previous project image" onClick={() => navigate(-1)}>
           <ArrowLeft size={16} aria-hidden="true" />
         </button>
         <span className={showcaseCounter} aria-live={paused || reducedMotion ? "polite" : "off"}>
           {String(active + 1).padStart(2, "0")} <span>/ {String(featuredSlides.length).padStart(2, "0")}</span>
         </span>
-        <button aria-label="Next project image" onClick={() => navigate(1)} disabled={!ready}>
+        <button aria-label="Next project image" onClick={() => navigate(1)}>
           <ArrowRight size={16} aria-hidden="true" />
         </button>
         {!reducedMotion && <button aria-label={paused ? "Play slideshow" : "Pause slideshow"} onClick={() => setPaused(!paused)} className={showcasePlayToggle}>

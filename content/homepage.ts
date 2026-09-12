@@ -11,7 +11,7 @@ export const homepageContact = {
 
 export const featuredSlides = [
   {
-    image: "/homepage/showcase/lumi-lifestyle-4k.png",
+    image: "/homepage/showcase/lumi-lifestyle.webp",
     background: "#d6d2cb",
     title: "Lumi Wallet lifestyle",
     alt: "Lumi Wallet identity displayed on a tablet and phone in a warm wood interior",
