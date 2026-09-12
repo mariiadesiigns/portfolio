@@ -1,5 +1,5 @@
 import { ArrowRight, Check, Layers3, PenTool } from "lucide-react";
-import { homepageServices, projectEmail } from "@/content/homepage";
+import { homepageServices } from "@/content/homepage";
 import {
   homeContainer,
   homeSection,
@@ -51,7 +51,10 @@ export function HomeServices() {
                 </div>
                 <a
                   className={serviceCta}
-                  href={projectEmail(service.subject)}
+                  href="https://cal.com/mariia-bnm4ni/discovery-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${service.action} — book a discovery call (opens in a new tab)`}
                 >
                   {service.action}
                   <ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" />
