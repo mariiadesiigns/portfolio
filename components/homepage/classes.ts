@@ -257,7 +257,7 @@ export const aboutComposition =
 export const aboutPhoto =
   "absolute top-[60px] left-[33%] z-[1] aspect-[533/648] w-[34.111%] overflow-hidden rounded-[10px] " +
   "shadow-[0_2px_4px_#0b195710,0_18px_40px_#0b195718,0_36px_72px_#0b19570d] " +
-  "[&_img]:origin-[72%_70%] [&_img]:scale-[1.45] [&_img]:object-cover [&_img]:object-[50%_90%] " +
+  "[&_img]:origin-[55%_65%] [&_img]:scale-[1.75] [&_img]:object-cover [&_img]:object-center " +
   "max-[640px]:top-[84px] max-[640px]:left-1/2 max-[640px]:w-[210px] max-[640px]:-translate-x-1/2";
 
 export const aboutCard =

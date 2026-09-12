@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import portrait from "@/public/homepage/mariia-garden-portrait.jpg";
 import { useEffect, useRef } from "react";
 import { homepageAbout } from "@/content/homepage";
 import { AboutSketch } from "./about-sketch";
@@ -99,10 +100,11 @@ export function HomeAbout() {
         </div>
         <figure className={aboutPhoto}>
           <Image
-            src="/homepage/mariia-portrait-new.jpg"
-            alt="Mariia working on her laptop at an oceanfront café"
+            src={portrait}
+            alt="Mariia sitting with her laptop surrounded by lush greenery"
             fill
-            sizes="(max-width: 640px) 220px, 307px"
+            placeholder="blur"
+            sizes="(max-width: 640px) 368px, 538px"
           />
         </figure>
         <div className={cn(aboutCard, aboutPartner)}>
