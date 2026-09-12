@@ -348,7 +348,7 @@ export const testimonialTrack =
   "data-[settling=true]:snap-none data-[dragging=true]:cursor-grabbing data-[dragging=true]:snap-none data-[dragging=true]:select-none " +
   "focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-home-sapphire " +
   "max-[1050px]:px-9 max-[1050px]:-mx-9 max-[1050px]:[scroll-padding-inline:36px] " +
-  "max-[760px]:auto-cols-[100%] max-[760px]:gap-[18px] max-[760px]:px-[22px] max-[760px]:-mx-[22px] max-[760px]:[scroll-padding-inline:22px]";
+  "max-[760px]:auto-cols-[100%] max-[760px]:gap-[18px] max-[760px]:px-[22px] max-[760px]:-mx-[22px] max-[760px]:pb-6 max-[760px]:mb-0 max-[760px]:[scroll-padding-inline:22px]";
 
 export const testimonialCard =
   "flex min-h-[330px] snap-start flex-col rounded-2xl border border-[#dfe4eb] bg-white p-9 shadow-home-card transition-[border-color,box-shadow] duration-300 " +
@@ -369,7 +369,7 @@ export const testimonialAvatar =
   "[&_img]:h-full [&_img]:w-full [&_img]:object-cover";
 
 export const testimonialNav =
-  "mt-3 flex justify-center gap-3 " +
+  "relative z-10 mt-3 flex justify-center gap-3 " +
   "[&_button]:grid [&_button]:size-11 [&_button]:cursor-pointer [&_button]:place-items-center [&_button]:rounded-lg [&_button]:border [&_button]:border-[#dce3eb] [&_button]:bg-transparent [&_button]:text-home-ink " +
   "[&_button]:transition-[background,border-color,opacity] [&_button]:duration-[250ms] " +
   "[&_button]:hover:enabled:border-[#b4c8ee] [&_button]:hover:enabled:bg-home-bridal [&_button]:hover:enabled:text-home-sapphire " +
