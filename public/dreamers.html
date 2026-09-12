@@ -512,9 +512,9 @@
 
         .hero-section { min-height: min(68svh, 560px); padding: 0; }
         .hero-bg img {
-          object-position: 22% 46%;
-          transform: scale(1.9);
-          transform-origin: center center;
+          object-fit: cover;
+          object-position: center;
+          transform: none;
         }
 
         .intro-section { padding-top: 56px; padding-bottom: 0; }
@@ -603,7 +603,7 @@
         <div class="surface surface--applications" aria-hidden="true"></div>
 
         <section class="case-section hero-section" aria-label="Dreamers case study introduction">
-          <figure class="item hero-bg"><img src="/case-media/dreamers/hero-1280.webp" data-original="dreamers/hero.jpg" alt="Dreamers identity on a large event screen: the mark, wordmark, and the line Мріємо і втілюємо" width="3840" height="2160" srcset="/case-media/dreamers/hero-640.webp 640w, /case-media/dreamers/hero-1280.webp 1280w, /case-media/dreamers/hero-1920.webp 1920w, /case-media/dreamers/hero-2560.webp 2560w, /case-media/dreamers/hero-3840.webp 3840w" sizes="(max-width: 1100px) 2000px, 100vw" decoding="async" loading="eager" fetchpriority="high" /></figure>
+          <figure class="item hero-bg"><picture><source media="(max-width: 640px)" srcset="dreamers/hero-mobile.png" width="1620" height="2025" /><img src="/case-media/dreamers/hero-1280.webp" data-original="dreamers/hero.jpg" alt="Dreamers brand mark and wordmark" width="3840" height="2160" srcset="/case-media/dreamers/hero-640.webp 640w, /case-media/dreamers/hero-1280.webp 1280w, /case-media/dreamers/hero-1920.webp 1920w, /case-media/dreamers/hero-2560.webp 2560w, /case-media/dreamers/hero-3840.webp 3840w" sizes="(max-width: 1100px) 2000px, 100vw" decoding="async" loading="eager" fetchpriority="high" /></picture></figure>
         </section>
 
         <section class="case-section intro-section" aria-label="Project overview">
