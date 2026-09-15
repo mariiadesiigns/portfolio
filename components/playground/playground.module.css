@@ -1,0 +1,238 @@
+.field { outline: none; }
+.field[data-tool="select"] { cursor: default; }
+.field[data-tool="draw"], .field[data-tool="draw"] .object { cursor: crosshair; }
+.field[data-dragging="true"], .field[data-dragging="true"] .object { cursor: grabbing; }
+.intro { --x: 0; --y: -45; --w: 303; --layer: 8; --intro-scale: 1; --text-width: calc(303px * var(--text-fit, 1)); max-width: none; cursor: grab; text-align: center; }
+.introCopy { pointer-events: none; }
+/* Text lives in world units like the images, so it zooms with the canvas.
+   Sizes are tuned to read ~14px / 56px on screen at the 111% default. */
+.introCopy h1 { font-family: var(--font-instrument), "Instrument Serif", serif; font-size: calc(50px * var(--intro-scale, 1) * var(--text-fit, 1)); font-weight: 400; line-height: 1.05; letter-spacing: -0.03em; }
+/* Same 13px world size as the project captions so all grey copy matches. */
+.intro p { margin-top: calc(16px * var(--intro-scale, 1)); font-size: calc(13px * var(--intro-scale, 1)); line-height: 1.35; }
+.intro p + p { margin-top: calc(7px * var(--intro-scale, 1)); white-space: pre-line; }
+.editableText { pointer-events: auto; cursor: text; user-select: text; min-height: 1em; white-space: pre-wrap; overflow-wrap: anywhere; outline: 1px solid transparent; outline-offset: 5px; border-radius: 2px; }
+.editableText:hover, .editableText:focus-visible { outline-color: #426bc255; }
+.editableText[contenteditable="plaintext-only"] { user-select: text; touch-action: manipulation; outline-color: var(--color-home-sapphire); background: #e9f3ffed; cursor: text; }
+.field[data-tool="draw"] .editableText:not([contenteditable="plaintext-only"]) { pointer-events: none; }
+.object { position: absolute; cursor: grab; outline: 1.5px solid transparent; outline-offset: 4px; }
+.object[data-selected="true"], .object:focus-visible { outline-color: var(--color-home-sapphire); }
+.print { width: 100%; height: auto; border-radius: 4px; pointer-events: none; box-shadow: 0 14px 32px -22px #0b195766; }
+.drawing { display: block; overflow: visible; }
+.objectLabel { position: absolute; left: -5px; top: calc(100% + 14px); padding: 2px 6px; color: var(--color-home-sapphire); font-size: 10px; white-space: nowrap; pointer-events: none; }
+.controls { position: fixed; bottom: max(18px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); z-index: 40; display: flex; flex-direction: column; align-items: center; gap: 11px; width: max-content; max-width: calc(100vw - 24px); }
+.controls .hint { font-size: 11px; color: var(--color-home-midnight); background: #e9f3ffe6; border-radius: 20px; padding: 4px 10px; text-align: center; }
+.toolbar { display: flex; align-items: center; gap: 4px; padding: 8px; border-radius: 18px; border: 1px solid var(--color-home-cta-border); background: #f6faffed; box-shadow: 0 8px 32px #0b195714, inset 0 1px 0 #fff; backdrop-filter: blur(20px); }
+.toolbar > button, .zoom button { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; color: var(--color-home-midnight); cursor: pointer; transition: background 150ms, color 150ms; flex-shrink: 0; }
+.toolbar > button:hover, .zoom button:hover { background: var(--color-home-bridal-hover); }
+.toolbar > button[aria-pressed="true"] { background: var(--color-home-midnight); color: var(--color-home-bridal); }
+.toolbar button:disabled, .zoom button:disabled { opacity: .3; cursor: default; }
+.divider { width: 1px; height: 23px; background: var(--color-home-cta-border); margin: 0 5px; }
+.colors { display: flex; align-items: center; gap: 10px; padding: 0 6px; }
+.colors button { width: 20px; height: 20px; border-radius: 50%; border: 1px solid #0b195722; cursor: pointer; }
+.colors button[aria-pressed="true"] { outline: 1px solid var(--color-home-midnight); outline-offset: 2px; }
+.controls .note { font-size: 10px; color: var(--color-home-muted); letter-spacing: .02em; }
+.zoom { position: fixed; left: calc(100% + 18px); bottom: 25px; display: flex; align-items: center; border: 1px solid var(--color-home-cta-border); background: #f6faffed; border-radius: 12px; color: var(--color-home-midnight); }
+.zoom span { min-width: 35px; text-align: center; font-size: 11px; }
+.zoom button { width: 30px; height: 36px; }
+@media (max-width: 600px) { .zoom { position: static; order: -1; } .controls { gap: 7px; } }
+@media (max-width: 540px) { .toolbar { gap: 1px; padding: 6px; border-radius: 14px; } .toolbar > button { width: 31px; height: 38px; } .divider { margin: 0 3px; } .colors { padding: 0 3px; gap: 5px; } .controls .hint { font-size: 10px; } }
+.simple .deskOnly { display: none; }
+.field[data-simple] .object { cursor: inherit; }
+@media (prefers-reduced-motion: reduce) { .toolbar > button, .zoom button { transition: none; } }
+@media (max-width: 540px) {
+  .controls .note { background: #e9f3ffe6; border-radius: 20px; padding: 2px 8px; }
+}
+@media (max-width: 380px) {
+  .toolbar > button { width: 27px; }
+  .divider { margin: 0 2px; }
+}
+
+@media (max-width: 380px) { .colors { gap: 7px; } .colors button { width: 18px; height: 18px; } }
+
+/* Image bounds traced from the 13.02.40 reference screenshot.
+   Units compensate for the 80% default zoom; browser chrome is excluded. */
+.field {
+  --layout-x: calc(100vw / 1550.4);
+  --layout-y: calc(100dvh / 929.6);
+  --layout-size: min(var(--layout-x), var(--layout-y));
+  --text-fit: 1;
+}
+.object[data-object] {
+  left: calc(var(--x, 0) * var(--layout-x));
+  top: calc(var(--y, 0) * var(--layout-y));
+  width: calc(var(--w, 0) * var(--layout-size));
+  z-index: var(--layer, 1);
+}
+.object[data-object].intro { width: var(--text-width); }
+/* Desktop composition, designed at 1440×900 in world units (111% default zoom).
+   The whole spread is visible on load: five tight project clusters around a
+   clear centre column, each piece with a small alternating tilt. */
+.object[data-object="bvj-welcome"] { --x: -911; --y: -395; --w: 117; --layer: 1; --tilt: -4deg; }
+.object[data-object="bvj-logo"] { --x: -851; --y: -287; --w: 187; --layer: 2; --tilt: -3deg; }
+.object[data-object="bvj-magazine"] { --x: -655; --y: -470; --w: 305; --layer: 2; --tilt: -3deg; }
+.object[data-object="bvj-logo-photo"] { --x: -592; --y: -263; --w: 177; --layer: 3; --tilt: 3deg; }
+.object[data-object="bvj-cards"] { --x: -414; --y: -338; --w: 128; --layer: 3; --tilt: 4deg; }
+.object[data-object="ulis-forest"] { --x: 165; --y: -512; --w: 230; --layer: 2; --tilt: -3deg; }
+.object[data-object="ulis-stories"] { --x: 427; --y: -512; --w: 167; --layer: 2; --tilt: 4deg; }
+.object[data-object="ulis-launch"] { --x: 437; --y: -299; --w: 156; --layer: 3; --tilt: 3deg; }
+.object[data-object="ulis-results"] { --x: 598; --y: -350; --w: 207; --layer: 4; --tilt: 5deg; }
+.object[data-object="lyra-portrait"] { --x: -557; --y: -73; --w: 175; --layer: 2; --tilt: 3deg; }
+.object[data-object="lyra-campaign"] { --x: -414; --y: -73; --w: 153; --layer: 3; --tilt: -4deg; }
+.object[data-object="lyra-cards"] { --x: -676; --y: 36; --w: 124; --layer: 3; --tilt: -5deg; }
+.object[data-object="lyra-packaging"] { --x: -792; --y: 85; --w: 202; --layer: 1; --tilt: -3deg; }
+.object[data-object="bloom-identity"] { --x: 258; --y: -53; --w: 135; --layer: 2; --tilt: 5deg; }
+.object[data-object="bloom-menu"] { --x: 369; --y: -5; --w: 202; --layer: 4; --tilt: 3deg; }
+.object[data-object="bloom-flowers"] { --x: 513; --y: 40; --w: 249; --layer: 3; --tilt: -4deg; }
+.object[data-object="lumi-phone"] { --x: -282; --y: 168; --w: 230; --layer: 2; --tilt: -2deg; }
+.object[data-object="lumi-graph"] { --x: -148; --y: 248; --w: 236; --layer: 3; --tilt: 2deg; }
+.object[data-object="lumi-lifestyle"] { --x: 62; --y: 220; --w: 236; --layer: 2; --tilt: 3deg; }
+.object[data-object="lumi-app-icon"] { --x: 188; --y: 318; --w: 176; --layer: 3; --tilt: -4deg; }
+.noteObject { --layer: 6; --note-scale: 1; }
+.object[data-object="note-bvj"] { --x: -255; --y: -313; --w: 165; }
+.object[data-object="note-ulis"] { --x: 158; --y: -212; --w: 194; }
+.object[data-object="note-lyra"] { --x: -557; --y: -122; --w: 155; }
+.object[data-object="note-bloom"] { --x: 418; --y: -70; --w: 174; }
+.object[data-object="note-lumi"] { --x: -282; --y: 138; --w: 230; }
+
+.resizeHandle { position: absolute; width: 24px; height: 24px; display: grid; place-items: center; z-index: 1; touch-action: none; }
+.resizeHandle::after { content: ""; width: 9px; height: 9px; background: var(--color-home-paper); border: 1.5px solid var(--color-home-sapphire); }
+.resizeHandle[data-resize="nw"] { left: -4px; top: -4px; cursor: nwse-resize; }
+.resizeHandle[data-resize="ne"] { left: calc(100% + 4px); top: -4px; cursor: nesw-resize; }
+.resizeHandle[data-resize="sw"] { left: -4px; top: calc(100% + 4px); cursor: nesw-resize; }
+.resizeHandle[data-resize="se"] { left: calc(100% + 4px); top: calc(100% + 4px); cursor: nwse-resize; }
+.field[data-resizing="nw"], .field[data-resizing="se"], .field[data-resizing="nw"] .object, .field[data-resizing="se"] .object { cursor: nwse-resize; }
+.field[data-resizing="ne"], .field[data-resizing="sw"], .field[data-resizing="ne"] .object, .field[data-resizing="sw"] .object { cursor: nesw-resize; }
+.rotateHandle { position: absolute; left: 50%; top: -14px; width: 28px; height: 28px; display: grid; place-items: center; z-index: 1; touch-action: none; cursor: grab; }
+.rotateHandle::before { content: ""; position: absolute; left: 50%; top: 100%; width: 1.5px; height: 10px; background: var(--color-home-sapphire); transform: translateX(-50%); }
+.rotateHandle::after { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--color-home-paper); border: 1.5px solid var(--color-home-sapphire); }
+.field[data-rotating="true"], .field[data-rotating="true"] .object, .field[data-rotating="true"] .rotateHandle { cursor: grabbing; }
+
+/* Keep the floating controls readable without obscuring the rest of the canvas. */
+.bottomFade {
+  position: fixed;
+  inset: auto 0 0;
+  height: calc(130px + env(safe-area-inset-bottom));
+  z-index: 30;
+  pointer-events: none;
+  background: linear-gradient(to bottom, #e9f3ff00, #e9f3ff52 65%, #e9f3ff99);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 75%);
+  mask-image: linear-gradient(to bottom, transparent, #000 75%);
+}
+@media (max-width: 800px) {
+  .bottomFade { height: calc(195px + env(safe-area-inset-bottom)); }
+}
+
+/* Step the intro type with the viewport so it never wraps awkwardly.
+   Tablet keeps the laptop cluster map; only type and the layout scale change. */
+@media (min-width: 601px) and (max-width: 900px) {
+  .field { --text-fit: .82; }
+  .intro { --w: 250; --text-width: calc(250px * var(--text-fit, 1)); --y: -20; }
+  /* Notes keep a two-line caption width as the layout scale shrinks. */
+  .object[data-object="note-bvj"] { --w: 300; }
+  .object[data-object="note-ulis"] { --w: 320; }
+  .object[data-object="note-lyra"] { --w: 280; }
+  .object[data-object="note-bloom"] { --w: 300; }
+  .object[data-object="note-lumi"] { --w: 280; }
+}
+@media (min-width: 901px) and (max-width: 1200px) {
+  .field { --text-fit: .9; }
+  .intro { --w: 270; --text-width: calc(270px * var(--text-fit, 1)); }
+  .object[data-object="note-bvj"] { --w: 230; }
+  .object[data-object="note-ulis"] { --w: 250; }
+  .object[data-object="note-lyra"] { --w: 220; }
+  .object[data-object="note-bloom"] { --w: 230; }
+  .object[data-object="note-lumi"] { --w: 240; }
+}
+@media (min-width: 1201px) and (max-width: 1340px) { .field { --text-fit: .94; } }
+@media (min-width: 1800px) { .field { --text-fit: 1.12; } }
+@media (min-width: 1201px) and (min-aspect-ratio: 2/1) {
+  .field { --layout-x: min(calc(100vw / 1550.4), calc(100dvh / 750)); --layout-size: min(var(--layout-x), calc(100dvh / 850)); }
+}
+
+/* Phone: captions sit on the dotted field, never on photos. No bottom chrome. */
+@media (max-width: 600px) {
+  .field {
+    --layout-x: calc(100vw / 390);
+    --layout-y: var(--layout-x);
+    --layout-size: var(--layout-x);
+    --text-fit: 1;
+  }
+  .intro { --x: 0; --y: -8; --w: 280; --text-width: min(280px, calc((100vw - 40px) / .9)); }
+
+  /* BVJ — one constellation, magazine as hero. */
+  .object[data-object="bvj-magazine"] { --x: -186; --y: -368; --w: 152; --layer: 2; }
+  .object[data-object="bvj-logo"] { --x: -196; --y: -316; --w: 76; --layer: 1; }
+  .object[data-object="bvj-cards"] { --x: -64; --y: -316; --w: 68; --layer: 3; }
+  .object[data-object="bvj-logo-photo"] { --x: -148; --y: -278; --w: 66; --layer: 3; }
+  .object[data-object="bvj-welcome"] { --x: -194; --y: -246; --w: 50; --layer: 4; }
+
+  /* ULIS — forest hero, satellites on its right edge. */
+  .object[data-object="ulis-forest"] { --x: 36; --y: -378; --w: 116; --layer: 2; }
+  .object[data-object="ulis-stories"] { --x: 122; --y: -298; --w: 66; --layer: 3; }
+  .object[data-object="ulis-results"] { --x: 164; --y: -346; --w: 76; --layer: 1; }
+  .object[data-object="ulis-launch"] { --x: 118; --y: -258; --w: 56; --layer: 4; }
+
+  /* Lyra — packaging base, cards + portrait + campaign overlapping. */
+  .object[data-object="lyra-packaging"] { --x: -210; --y: 230; --w: 118; --layer: 1; }
+  .object[data-object="lyra-cards"] { --x: -128; --y: 214; --w: 62; --layer: 3; }
+  .object[data-object="lyra-portrait"] { --x: -84; --y: 196; --w: 90; --layer: 2; }
+  .object[data-object="lyra-campaign"] { --x: -36; --y: 164; --w: 56; --layer: 4; }
+
+  /* Bloom — flowers hero, identity + menu on the top edge. */
+  .object[data-object="bloom-flowers"] { --x: 68; --y: 206; --w: 122; --layer: 3; }
+  .object[data-object="bloom-identity"] { --x: 46; --y: 194; --w: 60; --layer: 2; }
+  .object[data-object="bloom-menu"] { --x: 152; --y: 198; --w: 66; --layer: 4; }
+
+  /* Lumi — phone, graph, lifestyle, icon in the same stack as laptop. */
+  .object[data-object="lumi-phone"] { --x: -120; --y: 430; --w: 132; --layer: 2; }
+  .object[data-object="lumi-graph"] { --x: -40; --y: 478; --w: 136; --layer: 3; }
+  .object[data-object="lumi-lifestyle"] { --x: 72; --y: 468; --w: 140; --layer: 2; }
+  .object[data-object="lumi-app-icon"] { --x: 148; --y: 548; --w: 104; --layer: 3; }
+
+  .object[data-object].noteObject { width: 188px !important; --note-scale: 1; --layer: 7; }
+  .object[data-object="note-bvj"] { --x: -186; --y: -168; }
+  .object[data-object="note-ulis"] { --x: 28; --y: -168; }
+  .object[data-object="note-lyra"] { --x: -210; --y: 168; }
+  .object[data-object="note-bloom"] { --x: 28; --y: 124; }
+  .object[data-object="note-lumi"].noteObject { --x: -8; --y: 400; width: 188px !important; }
+
+  .bottomFade,
+  .controls .hint,
+  .controls .note,
+  .toolbar { display: none; }
+  .controls {
+    display: block;
+    inset: auto 12px max(12px, env(safe-area-inset-bottom)) auto;
+    left: auto;
+    transform: none;
+    width: auto;
+    pointer-events: none;
+  }
+  .zoom {
+    position: static;
+    pointer-events: auto;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: #f6faff;
+    box-shadow: none;
+  }
+}
+
+/* Short landscape: same laptop map, Y compressed so clusters stay in quadrant. */
+@media (min-width: 601px) and (max-height: 520px) {
+  .field {
+    --layout-x: calc(100vw / 1550.4);
+    --layout-y: calc(100dvh / 1180);
+    --layout-size: min(var(--layout-x), calc(100dvh / 720));
+    --text-fit: .7;
+  }
+  .intro { --y: 0; --w: 200; --text-width: calc(200px * var(--text-fit, 1)); }
+  .noteObject { opacity: 0; pointer-events: none; }
+  .controls { bottom: max(10px, env(safe-area-inset-bottom)); }
+  .controls .hint, .controls .note { display: none; }
+  .zoom { position: absolute; left: calc(100% + 14px); bottom: 0; }
+  .bottomFade { height: 90px; }
+}
+

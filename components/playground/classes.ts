@@ -1,5 +1,5 @@
 export const playgroundPage =
-  "relative min-h-dvh bg-home-bridal font-archivo font-light text-home-ink " +
+  "relative min-h-dvh overflow-hidden overscroll-none bg-home-bridal font-archivo font-light text-home-ink " +
   "[&_:is(h1,p)]:m-0 " +
   "[&_:is(button,a)]:focus-visible:outline-2 [&_:is(button,a)]:focus-visible:outline-offset-[5px] [&_:is(button,a)]:focus-visible:outline-home-sapphire";
 
@@ -39,17 +39,3 @@ export const playgroundRecenter =
   "font-archivo text-xs font-normal text-home-muted shadow-[0_2px_5px_#0b195710,0_12px_30px_#0b195708,inset_0_1px_0_#fff] backdrop-blur-[20px] " +
   "hover:text-home-ink max-[540px]:right-3.5 max-[540px]:bottom-[18px]";
 
-export const playgroundPrints: Record<string, string> = {
-  "bvj-welcome":
-    "left-[-290px] top-[-430px] w-[168px] max-[1280px]:left-[-230px] max-[1280px]:top-[-340px] max-[1280px]:w-[140px] max-[860px]:left-[-190px] max-[860px]:top-[-250px] max-[860px]:w-[112px]",
-  "bvj-cards":
-    "left-[-520px] top-[-200px] w-[340px] max-[1280px]:left-[-400px] max-[1280px]:top-[-150px] max-[1280px]:w-[260px] max-[860px]:left-[-250px] max-[860px]:top-[-90px] max-[860px]:w-[168px]",
-  "lyra-campaign":
-    "left-[175px] top-[-410px] w-[196px] max-[1280px]:left-[140px] max-[1280px]:top-[-330px] max-[1280px]:w-[150px] max-[860px]:left-[100px] max-[860px]:top-[-240px] max-[860px]:w-[108px]",
-  "lyra-packaging":
-    "left-[210px] top-[-28px] w-[300px] max-[1280px]:left-[165px] max-[1280px]:top-[-16px] max-[1280px]:w-[220px] max-[860px]:left-[130px] max-[860px]:top-[-20px] max-[860px]:w-[148px]",
-  "bloom-menu":
-    "left-[-175px] top-[175px] w-[196px] max-[1280px]:left-[-130px] max-[1280px]:top-[190px] max-[1280px]:w-[150px] max-[860px]:left-[-150px] max-[860px]:top-[130px] max-[860px]:w-[118px]",
-  "bloom-identity":
-    "left-[58px] top-[355px] w-[255px] max-[1280px]:left-5 max-[1280px]:top-[270px] max-[1280px]:w-[196px] max-[860px]:left-5 max-[860px]:top-[155px] max-[860px]:w-[150px]",
-};

@@ -1,0 +1,14 @@
+/* Quiet captions in world units: 13px reads as ~14px at the 111% desktop
+   default and zooms with the canvas like everything else. */
+.noteText {
+  margin: 0;
+  color: var(--color-home-muted);
+  font: 400 calc(13px * var(--note-scale, 1))/1.35 var(--font-sans), sans-serif;
+  letter-spacing: -0.005em;
+  white-space: pre-wrap;
+  text-wrap: pretty;
+}
+
+@media (max-width: 600px) {
+  .noteText { line-height: 1.4; }
+}

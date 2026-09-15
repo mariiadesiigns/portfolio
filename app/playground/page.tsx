@@ -4,7 +4,7 @@ import { playgroundIntro } from "@/content/playground";
 
 export const metadata: Metadata = {
   title: "Playground",
-  description: playgroundIntro.description,
+  description: `${playgroundIntro.description} ${playgroundIntro.invitation}`,
 };
 
 export default function PlaygroundPage() {
