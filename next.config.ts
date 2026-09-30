@@ -26,8 +26,21 @@ const nextConfig: NextConfig = {
       }
     ];
   },
+  skipTrailingSlashRedirect: true,
   async rewrites() {
     return [
+      {
+        source: "/phx/static/:path*",
+        destination: "https://eu-assets.i.posthog.com/static/:path*"
+      },
+      {
+        source: "/phx/array/:path*",
+        destination: "https://eu-assets.i.posthog.com/array/:path*"
+      },
+      {
+        source: "/phx/:path*",
+        destination: "https://eu.i.posthog.com/:path*"
+      },
       { source: "/dreamers", destination: "/dreamers.html" },
       { source: "/beautech", destination: "/beautech.html" }
     ];

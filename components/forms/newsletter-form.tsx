@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import posthog from "posthog-js";
 import { newsletterSchema, type NewsletterValues } from "@/lib/validation/newsletter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -45,6 +46,11 @@ export function NewsletterForm({
         body: JSON.stringify({ ...values, source }),
       });
       if (!res.ok) { setState("error"); return; }
+      posthog.identify(values.email, {
+        email: values.email,
+        name: values.firstName
+      });
+      posthog.capture("newsletter_subscribed", { source });
       setState("success");
       reset();
     } catch {

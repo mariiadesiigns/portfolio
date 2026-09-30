@@ -15,6 +15,7 @@
     "lucide-react": "latest",
     "lumail": "^0.1.5",
     "next": "latest",
+    "posthog-js": "^1.428.7",
     "react": "latest",
     "react-dom": "latest",
     "react-hook-form": "latest",

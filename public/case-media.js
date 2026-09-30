@@ -1,3 +1,18 @@
+(() => {
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = "/phx/static/array.js";
+  script.onload = () => {
+    window.posthog.init("phc_npRiiwjDwDAeFcAxP3LsQwefTfrndZ3B5jWbaFQmCPHK", {
+      api_host: "/phx",
+      ui_host: "https://eu.posthog.com",
+      defaults: "2026-05-30",
+      person_profiles: "identified_only"
+    });
+  };
+  document.head.appendChild(script);
+})();
+
 // Load case-study motion near the viewport, and play only while it is visible.
 (() => {
   const videos = [...document.querySelectorAll('video[data-case-video]')];
