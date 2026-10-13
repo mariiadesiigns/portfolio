@@ -7,7 +7,7 @@
       api_host: "/phx",
       ui_host: "https://eu.posthog.com",
       defaults: "2026-05-30",
-      person_profiles: "identified_only"
+      person_profiles: "always"
     });
   };
   document.head.appendChild(script);
